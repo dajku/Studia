@@ -14,4 +14,5 @@ def czy_pierwsza(n):
     return True
 
 if __name__ == "__main__":
-    print(czy_pierwsza(9))
+    x = int(input("Podaj liczbe: "))
+    print(czy_pierwsza(x))
