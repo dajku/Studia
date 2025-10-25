@@ -5,8 +5,12 @@
 # dla i = 2 mamy 12
 # różnica jest stała 12 - 4 = 8
 
+
+
 def rozklad_na_czynniki(n):
     lista_czynników = []
+    for i in range(n):
+        lista_czynników.append(n)
 
 if __name__ == "__main__":
     pass
