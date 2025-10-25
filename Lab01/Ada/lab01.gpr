@@ -1,0 +1,9 @@
+project Lab01 is
+   for Source_Dirs use (".");
+
+   for Main use ("gcd.adb");
+
+   package Compiler is
+      for Default_Switches ("ada") use ("-gnat2020", "-gnatwa");
+   end Compiler;
+end Lab01;

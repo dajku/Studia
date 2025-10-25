@@ -1,0 +1,7 @@
+project Lab_All is
+
+   for Project_Files use(
+      "Lab01/Ada/lab01.gpr"
+   );
+
+end Lab_All;
