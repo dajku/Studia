@@ -15,4 +15,8 @@ def czy_pierwsza(n):
 
 if __name__ == "__main__":
     x = int(input("Podaj liczbe: "))
-    print(czy_pierwsza(x))
+    if czy_pierwsza(x):
+        print(f"{x} jest liczbą pierwszą")
+    else:
+        print(f"{x} nie jest liczbą pierwszą")
+    

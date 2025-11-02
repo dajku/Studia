@@ -18,4 +18,4 @@ def czy_pierwsza(n):
     return True
 
 if __name__ == "__main__":
-    print(czy_pierwsza(9021012159111111256789876545678987654356789451))
+    print(czy_pierwsza(1234577))

@@ -36,6 +36,11 @@ begin
    Put_Line ("Podaj liczbe: ");
    Get(x);
    wynik := czy_pierwsza(x);
-   Put_Line(wynik'Image);
+   if wynik then
+      Put_Line(x'Image & " jest liczbą pierwszą");
+   else 
+      Put_Line(x'Image & " nie jest liczbą pierwszą");
+
+   end if;
 
 end pierwsza;
