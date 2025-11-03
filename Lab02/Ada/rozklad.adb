@@ -47,6 +47,7 @@ procedure rozklad is
    x : Long_Long_Integer;
    czynniki : Vector;
    i : Positive := 1;
+   j : Positive;
    aktualnyCzynnik : Long_Long_Integer;
    licznik : Long_Long_Integer := 0;
 begin 
@@ -58,13 +59,14 @@ begin
    while i <= Integer(czynniki.Length) loop
       aktualnyCzynnik := czynniki.Element (i);
       licznik := 0;
-         while i <= Integer(czynniki.Length) and then aktualnyCzynnik = Long_Long_Integer(czynniki.Element(i)) loop
-         licznik := licznik + Long_Long_Integer(1);
-         i := i + 1;
 
+      j := i;
+      while j <= Integer(czynniki.Length) and then aktualnyCzynnik = Long_Long_Integer(czynniki.Element(j)) loop
+         licznik := licznik + Long_Long_Integer(1);
+         j := j + 1;
       end loop;
 
-      if (Long_Long_Integer(i) > licznik + 1) then
+      if (Long_Long_Integer(i) > 1) then
          Put("*");
       end if;
 
@@ -74,11 +76,12 @@ begin
          Put("^");
          Put(Item => licznik, Width => 1);
       end if;
+      i := i + Positive(licznik);
    end loop;
 
    --  for i in czynniki.First_Index .. czynniki.Last_Index loop
    --     Put(czynniki.Element(i)'Image);
    --  end loop;
-      
+         
 
 end rozklad;

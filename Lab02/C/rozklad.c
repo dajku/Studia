@@ -48,7 +48,7 @@ void dodajCzynnik(struct RozkladLiczby* rozklad, long long x){
     rozklad->czynniki[rozklad->ilosc] = x;
     rozklad->ilosc += 1; 
 }
-void rozkladNaCzynniki(long long n, struct RozkladLiczby* rozklad){
+void rozkladNaCzynniki(struct RozkladLiczby* rozklad, long long n){
 
     long long kopiaN = n;
 
@@ -85,7 +85,7 @@ int main(){
         return 0;
     }
     struct RozkladLiczby liczba = InicjalizacjaRozkladu();
-    rozkladNaCzynniki(x, &liczba);
+    rozkladNaCzynniki(&liczba, x );
 
     long long i = 0;
     printf("%lld=",x);
@@ -93,12 +93,14 @@ int main(){
         long long aktualnyCzynnik = liczba.czynniki[i];
         long long licznik = 0;
 
-        while (i < liczba.ilosc && liczba.czynniki[i] == aktualnyCzynnik){
+
+        long long j = i;
+        while (j < liczba.ilosc && liczba.czynniki[j] == aktualnyCzynnik){
             licznik += 1;
-            i += 1;
+            j += 1;
         }
-        // i będzie większe od licznika dla każdego "bloku" czynników oprócz dla pierwszego
-        if (i > licznik){
+
+        if (i > 0){
             printf("*");
         }
         
@@ -107,6 +109,8 @@ int main(){
         if (licznik > 1){
             printf("^%lld", licznik);
         }
+
+        i += licznik;
     }
 
     printf("\n");

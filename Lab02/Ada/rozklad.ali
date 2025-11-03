@@ -31,7 +31,7 @@ RV NO_IMPLICIT_ALIASING
 RV NO_IMPLICIT_LOOPS
 RV STATIC_DISPATCH_TABLES
 
-U rozklad%b		rozklad.adb		667628c4 NE OO SU IL
+U rozklad%b		rozklad.adb		1672d403 NE OO SU IL
 W ada%s			ada.ads			ada.ali
 W ada.containers%s	a-contai.ads		a-contai.ali
 Z ada.containers.generic_array_sort%s
@@ -85,7 +85,7 @@ D a-uncdea.ads		20240521074738 c3a8ac65 ada.unchecked_deallocation%s
 D interfac.ads		20240521074738 15f799c2 interfaces%s
 D i-c.ads		20240521074738 5c5a6c17 interfaces.c%s
 D i-cstrea.ads		20240521074738 e53d8b8e interfaces.c_streams%s
-D rozklad.adb		20251102182457 314df54f rozklad%b
+D rozklad.adb		20251103190544 41490988 rozklad%b
 D system.ads		20240521074738 426dafb8 system%s
 D s-addima.ads		20240521074738 a1ec9d3a system.address_image%s
 D s-atocou.ads		20240521074738 dc18efc3 system.atomic_counters%s
@@ -126,8 +126,8 @@ X 6 a-convec.ads
 63+9 Element_Type 25|13r7
 74k24*Vectors 878e27 25|3w21 11r60
 91R9 Vector<9|43R9> 25|18r61[11] 19r23[11] 48r15[11]
-175V13 Length{2|22I9} 25|58s32[11] 61s38[11]
-206V13 Element{long_long_integer} 25|59s35[11] 61s100[11]
+175V13 Length{2|22I9} 25|59s32[11] 64s35[11]
+206V13 Element{long_long_integer} 25|60s35[11] 64s97[11]
 483U14 Append 25|28s24[11] 35s27[11] 43s24[11]
 X 11 a-iteint.ads
 24h9 Forward_Iterator
@@ -137,16 +137,16 @@ X 12 a-llitio.ads
 X 18 a-textio.ads
 58K13*Text_IO 787e16 25|1w10 1r27
 88I12*Field{integer}
-519U14*Put 25|53s4 57s4 68s10 74s10
+519U14*Put 25|54s4 58s4 70s10 76s10
 X 19 a-tiinio.ads
-60U14*Get 25|54s4[12|18]
-83U14*Put 25|56s4[12|18] 71s7[12|18] 75s10[12|18]
-84i7 Item{long_long_integer} 25|56r8[12|18] 75r14[12|18]
-85i7 Width{18|88I12} 25|56r19[12|18] 71r29[12|18] 75r31[12|18]
+60U14*Get 25|55s4[12|18]
+83U14*Put 25|57s4[12|18] 73s7[12|18] 77s10[12|18]
+84i7 Item{long_long_integer} 25|57r8[12|18] 77r14[12|18]
+85i7 Width{18|88I12} 25|57r19[12|18] 73r29[12|18] 77r31[12|18]
 X 25 rozklad.adb
-9U11*rozklad 9b11 84l5 84t12
+9U11*rozklad 9b11 87l5 87t12
 11K12 Long_Long_Integer_Vectors[6|74] 15r8
-18V13 rozkladNaCzynniki{6|91R9[11]} 18b13 18>31 46l8 46t25 55s16
+18V13 rozkladNaCzynniki{6|91R9[11]} 18b13 18>31 46l8 46t25 56s16
 18i31 n{long_long_integer} 21r37
 19r7 rozkladLiczby{6|91R9[11]} 28m10 28r10 35m13 35r13 43m10 43r10 45r14
 21i7 kopiaN{long_long_integer} 27r13 29m10 29r20 33r24 34r16 36m13 36r23
@@ -154,11 +154,12 @@ X 25 rozklad.adb
 22i7 i{long_long_integer} 34r27 35r34 36r30 40m10 40r15
 23i7 kwadrat{long_long_integer} 33r13 38m10 38r21
 24i7 roznica{long_long_integer} 38r31 39m10 39r21
-47i4 x{long_long_integer} 54m8 55r34 56r16
-48r4 czynniki{6|91R9[11]} 55m4 58r23 59r26 61r29 61r91
-49i4 i{positive} 58r10 59r44 61r16 61r108 63m10 63r15 67r29
-50i4 aktualnyCzynnik{long_long_integer} 59m7 61r55 71r12
-51i4 licznik{long_long_integer} 60m7 62m10 62r21 67r34 73r10 75r22
+47i4 x{long_long_integer} 55m8 56r34 57r16
+48r4 czynniki{6|91R9[11]} 56m4 59r23 60r26 64r26 64r88
+49i4 i{positive} 59r10 60r44 63r12 69r29 79m7 79r12
+50i4 j{positive} 63m7 64r13 64r105 66m10 66r15
+51i4 aktualnyCzynnik{long_long_integer} 60m7 64r52 73r12
+52i4 licznik{long_long_integer} 61m7 65m10 65r21 75r10 77r22 79r25
 X 26 system.ads
 67M9*Address
 X 37 s-memory.ads

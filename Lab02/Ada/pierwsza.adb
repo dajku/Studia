@@ -37,9 +37,11 @@ begin
    Get(x);
    wynik := czy_pierwsza(x);
    if wynik then
-      Put_Line(x'Image & " jest liczbą pierwszą");
+      Put (Item => x, Width => 1);
+      Put(" jest liczbą pierwszą");
    else 
-      Put_Line(x'Image & " nie jest liczbą pierwszą");
+      Put(Item => x, Width => 1);
+      Put(" nie jest liczbą pierwszą");
 
    end if;
 

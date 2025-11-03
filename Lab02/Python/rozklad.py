@@ -39,29 +39,31 @@ def rozklad_na_czynniki(n):
 
 if __name__ == "__main__":
 
-    # DODAĆ POPRAWNE WYŚWIETLANIE WYNIKU
     x = int(input("Podaj liczbe: "))
     if (x < 2):
         print(f"{x} jest mniejsze od 2, nie ma rozkładu na czynniki pierwsze")
         exit(1)
     czynniki = rozklad_na_czynniki(x)
-    print(f"{x} = ", end="")
+    print(f"{x}=", end="")
     i = 0
     while (i < len(czynniki)):
         aktualny_czynnik = czynniki[i]
         licznik = 0
-
-        while (i < len(czynniki) and czynniki[i] == aktualny_czynnik):
-            i += 1
+        
+        j = i
+        while (j < len(czynniki) and czynniki[j] == aktualny_czynnik):
+            j += 1
             licznik += 1
         
-        if (i > licznik):
+        if (i > 0):
             print("*", end="")
         
         print(f"{aktualny_czynnik}", end="")
 
         if (licznik > 1):
             print(f"^{licznik}", end="")
+
+        i += licznik
     print("")
         
 
