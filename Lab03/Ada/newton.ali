@@ -7,7 +7,7 @@ RV NO_DIRECT_BOOLEAN_OPERATORS
 RV NO_IO
 RV NO_DYNAMIC_SIZED_OBJECTS
 
-U newton%b		newton.adb		e5a36756 NE OO SU IL
+U newton%b		newton.adb		efa3e468 NE OO SU IL
 W ada%s			ada.ads			ada.ali
 W ada.integer_text_io%s	a-inteio.ads		a-inteio.ali
 Z ada.strings.text_buffers%s  a-sttebu.adb	a-sttebu.ali
@@ -33,7 +33,7 @@ D a-tiinio.ads		20240521074738 e58fa6fb ada.text_io.integer_io%s
 D a-unccon.ads		20240521074738 0e9b276f ada.unchecked_conversion%s
 D interfac.ads		20240521074738 15f799c2 interfaces%s
 D i-cstrea.ads		20240521074738 e53d8b8e interfaces.c_streams%s
-D newton.adb		20251115143400 4fc48fa1 newton%b
+D newton.adb		20251115181503 45c40c9f newton%b
 D system.ads		20240521074738 426dafb8 system%s
 D s-assert.ads		20240521074738 9c4520c7 system.assertions%s
 D s-casuti.ads		20240521074738 cf13d755 system.case_util%s
@@ -71,23 +71,22 @@ X 4 a-inteio.ads
 18K13*Integer_Text_IO[15|46] 19|2w10 2r35
 X 14 a-textio.ads
 58K13*Text_IO 787e16 19|1w10 1r27
-566U14*Put_Line 19|44s4 47s4 50s7 52s7 55s7
+566U14*Put_Line 19|42s4 43s4 46s4 49s7 51s7 54s7
 X 15 a-tiinio.ads
-60U14*Get 19|45s4[4|18] 48s4[4|18]
+60U14*Get 19|44s4[4|18] 47s4[4|18]
 X 19 newton.adb
-6U11*newton 6b11 59l5 59t11
-7V13 calcNewton{integer} 7b13 7>24 7>46 37l8 37t18 54s16
-7i24 n_parameter{integer} 8r30 9r22
-7i46 k_parameter{integer} 10r22
-8a7 czynniki(integer) 23m7 28m13 32m13 32r28 32r42 36r14
-9i7 n{integer} 24r19 26r21
-10i7 k{integer} 24m7 24r16 24r21 27r18 31r31 36r23
-13V16 min{integer} 13b16 13>20 13>22 20l11 20t14 24s12 31s27
-13i20 a{integer} 15r13 16r20
-13i22 b{integer} 15r17 18r20
-26i11 i{integer} 27r13 28r22 31r34
-31i14 j{integer} 32r22 32r37 32r51
-39i4 n{integer} 45m8 49r7 51r23 54r27 55r16
-40i4 k{integer} 48m8 51r10 51r19 54r29 55r35
-41i4 wynik{integer} 54m7 55r53
+6U11*newton 6b11 58l5 58t11
+7V13 calcNewton{integer} 7b13 7>24 7>36 36l8 36t18 53s16
+7i24 n{integer} 8r30 23r24 25r21
+7i36 k{integer} 9r27 23r21 23r26 30r36
+8a7 czynniki(integer) 22m7 27m13 31m13 31r28 31r42 35r14
+9i7 k_copy{integer} 23m7 26r18 35r23
+12V16 min{integer} 12b16 12>20 12>22 19l11 19t14 23s17 30s32
+12i20 a{integer} 14r13 15r20
+12i22 b{integer} 14r17 17r20
+25i11 i{integer} 26r13 27r22 30r39
+30i14 j{integer} 31r22 31r37 31r51
+38i4 n{integer} 44m8 48r7 50r23 53r27 54r16
+39i4 k{integer} 47m8 50r10 50r19 53r29 54r35
+40i4 wynik{integer} 53m7 54r53
 

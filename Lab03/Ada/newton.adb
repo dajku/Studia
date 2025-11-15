@@ -4,10 +4,9 @@ with Ada.Integer_Text_IO; use Ada.Integer_Text_IO;
 
 
 procedure newton is
-   function calcNewton(n_parameter : Integer;k_parameter : Integer) return Integer is
-      czynniki : array (0 .. n_parameter + 1) of Integer := (others => 0);
-      n : Integer := n_parameter;
-      k : Integer := k_parameter;
+   function calcNewton(n : Integer;k : Integer) return Integer is
+      czynniki : array (0 .. n + 1) of Integer := (others => 0);
+      k_copy : Integer := k;
 
 
       function min(a,b : Integer ) return Integer is
@@ -17,23 +16,23 @@ procedure newton is
          else 
             return b;
          end if;
-      end min;
+      end min;    
 
    begin
       czynniki(0) := 1;
-      k := min(k, n-k);
+      k_copy := min(k, n-k);
 
       for i in 1 .. n  loop
-         if i <= k then
+         if i <= k_copy then
             czynniki(i) := 1;
          end if;
          
-         for j in reverse min(k, i-1) .. 1 loop
+         for j in reverse 1 .. min(k, i-1)  loop
             czynniki(j) := czynniki(j) + czynniki(j-1);
          end loop;
       end loop;
 
-      return czynniki(k);
+      return czynniki(k_copy);
    end calcNewton;
 
    n : Integer := 0;
