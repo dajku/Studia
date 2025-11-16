@@ -20,16 +20,17 @@ procedure PrimeNumbers is
             end if;
          end loop ;
       end ComputeSieve ;
-   function CountPrimes (s : Sieve ) return Natural is
-      c : Natural := 0;
-   begin
-      for i in s'First .. s'Last loop
-         if s (i) then
-            c := c + 1;
-         end if;
-      end loop ;
-      return c;
-   end CountPrimes ;
+      
+      function CountPrimes (s : Sieve ) return Natural is
+         c : Natural := 0;
+      begin
+         for i in s'First .. s'Last loop
+            if s (i) then
+               c := c + 1;
+            end if;
+         end loop ;
+         return c;
+      end CountPrimes ;
 
        s : Sieve ;
    begin
