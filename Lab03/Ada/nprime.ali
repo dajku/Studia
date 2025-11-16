@@ -1,0 +1,74 @@
+V "GNAT Lib v13"
+M P W=b
+P ZX
+
+RN
+RV NO_DIRECT_BOOLEAN_OPERATORS
+RV NO_IO
+RV NO_LONG_LONG_INTEGERS
+
+U nprime%b		nprime.adb		3cd2b988 NE OO SU IL
+W ada%s			ada.ads			ada.ali
+W ada.long_long_integer_text_io%s  a-llitio.ads	a-llitio.ali
+Z ada.strings.text_buffers%s  a-sttebu.adb	a-sttebu.ali
+W ada.text_io%s		a-textio.adb		a-textio.ali
+
+D ada.ads		20240521074738 76789da1 ada%s
+D a-except.ads		20240521074738 2a7d8d70 ada.exceptions%s
+D a-ioexce.ads		20240521074738 40018c65 ada.io_exceptions%s
+D a-llitio.ads		20240521074738 9aecf52b ada.long_long_integer_text_io%s
+D a-stream.ads		20240521074738 119b8fb3 ada.streams%s
+D a-string.ads		20240521074738 90ac6797 ada.strings%s
+D a-sttebu.ads		20240521074738 f1ad67a2 ada.strings.text_buffers%s
+D a-stuten.ads		20240521074738 c6ced0ae ada.strings.utf_encoding%s
+D a-tags.ads		20240521074738 9eaa38c6 ada.tags%s
+D a-textio.ads		20240521074738 5c2c6153 ada.text_io%s
+D a-tiinio.ads		20240521074738 e58fa6fb ada.text_io.integer_io%s
+D a-unccon.ads		20240521074738 0e9b276f ada.unchecked_conversion%s
+D interfac.ads		20240521074738 15f799c2 interfaces%s
+D i-cstrea.ads		20240521074738 e53d8b8e interfaces.c_streams%s
+D nprime.adb		20251116163754 fa122df0 nprime%b
+D system.ads		20240521074738 426dafb8 system%s
+D s-crtl.ads		20240521074738 8a0692f8 system.crtl%s
+D s-exctab.ads		20240521074738 91bef6ef system.exception_table%s
+D s-ficobl.ads		20240521074738 dc5161d4 system.file_control_block%s
+D s-parame.ads		20240904144414 1f39ba92 system.parameters%s
+D s-putima.ads		20240521074738 17291fe4 system.put_images%s
+D s-secsta.ads		20240521074738 578279f5 system.secondary_stack%s
+D s-soflin.ads		20240521074738 df77073e system.soft_links%s
+D s-stache.ads		20240521074738 0b81c1fe system.stack_checking%s
+D s-stalib.ads		20240521074738 1c9580f6 system.standard_library%s
+D s-stoele.ads		20240521074738 ab5468e4 system.storage_elements%s
+D s-stoele.adb		20240521074738 8f5a9db6 system.storage_elements%b
+D s-traent.ads		20240521074738 c81cbf8c system.traceback_entries%s
+D s-unstyp.ads		20240521074738 fa2a7f59 system.unsigned_types%s
+D s-wchcon.ads		20240521074738 d9032363 system.wch_con%s
+G a e
+G c Z b b [nprime standard 6 11 none]
+X 1 ada.ads
+16K9*Ada 20e8 15|2r6 2r23 3r6 3r41
+X 4 a-llitio.ads
+18K13*Long_Long_Integer_Text_IO[11|46] 15|3w10 3r45
+X 10 a-textio.ads
+58K13*Text_IO 787e16 15|2w10 2r27
+88I12*Field{integer}
+519U14*Put 15|53s7
+566U14*Put_Line 15|48s4 56s7
+X 11 a-tiinio.ads
+60U14*Get 15|49s4[4|18]
+83U14*Put 15|52s7[4|18] 54s7[4|18]
+84i7 Item{long_long_integer} 15|52r11[4|18] 54r11[4|18]
+85i7 Width{10|88I12} 15|52r22[4|18] 54r42[4|18]
+X 15 nprime.adb
+6U11*nprime 6b11 60l5 60t11
+7A9 LLI_array(long_long_integer)<integer> 9r60 44r13
+9U14 nPierwsza 9b14 9>25 9=48 41l8 41t17 51s7
+9i25 n{long_long_integer} 19r17
+9a48 tab{7A9} 15m7 24r36 24r45 25r28 33m13
+10i7 licznik{long_long_integer} 16m7 24r55 25r16 33r32 37m10 37r21
+11i7 k{long_long_integer} 17m7 19r13 24r28 33r25 34m13 34r18
+12i7 i{integer} 22m10 24r16 24r40 24r49 25r32 28m13 28r18
+13b7 flag{boolean} 20m10 24r68 26m16 32r13
+44a4 tablica{7A9} 51m21 51r21 54r19
+45i4 n{long_long_integer} 49m8 50r7 51r18 52r19 54r35
+
