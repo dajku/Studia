@@ -1,8 +1,12 @@
 #include <stdio.h>
+#include <stdlib.h>
 #include <stdbool.h>
+#include <ctype.h>
 
-void compute_sieve(bool s[], int n){
-    int i, j;
+#include "primenumbers.h"
+
+void compute_sieve(bool s[], unsigned n){
+    unsigned i, j;
     for (i = 2; i <= n; i++){
         s[i] = true;
     }
@@ -15,7 +19,7 @@ void compute_sieve(bool s[], int n){
     }
 }
 
-int count_primes(bool s[], int n){
+unsigned count_primes(bool s[], unsigned n){
     int i, c = 0;
     for (i=2; i <= n; i++){
         if(s[i]) c++;
@@ -23,26 +27,34 @@ int count_primes(bool s[], int n){
     return c;
 }
 
-int primenumbers(int n) {
-    bool sieve[n+1];
-    compute_sieve(sieve, n);
-    return count_primes(sieve, n);
-}
 
-int main(){
-    int n = 0;
-    while (n < 2)
-    {
-        printf("Podaj n większe od 0: ");
-        scanf("%u", &n);
-        if(n > 0){
-            break;
-        }
-        printf("Nieprawidłowe dane\n");
 
+int main(int argc, char *argv[]){
+    unsigned long n;
+    unsigned long c;
+    bool *s;
+    char *endptr;
+
+
+    if (argc != 2){
+        printf("Zła liczba argumentów \n");
+        return -1;
     }
+    if (strtoul(argv[1], &endptr, 10) != 0){
+        n = atol(argv[1]);
+        printf("n: %lu\n", n);
+        
+        s = malloc((n+1)*sizeof(bool));
+        compute_sieve(s,n);
+        c = count_primes(s, n);
+        free(s);
+        printf("%lu\n", c);
+        return 0;
+    }
+    else{
+        printf("Błędne dane\n");
+        return -1;
+    }
+    
 
-    printf("Ilosc liczb pierwszych nie większych od n:%u\n", primenumbers(n));
-
-    return 0;
 }
