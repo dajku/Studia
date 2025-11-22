@@ -40,15 +40,17 @@ int main(int argc, char *argv[]){
         printf("Zła liczba argumentów \n");
         return -1;
     }
-    if (strtoul(argv[1], &endptr, 10) != 0){
-        n = atol(argv[1]);
-        printf("n: %lu\n", n);
+    // strtoul zwraca 0 gdy nie powiedzie się zamiana na integer //
+    if (strtol(argv[1], &endptr, 10) > 0){
+
+        n = strtol(argv[1], &endptr, 10);
+        // printf("n: %lu\n", n);
         
         s = malloc((n+1)*sizeof(bool));
         compute_sieve(s,n);
         c = count_primes(s, n);
         free(s);
-        printf("%lu\n", c);
+        printf("Ilość liczb pierwszych mniejszych od %lu wynosi: %ld\n", n, c);
         return 0;
     }
     else{
