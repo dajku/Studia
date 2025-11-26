@@ -1,0 +1,1 @@
+from .primelibrary import PrimeNumbers, Prime, IsPrime
