@@ -12,7 +12,7 @@ void compute_sieve(bool s[], unsigned n){
     }
     for (i = 2; i <= n; i++){
         if (s[i]){
-            for(j = i + i; j <= n; j+=i){
+            for(j = i + i; j <= n; j += i){
                 s[j] = false;
             }
         }
@@ -33,7 +33,7 @@ int main(int argc, char *argv[]){
     unsigned long n;
     unsigned long c;
     bool *s;
-    char *endptr;
+    // char *endptr;
 
 
     if (argc != 2){
@@ -41,16 +41,16 @@ int main(int argc, char *argv[]){
         return -1;
     }
     // strtoul zwraca 0 gdy nie powiedzie się zamiana na integer //
-    if (strtol(argv[1], &endptr, 10) > 0){
+    if (strtol(argv[1], NULL, 10) > 0){
 
-        n = strtol(argv[1], &endptr, 10);
+        n = strtol(argv[1], NULL, 10);
         // printf("n: %lu\n", n);
         
         s = malloc((n+1)*sizeof(bool));
         compute_sieve(s,n);
         c = count_primes(s, n);
         free(s);
-        printf("Ilość liczb pierwszych mniejszych od %lu wynosi: %ld\n", n, c);
+        printf("Ilość liczb pierwszych mniejszych lub równych od %lu wynosi: %ld\n", n, c);
         return 0;
     }
     else{

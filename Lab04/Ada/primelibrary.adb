@@ -7,6 +7,7 @@ with Ada.Unchecked_Deallocation;
 
 package body primelibrary is
 
+   
    type Sieve is array(Positive range <>) of Boolean;
    type Sieve_Ptr is access Sieve;
 

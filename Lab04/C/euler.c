@@ -9,12 +9,12 @@ typedef struct {
 } Czynniki;
 
 
-static void inicjalizacja(Czynniki *rozklad){
+void inicjalizacja(Czynniki *rozklad){
     rozklad->licznik = 0;
 
 }
 
-static void dodajCzynnik(Czynniki *rozklad, unsigned x){
+void dodajCzynnik(Czynniki *rozklad, unsigned x){
     if (rozklad->licznik < 50){
         rozklad->czynniki[rozklad->licznik] = x;
         rozklad->licznik++;
@@ -25,7 +25,7 @@ static void dodajCzynnik(Czynniki *rozklad, unsigned x){
 }
 
 
-static void RozkladNaCzynniki(Czynniki *rozklad, unsigned n){
+void RozkladNaCzynniki(Czynniki *rozklad, unsigned n){
     unsigned kopiaN = n;
     while (kopiaN % 2 == 0){
         dodajCzynnik(rozklad, 2);

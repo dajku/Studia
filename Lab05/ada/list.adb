@@ -11,8 +11,10 @@ package body list is
       e : Integer := n.elem;
    begin
       l.first := n.next;
+      l.Length := l.Length - 1;
       if l.first = null then -- last element
          l.last := null;
+         l.Length := 0;
       end if;
       Free (n);
       return e;
@@ -24,6 +26,7 @@ package body list is
       n.elem := e;
       n.next := l.first;
       l.first := n;
+      l.Length := l.Length + 1;
       if l.last = null then -- first element
          l.last := n;
       end if;
@@ -33,6 +36,7 @@ package body list is
       n : NodePtr := new Node;
    begin
       n.elem := e;
+      l.Length := l.Length + 1;
       if l.first = null then -- first element
          l.first := n;
       else
@@ -41,6 +45,20 @@ package body list is
       l.last := n;
    end Append;
 
+   function get(l : ListT; i : Integer) return Integer is
+      aktualny_Node : NodePtr := l.first;
+      aktualny_Index : Integer := 1;
+   begin 
+      
+      while aktualny_Index < i loop
+         aktualny_Node := aktualny_Node.next;
+         aktualny_Index := aktualny_Index + 1;
+
+      end loop;
+
+      return aktualny_Node.elem;
+   end Get;
+
    procedure Print (l : ListT) is
       n : NodePtr := l.first;
    begin
@@ -48,17 +66,14 @@ package body list is
          Put (n.elem'Image);
          n := n.next;
       end loop;
-      Put_Line (" (" & Length (l)'Image & " )");
+      Put_Line (" (" & Length(l)'Image & " )");
    end Print;
 
    function Length (l : ListT) return Integer is
-      i : Integer := 0;
-      n : NodePtr := l.first;
+
    begin
-      while n /= null loop
-         i := i + 1;
-         n := n.next;
-      end loop;
-      return i;
+
+      return l.Length;
+
    end Length;
 end list;

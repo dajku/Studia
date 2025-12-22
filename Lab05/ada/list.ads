@@ -4,12 +4,21 @@ package list is
    type ListT is private;
 
    function isEmpty (l : ListT) return Boolean;
+
    function Pop (l : in out ListT) return Integer;
    procedure Push (l : in out ListT; e : Integer);
    procedure Append (l : in out ListT; e : Integer);
 
+   function get(l : ListT; i : Integer) return Integer; --
+   --  procedure Put(l : in out ListT; i : Integer; e : Integer); --
+   --  procedure Insert(l : in out ListT; i : Integer; e : Integer); -- 
+   --  procedure Delete (l : in out ListT; i : Integer); -- 
+
    procedure Print (l : ListT);
-   function Length (l : ListT) return Integer;
+   --  procedure Clean (l : in out ListT); --
+
+
+   function Length (l : ListT) return Integer; 
 private
    type Node;
    type NodePtr is access Node;
@@ -20,6 +29,7 @@ private
 
    type ListT is record
       first : NodePtr := null;
+      Length : Integer := 0;
       last  : NodePtr := null;
    end record;
 

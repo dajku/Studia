@@ -14,7 +14,6 @@ begin
       wynik := Totient(Integer'Value(Argument(i)));
       Put_Line("totient(" & Argument(i) & ") =" & wynik'Image);
       
-
    end loop;
 
 

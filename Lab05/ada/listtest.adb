@@ -8,6 +8,7 @@ with list; use list;
 procedure listTest is
    l : ListT;
    r : Integer;
+   wynik: Integer;
    command : Unbounded_String;
    continue : Boolean := True;
 begin
@@ -36,12 +37,21 @@ begin
       elsif command = "Print" then
          Put ("Result: ");
          Print (l);
-      elsif command = "Length" then
-         r := Length (l);
-         Put_Line ("Result: " & r'Image);
+      --  elsif command = "Length" then
+      --     r := list.Length (l);
+      --     Put_Line ("Result: " & r'Image);
+      elsif command = "Get" then
+         Put("Value: ");
+         Get(r);
+         if r > 0 and r <= Length(l) then
+            Put("Result :");
+            Put(get(l, r)'Image);
+         else
+            Put_Line ("Zły indeks");
+         end if;
       elsif command = "Exit" then
          continue := False;
-      else
+      else 
          Put_Line ("Unknown command!");
       end if;
    end loop;

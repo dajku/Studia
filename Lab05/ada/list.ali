@@ -1,30 +1,30 @@
 V "GNAT Lib v13"
-M P W=b
-P SS ZX
+P ZX
 
 RN
-RV NO_EXCEPTION_HANDLERS
-RV NO_EXCEPTIONS
+RV NO_ALLOCATORS
 RV NO_IO
-RV NO_SECONDARY_STACK
+RV NO_IMPLICIT_CONDITIONALS
+RV NO_LOCAL_ALLOCATORS
+RV NO_STANDARD_STORAGE_POOLS
+RV NO_UNCHECKED_DEALLOCATION
+RV NO_DEFAULT_INITIALIZATION
 RV NO_DYNAMIC_SIZED_OBJECTS
 
-U main%b		main.adb		b577a381 NE OO SU IL
+U list%b		list.adb		672b42ab NE OO PK IL
 W ada%s			ada.ads			ada.ali
-W ada.command_line%s	a-comlin.adb		a-comlin.ali
 Z ada.strings.text_buffers%s  a-sttebu.adb	a-sttebu.ali
 W ada.text_io%s		a-textio.adb		a-textio.ali
-W primelibrary%s	primelibrary.adb	primelibrary.ali
-Z system.concat_2%s	s-conca2.adb		s-conca2.ali
 Z system.concat_3%s	s-conca3.adb		s-conca3.ali
-Z system.concat_4%s	s-conca4.adb		s-conca4.ali
 Z system.img_int%s	s-imgint.ads		s-imgint.ali
-Z system.secondary_stack%s  s-secsta.adb	s-secsta.ali
-Z system.val_int%s	s-valint.ads		s-valint.ali
+
+U list%s		list.ads		138abad4 EE NE OO PK IL
+W ada%s			ada.ads			ada.ali
+Z ada.strings.text_buffers%s  a-sttebu.adb	a-sttebu.ali
+W ada.unchecked_deallocation%s
 
 D ada.ads		20240521074738 76789da1 ada%s
 D a-assert.ads		20240521074737 ba465f5c ada.assertions%s
-D a-comlin.ads		20240521074737 4aa66568 ada.command_line%s
 D a-except.ads		20240521074738 2a7d8d70 ada.exceptions%s
 D a-ioexce.ads		20240521074738 40018c65 ada.io_exceptions%s
 D a-numeri.ads		20240521074738 84bea7a3 ada.numerics%s
@@ -37,16 +37,15 @@ D a-stuten.ads		20240521074738 c6ced0ae ada.strings.utf_encoding%s
 D a-tags.ads		20240521074738 9eaa38c6 ada.tags%s
 D a-textio.ads		20240521074738 5c2c6153 ada.text_io%s
 D a-unccon.ads		20240521074738 0e9b276f ada.unchecked_conversion%s
+D a-uncdea.ads		20240521074738 c3a8ac65 ada.unchecked_deallocation%s
 D interfac.ads		20240521074738 15f799c2 interfaces%s
 D i-cstrea.ads		20240521074738 e53d8b8e interfaces.c_streams%s
-D main.adb		20251202102537 931b610e main%b
-D primelibrary.ads	20251202091317 30e6c6b4 primelibrary%s
+D list.ads		20251207195624 d02216b1 list%s
+D list.adb		20251222125428 eb253549 list%b
 D system.ads		20240521074738 426dafb8 system%s
 D s-assert.ads		20240521074738 9c4520c7 system.assertions%s
 D s-casuti.ads		20240521074738 cf13d755 system.case_util%s
-D s-conca2.ads		20240521074738 b5fb73f7 system.concat_2%s
 D s-conca3.ads		20240521074738 8a7a19a2 system.concat_3%s
-D s-conca4.ads		20240521074738 33f85f3e system.concat_4%s
 D s-crtl.ads		20240521074738 8a0692f8 system.crtl%s
 D s-exctab.ads		20240521074738 91bef6ef system.exception_table%s
 D s-ficobl.ads		20240521074738 dc5161d4 system.file_control_block%s
@@ -73,27 +72,59 @@ D s-wchcon.ads		20240521074738 d9032363 system.wch_con%s
 D s-widuns.ads		20240521074738 866a5800 system.wid_uns%s
 D s-widthu.ads		20240521074738 b32f15e2 system.width_u%s
 G a e
-G c Z b b [main standard 5 11 none]
-G r c none [main standard 5 11 none] [primenumbers primelibrary 4 13 none]
-G r c none [main standard 5 11 none] [prime primelibrary 6 13 none]
-G r c none [main standard 5 11 none] [isprime primelibrary 8 13 none]
+G c Z s b [isempty list 6 13 none]
+G c Z s b [pop list 8 13 none]
+G c Z s b [push list 9 14 none]
+G c Z s b [append list 10 14 none]
+G c Z s b [get list 12 13 none]
+G c Z s b [print list 17 14 none]
+G c Z s b [length list 21 13 none]
+G c Z s s [nodeIP list 25 9 none]
+G c Z s s [free list 36 14 none]
+G c Z s s [listtIP list 30 9 none]
 X 1 ada.ads
-16K9*Ada 20e8 18|2r6 2r23 3r6 3r28
-X 3 a-comlin.ads
-36K13*Command_Line 144e21 18|3w10 3r32
-39V13*Argument_Count{natural} 18|11s10
-52V13*Argument{string} 18|15s30 17s10 20s13 23s13
-X 14 a-textio.ads
-58K13*Text_IO 787e16 18|2w10 2r27
-566U14*Put_Line 18|12s10 19s10 22s10 28s13 30s13 35s7
-X 18 main.adb
-5U11*main 5b11 38l5 38t9
-7i4 n{positive} 15m10 18r41 19r71 21r34 22r19 25r37 28r22 30r22
-8i4 x{positive} 18m10 19r94 21m10 22r54
-9b4 b{boolean} 25m10 27r13
-X 19 primelibrary.ads
-1K9*primelibrary 18|1w6 1r24 18r15 21r15 25r15 19|11e17
-4V13*PrimeNumbers{positive} 18|18s28
-6V13*Prime{positive} 18|21s28
-8V13*IsPrime{boolean} 18|25s28
+16K9*Ada 20e8 18|1r6 37r20 19|1r6 1r23
+X 13 a-textio.ads
+58K13*Text_IO 787e16 19|1w10 1r27
+519U14*Put 19|66s10
+566U14*Put_Line 19|69s7
+X 15 a-uncdea.ads
+20u15*Unchecked_Deallocation 18|1w10 37r24
+X 18 list.ads
+3K9*list 23E9 38l5 38e9 19|3b14 79l5 79t9
+4R9*ListT 6r26 8r29 9r31 10r33 12r21 17r25 21r25 30c9 34e14 19|4r26 9r29
+. 23r31 35r33 48r21 62r25 72r25
+6V13*isEmpty{boolean} 6>22 19|4b13 7l8 7t15
+6r22 l{4R9} 19|4b22 6r14
+8V13*Pop{integer} 8=18 19|9b13 21l8 21t11
+8r18 l{4R9} 19|9b18 10r22 13m7 14m7 14r19 15r10 16m10 17m10
+9U14*Push 9=20 9>38 19|23b14 33l8 33t12
+9r20 l{4R9} 19|23b20 27r17 28m7 29m7 29r19 30r10 31m10
+9i38 e{integer} 19|23b38 26r17
+10U14*Append 10=22 10>40 19|35b14 46l8 46t14
+10r22 l{4R9} 19|35b22 39m7 39r19 40r10 41m10 43m10 43r10 45m7
+10i40 e{integer} 19|35b40 38r17
+12V13*get{integer} 12>17 12>28 19|48b13 60l8 60t11
+12r17 l{4R9} 19|48b17 49r34
+12i28 i{integer} 19|48b28 53r30
+17U14*Print 17>21 19|62b14 70l8 70t13
+17r21 l{4R9} 19|62b21 63r22 69r31
+21V13*Length{integer} 21>21 19|69s24 72b13 78l8 78t14
+21r21 l{4R9} 19|72b21 76r14
+23R9 Node 24r27 25c9 28e14 37r48 19|24r26 36r26
+24P9 NodePtr(23R9) 27r14 31r15 33r15 37r54 19|10r11 24r11 36r11 49r23 63r11
+26i7*elem{integer} 19|11r24 26m9 38m9 59r28 66r17
+27p7*next{24P9} 19|13r20 27m9 43m17 54r41 67r17
+31p7*first{24P9} 19|6r16 10r24 13m9 15r12 27r19 28m9 40r12 41m12 49r36 63r24
+32i7*Length{integer} 19|14m9 14r21 17m12 29m9 29r21 39m9 39r21 76r16
+33p7*last{24P9} 19|16m12 30r12 31m12 43r12 45m9
+36U14 Free[15|20] 19|19s7
+X 19 list.adb
+10p7 n{18|24P9} 11r22 13r18 19m13 19r13
+11i7 e{integer} 20r14
+24p7 n{18|24P9} 26r7 27r7 28r18 31r20
+36p7 n{18|24P9} 38r7 41r21 43r25 45r17
+49p7 aktualny_Node{18|24P9} 54m10 54r27 59r14
+50i7 aktualny_Index{integer} 53r13 55m10 55r28
+63p7 n{18|24P9} 65r13 66r15 67m10 67r15
 

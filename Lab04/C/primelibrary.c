@@ -3,7 +3,7 @@
 #include <math.h>
 
 // PRYWATNE FUNKCJE POMOCNICZE
-static void compute_sieve(bool s[], unsigned n)
+void compute_sieve(bool s[], unsigned n)
 {
     unsigned i, j;
     for (i = 2; i <= n; i++)
@@ -22,7 +22,7 @@ static void compute_sieve(bool s[], unsigned n)
     }
 }
 
-static unsigned count_primes(bool s[], unsigned n)
+unsigned count_primes(bool s[], unsigned n)
 {
     unsigned i, c = 0;
     for (i = 2; i <= n; i++)
@@ -33,7 +33,7 @@ static unsigned count_primes(bool s[], unsigned n)
     return c;
 }
 
-static void nPierwsza(unsigned n, unsigned *tab)
+void nPierwsza(unsigned n, unsigned *tab)
 {
 
     tab[0] = 2;

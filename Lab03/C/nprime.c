@@ -32,7 +32,8 @@ void nPierwsza(long long n, long long *tab)
 
 int main()
 {
-    long long tablica[10000];
+    const long long maxN = 10000;
+    long long tablica[maxN];
     long long n = 0;
     printf("Podaj n większe od 0: ");
     scanf("%lld", &n);

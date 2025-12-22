@@ -38,7 +38,7 @@ D a-unccon.ads		20240521074738 0e9b276f ada.unchecked_conversion%s
 D euler.ads		20251128193842 ecd0c6ba euler%s
 D interfac.ads		20240521074738 15f799c2 interfaces%s
 D i-cstrea.ads		20240521074738 e53d8b8e interfaces.c_streams%s
-D main2.adb		20251128194453 4d247d3f main2%b
+D main2.adb		20251216104311 4d247d3f main2%b
 D system.ads		20240521074738 426dafb8 system%s
 D s-assert.ads		20240521074738 9c4520c7 system.assertions%s
 D s-casuti.ads		20240521074738 cf13d755 system.case_util%s
@@ -84,7 +84,7 @@ X 16 euler.ads
 1K9*euler 5e10 19|1w6 1r17
 3V13*Totient{positive} 19|14s16
 X 19 main2.adb
-6U11*main2 6b11 21l5 21t10
+6U11*main2 6b11 20l5 20t10
 8i4 wynik{positive} 14m7 15r51
 13i8 i{integer} 14r47 15r38
 
