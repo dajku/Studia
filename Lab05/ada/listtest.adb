@@ -8,6 +8,7 @@ with list; use list;
 procedure listTest is
    l : ListT;
    r : Integer;
+   index: Integer;
    wynik: Integer;
    command : Unbounded_String;
    continue : Boolean := True;
@@ -43,12 +44,58 @@ begin
       elsif command = "Get" then
          Put("Value: ");
          Get(r);
+         Skip_Line;
          if r > 0 and r <= Length(l) then
             Put("Result :");
             Put(get(l, r)'Image);
          else
             Put_Line ("Zły indeks");
          end if;
+      elsif command = "Put" then
+         Put("Index: ");
+         Get(index);
+         if index in 1 .. Length(l) then
+
+            Put("Value: ");
+            Get(r);
+            Skip_Line;
+            put(l, index, r);
+            Put_Line("Result: OK");
+         else
+            Put_Line("Zły indeks");
+            Skip_Line;
+         end if;
+      elsif command = "Insert" then
+         Put("Index: ");
+         Get(index);
+         if index in 1 .. Length (l) + 1 then
+            Put("Value: ");
+            Get(r);
+            Skip_Line;
+            insert(l, index, r);
+            Put_Line("Result: OK");
+         else
+            Put_line("Zły indeks");
+            Skip_Line;
+         end if;
+      elsif command = "Delete" then
+         Put("Index: ");
+         Get(index);
+         if index in 1 .. Length (l) then
+
+            Skip_Line;
+            delete(l, index);
+            Put_Line("Result: OK");
+         
+         else
+            Put_Line("Zły indeks");
+            Skip_Line;
+
+         end if;
+      elsif command = "Clean" then
+         Clean(l);
+         Put_Line("Result: OK");
+      
       elsif command = "Exit" then
          continue := False;
       else 

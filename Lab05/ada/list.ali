@@ -11,14 +11,14 @@ RV NO_UNCHECKED_DEALLOCATION
 RV NO_DEFAULT_INITIALIZATION
 RV NO_DYNAMIC_SIZED_OBJECTS
 
-U list%b		list.adb		672b42ab NE OO PK IL
+U list%b		list.adb		00cdc81c NE OO PK IL
 W ada%s			ada.ads			ada.ali
 Z ada.strings.text_buffers%s  a-sttebu.adb	a-sttebu.ali
 W ada.text_io%s		a-textio.adb		a-textio.ali
 Z system.concat_3%s	s-conca3.adb		s-conca3.ali
 Z system.img_int%s	s-imgint.ads		s-imgint.ali
 
-U list%s		list.ads		138abad4 EE NE OO PK IL
+U list%s		list.ads		8dad7e57 EE NE OO PK IL
 W ada%s			ada.ads			ada.ali
 Z ada.strings.text_buffers%s  a-sttebu.adb	a-sttebu.ali
 W ada.unchecked_deallocation%s
@@ -40,8 +40,8 @@ D a-unccon.ads		20240521074738 0e9b276f ada.unchecked_conversion%s
 D a-uncdea.ads		20240521074738 c3a8ac65 ada.unchecked_deallocation%s
 D interfac.ads		20240521074738 15f799c2 interfaces%s
 D i-cstrea.ads		20240521074738 e53d8b8e interfaces.c_streams%s
-D list.ads		20251207195624 d02216b1 list%s
-D list.adb		20251222125428 eb253549 list%b
+D list.ads		20251225185418 4e05d232 list%s
+D list.adb		20251225190020 12e47b7d list%b
 D system.ads		20240521074738 426dafb8 system%s
 D s-assert.ads		20240521074738 9c4520c7 system.assertions%s
 D s-casuti.ads		20240521074738 cf13d755 system.case_util%s
@@ -77,7 +77,11 @@ G c Z s b [pop list 8 13 none]
 G c Z s b [push list 9 14 none]
 G c Z s b [append list 10 14 none]
 G c Z s b [get list 12 13 none]
+G c Z s b [put list 13 14 none]
+G c Z s b [insert list 14 14 none]
+G c Z s b [delete list 15 14 none]
 G c Z s b [print list 17 14 none]
+G c Z s b [clean list 18 14 none]
 G c Z s b [length list 21 13 none]
 G c Z s s [nodeIP list 25 9 none]
 G c Z s s [free list 36 14 none]
@@ -86,45 +90,75 @@ X 1 ada.ads
 16K9*Ada 20e8 18|1r6 37r20 19|1r6 1r23
 X 13 a-textio.ads
 58K13*Text_IO 787e16 19|1w10 1r27
-519U14*Put 19|66s10
-566U14*Put_Line 19|69s7
+519U14*Put 19|161s10
+566U14*Put_Line 19|164s7
 X 15 a-uncdea.ads
 20u15*Unchecked_Deallocation 18|1w10 37r24
 X 18 list.ads
-3K9*list 23E9 38l5 38e9 19|3b14 79l5 79t9
-4R9*ListT 6r26 8r29 9r31 10r33 12r21 17r25 21r25 30c9 34e14 19|4r26 9r29
-. 23r31 35r33 48r21 62r25 72r25
+3K9*list 23E9 38l5 38e9 19|3b14 175l5 175t9
+4R9*ListT 6r26 8r29 9r31 10r33 12r21 13r29 14r32 15r33 17r25 18r32 21r25
+. 30c9 34e14 19|4r26 9r29 23r31 35r33 50r21 64r28 80r31 99r31 139r30 157r25
+. 168r25
 6V13*isEmpty{boolean} 6>22 19|4b13 7l8 7t15
 6r22 l{4R9} 19|4b22 6r14
 8V13*Pop{integer} 8=18 19|9b13 21l8 21t11
 8r18 l{4R9} 19|9b18 10r22 13m7 14m7 14r19 15r10 16m10 17m10
-9U14*Push 9=20 9>38 19|23b14 33l8 33t12
+9U14*Push 9=20 9>38 19|23b14 33l8 33t12 85s21
 9r20 l{4R9} 19|23b20 27r17 28m7 29m7 29r19 30r10 31m10
 9i38 e{integer} 19|23b38 26r17
-10U14*Append 10=22 10>40 19|35b14 46l8 46t14
+10U14*Append 10=22 10>40 19|35b14 46l8 46t14 86s37
 10r22 l{4R9} 19|35b22 39m7 39r19 40r10 41m10 43m10 43r10 45m7
 10i40 e{integer} 19|35b40 38r17
-12V13*get{integer} 12>17 12>28 19|48b13 60l8 60t11
-12r17 l{4R9} 19|48b17 49r34
-12i28 i{integer} 19|48b28 53r30
-17U14*Print 17>21 19|62b14 70l8 70t13
-17r21 l{4R9} 19|62b21 63r22 69r31
-21V13*Length{integer} 21>21 19|69s24 72b13 78l8 78t14
-21r21 l{4R9} 19|72b21 76r14
-23R9 Node 24r27 25c9 28e14 37r48 19|24r26 36r26
-24P9 NodePtr(23R9) 27r14 31r15 33r15 37r54 19|10r11 24r11 36r11 49r23 63r11
-26i7*elem{integer} 19|11r24 26m9 38m9 59r28 66r17
-27p7*next{24P9} 19|13r20 27m9 43m17 54r41 67r17
-31p7*first{24P9} 19|6r16 10r24 13m9 15r12 27r19 28m9 40r12 41m12 49r36 63r24
-32i7*Length{integer} 19|14m9 14r21 17m12 29m9 29r21 39m9 39r21 76r16
-33p7*last{24P9} 19|16m12 30r12 31m12 43r12 45m9
-36U14 Free[15|20] 19|19s7
+12V13*get{integer} 12>17 12>28 19|50b13 62l8 62t11
+12r17 l{4R9} 19|50b17 51r34
+12i28 i{integer} 19|50b28 55r30
+13U14*put 13=18 13>36 13>49 19|64b14 78l8 78t11
+13r18 l{4R9} 19|64b18 65r34
+13i36 i{integer} 19|64b34 70r30
+13i49 e{integer} 19|64b47 76r29
+14U14*insert 14=21 14>39 14>52 19|80b14 97l8 97t14
+14r21 l{4R9} 19|80b21 81r34 85m26 86r25 86m45 94m10 94r22
+14i39 i{integer} 19|80b38 85r10 86r13 88r24
+14i52 e{integer} 19|80b51 85r28 86r48 91r28
+15U14*delete 15=22 15>40 19|99b14 137l8 137t14
+15r22 l{4R9} 19|99b21 106r13 106r23 107r20 108m13 109m13 111m13 114r20 115m13
+. 115r24 116m13 116r25 120r23 129m10 129r22 131m13
+15i40 i{integer} 19|99b38 105r10 122r24
+17U14*Print 17>21 19|157b14 165l8 165t13
+17r21 l{4R9} 19|157b21 158r22 164r31
+18U14*Clean 18=21 19|139b14 154l8 154t13
+18r21 l{4R9} 19|139b20 140r34 150m7 151m7 152m7
+21V13*Length{integer} 21>21 19|86s17 164s24 168b13 174l8 174t14
+21r21 l{4R9} 19|168b21 172r14
+23R9 Node 24r27 25c9 28e14 37r48 19|24r26 36r26 82r34
+24P9 NodePtr(23R9) 27r14 31r15 33r15 37r54 19|10r11 24r11 36r11 51r23 65r23
+. 81r23 82r19 101r10 102r16 140r23 141r14 158r11
+26i7*elem{integer} 19|11r24 26m9 38m9 61r28 76m21 91m20 161r17
+27p7*next{24P9} 19|13r20 27m9 43m17 56r41 72r41 89r44 92m20 92r42 93m24 115r32
+. 123r36 126r27 127m20 127r32 130r23 147r41 162r17
+31p7*first{24P9} 19|6r16 10r24 13m9 15r12 27r19 28m9 40r12 41m12 51r36 65r36
+. 81r36 106r15 107r22 108m15 114r22 115m15 115r26 120r25 140r36 150m9 158r24
+32i7*Length{integer} 19|14m9 14r21 17m12 29m9 29r21 39m9 39r21 94m12 94r24
+. 111m15 116m15 116r27 129m12 129r24 152m9 172r16
+33p7*last{24P9} 19|16m12 30r12 31m12 43r12 45m9 106r25 109m15 131m15 151m9
+36U14 Free[15|20] 19|19s7 110s13 117s13 128s10 148s10
 X 19 list.adb
 10p7 n{18|24P9} 11r22 13r18 19m13 19r13
 11i7 e{integer} 20r14
 24p7 n{18|24P9} 26r7 27r7 28r18 31r20
 36p7 n{18|24P9} 38r7 41r21 43r25 45r17
-49p7 aktualny_Node{18|24P9} 54m10 54r27 59r14
-50i7 aktualny_Index{integer} 53r13 55m10 55r28
-63p7 n{18|24P9} 65r13 66r15 67m10 67r15
+51p7 aktualny_Node{18|24P9} 56m10 56r27 61r14
+52i7 aktualny_Index{integer} 55r13 57m10 57r28
+65p7 aktualny_Node{18|24P9} 72m10 72r27 76r7
+66i7 aktualny_Index{integer} 70r13 71m10 71r28
+81p7 aktualny_Node{18|24P9} 89m13 89r30 92r28 93r10
+82p7 nowy_Node{18|24P9} 91r10 92r10 93r32
+88i14 j{integer}
+101p4 tmp{18|24P9} 107m13 110m18 110r18 114m13 117m18 117r18 126m10 127r28
+. 128m15 128r15
+102p4 prev_node{18|24P9} 120m10 123m13 123r26 126r17 127r10 130r13 131r23
+122i14 j{integer}
+140p7 aktualny_Node{18|24P9} 145r13 146r18 147m10 147r27
+141p7 temp{18|24P9} 146m10 148m16 148r16
+158p7 n{18|24P9} 160r13 161r15 162m10 162r15
 

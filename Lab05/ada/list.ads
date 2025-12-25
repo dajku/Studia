@@ -9,13 +9,13 @@ package list is
    procedure Push (l : in out ListT; e : Integer);
    procedure Append (l : in out ListT; e : Integer);
 
-   function get(l : ListT; i : Integer) return Integer; --
-   --  procedure Put(l : in out ListT; i : Integer; e : Integer); --
-   --  procedure Insert(l : in out ListT; i : Integer; e : Integer); -- 
-   --  procedure Delete (l : in out ListT; i : Integer); -- 
+   function get(l : ListT; i : Integer) return Integer; 
+   procedure put(l : in out ListT; i : Integer; e : Integer); 
+   procedure insert(l : in out ListT; i : Integer; e : Integer); 
+   procedure delete (l : in out ListT; i : Integer); 
 
    procedure Print (l : ListT);
-   --  procedure Clean (l : in out ListT); --
+   procedure Clean (l : in out ListT); --
 
 
    function Length (l : ListT) return Integer; 
