@@ -1,0 +1,49 @@
+V "GNAT Lib v13"
+P ZX
+
+RN
+RV NO_ACCESS_SUBPROGRAMS
+RV NO_FLOATING_POINT
+
+U findzeropackage%b	findzeropackage.adb	fd4952b2 NE OO PK IL
+
+U findzeropackage%s	findzeropackage.ads	35ab9282 EE NE OO PK IL
+W ada%s			ada.ads			ada.ali
+W ada.numerics%s	a-numeri.ads		a-numeri.ali
+W ada.numerics.elementary_functions%s  a-nuelfu.ads  a-nuelfu.ali
+
+D ada.ads		20240521074738 76789da1 ada%s
+D a-numeri.ads		20240521074738 84bea7a3 ada.numerics%s
+D a-nuelfu.ads		20240521074738 dc1b3a37 ada.numerics.elementary_functions%s
+D a-ngelfu.ads		20240521074738 58d8ffc8 ada.numerics.generic_elementary_functions%s
+D a-unccon.ads		20240521074738 0e9b276f ada.unchecked_conversion%s
+D findzeropackage.ads	20251227122817 e9b0a8b5 findzeropackage%s
+D findzeropackage.adb	20251227122753 14f9fa07 findzeropackage%b
+D system.ads		20240521074738 426dafb8 system%s
+D s-exctab.ads		20240521074738 91bef6ef system.exception_table%s
+D s-stalib.ads		20240521074738 1c9580f6 system.standard_library%s
+G a e
+G c Z s b [cos_2 findzeropackage 7 13 none]
+G c Z s b [findzero findzeropackage 9 13 none]
+X 1 ada.ads
+16K9*Ada 20e8 6|1r6 1r45
+X 2 a-numeri.ads
+16K13*Numerics 35e17 6|1r10 1r49
+X 3 a-nuelfu.ads
+18K22*Elementary_Functions[4|39] 6|1w19 1r58
+X 4 a-ngelfu.ads
+105V13*Cos{float} 7|6s25[3|18]
+X 6 findzeropackage.ads
+3K9*FindZeroPackage 12l5 12e20 7|2b14 27l5 27t20
+5P9*FuncType(long_float) 5>38 9r26 7|9r25
+5f38 X{long_float}
+7V13*cos_2{long_float} 7>19 7|4b13 7l8 7t13
+7f19 X{long_float} 7|4b19 6r35
+9V13*FindZero{long_float} 9>22 9=36 9=39 9=42 7|9b13 25l8 25t16
+9p22 f{5P9} 7|9b22 14r13 14r20
+9f36 a{long_float} 7|9b34 10r31 13r17 14r15 16r24 18m13 19r24
+9f39 b{long_float} 7|9b36 10r33 13r19 15m13 16r26 19r26
+9f42 eps{long_float} 7|9b38 13r24
+X 7 findzeropackage.adb
+10f7 srodek{long_float} 14r22 15r18 16m13 18r18 19m13 24r14
+

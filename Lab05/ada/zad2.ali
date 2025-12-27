@@ -1,0 +1,88 @@
+V "GNAT Lib v13"
+M P W=b
+P ZX
+
+RN
+RV NO_FLOATING_POINT
+RV NO_IO
+RV NO_STANDARD_STORAGE_POOLS
+
+U zad2%b		zad2.adb		d78c562b NE OO SU IL
+W ada%s			ada.ads			ada.ali
+W ada.float_text_io%s	a-flteio.ads		a-flteio.ali
+Z ada.strings.text_buffers%s  a-sttebu.adb	a-sttebu.ali
+W ada.text_io%s		a-textio.adb		a-textio.ali
+W findzeropackage%s	findzeropackage.adb	findzeropackage.ali
+Z system.img_lflt%s	s-imglfl.ads		s-imglfl.ali
+
+D ada.ads		20240521074738 76789da1 ada%s
+D a-assert.ads		20240521074737 ba465f5c ada.assertions%s
+D a-except.ads		20240521074738 2a7d8d70 ada.exceptions%s
+D a-flteio.ads		20240521074738 e18a47a0 ada.float_text_io%s
+D a-ioexce.ads		20240521074738 40018c65 ada.io_exceptions%s
+D a-numeri.ads		20240521074738 84bea7a3 ada.numerics%s
+D a-nubinu.ads		20240521074738 93f1f3d1 ada.numerics.big_numbers%s
+D a-nbnbig.ads		20240521074738 711e0174 ada.numerics.big_numbers.big_integers_ghost%s
+D a-nuelfu.ads		20240521074738 dc1b3a37 ada.numerics.elementary_functions%s
+D a-ngelfu.ads		20240521074738 58d8ffc8 ada.numerics.generic_elementary_functions%s
+D a-stream.ads		20240521074738 119b8fb3 ada.streams%s
+D a-string.ads		20240521074738 90ac6797 ada.strings%s
+D a-sttebu.ads		20240521074738 f1ad67a2 ada.strings.text_buffers%s
+D a-stuten.ads		20240521074738 c6ced0ae ada.strings.utf_encoding%s
+D a-tags.ads		20240521074738 9eaa38c6 ada.tags%s
+D a-textio.ads		20240521074738 5c2c6153 ada.text_io%s
+D a-tiflio.ads		20240521074738 9fe024a2 ada.text_io.float_io%s
+D a-unccon.ads		20240521074738 0e9b276f ada.unchecked_conversion%s
+D findzeropackage.ads	20251227122817 e9b0a8b5 findzeropackage%s
+D interfac.ads		20240521074738 15f799c2 interfaces%s
+D i-cstrea.ads		20240521074738 e53d8b8e interfaces.c_streams%s
+D system.ads		20240521074738 426dafb8 system%s
+D s-assert.ads		20240521074738 9c4520c7 system.assertions%s
+D s-casuti.ads		20240521074738 cf13d755 system.case_util%s
+D s-crtl.ads		20240521074738 8a0692f8 system.crtl%s
+D s-exctab.ads		20240521074738 91bef6ef system.exception_table%s
+D s-ficobl.ads		20240521074738 dc5161d4 system.file_control_block%s
+D s-imager.ads		20240521074738 45c7157d system.image_r%s
+D s-imageu.ads		20240521074738 631c6ed0 system.image_u%s
+D s-imglfl.ads		20240521074738 941be202 system.img_lflt%s
+D s-imgllu.ads		20240521074738 ef081208 system.img_llu%s
+D s-parame.ads		20240904144414 1f39ba92 system.parameters%s
+D s-powlfl.ads		20240521074738 ac0852c8 system.powten_lflt%s
+D s-putima.ads		20240521074738 17291fe4 system.put_images%s
+D s-secsta.ads		20240521074738 578279f5 system.secondary_stack%s
+D s-soflin.ads		20240521074738 df77073e system.soft_links%s
+D s-stache.ads		20240521074738 0b81c1fe system.stack_checking%s
+D s-stalib.ads		20240521074738 1c9580f6 system.standard_library%s
+D s-stoele.ads		20240521074738 ab5468e4 system.storage_elements%s
+D s-stoele.adb		20240521074738 8f5a9db6 system.storage_elements%b
+D s-traent.ads		20240521074738 c81cbf8c system.traceback_entries%s
+D s-unstyp.ads		20240521074738 fa2a7f59 system.unsigned_types%s
+D s-valllu.ads		20240521074738 ca6e26ce system.val_llu%s
+D s-valuti.ads		20240521074738 fcd603d8 system.val_util%s
+D s-valueu.ads		20240521074738 18770347 system.value_u%s
+D s-vauspe.ads		20240521074738 a67b2f28 system.value_u_spec%s
+D s-wchcon.ads		20240521074738 d9032363 system.wch_con%s
+D s-widllu.ads		20240521074738 a6620b19 system.wid_llu%s
+D s-widthu.ads		20240521074738 b32f15e2 system.width_u%s
+D zad2.adb		20251227122829 839ad86d zad2%b
+G a e
+G c Z b b [zad2 standard 5 11 none]
+G r c none [zad2 standard 5 11 none] [findzero findzeropackage 9 13 none]
+X 1 ada.ads
+16K9*Ada 20e8 50|2r6 2r23 3r6 3r29
+X 4 a-flteio.ads
+20K13*Float_Text_IO[17|46] 50|3w10 3r33
+X 16 a-textio.ads
+58K13*Text_IO 787e16 50|2w10 2r27
+566U14*Put_Line 50|13s4
+X 19 findzeropackage.ads
+3K9*FindZeroPackage 12e20 50|1w6 1r27
+7V13*cos_2{long_float} 50|12r22
+9V13*FindZero{long_float} 50|12s13
+X 50 zad2.adb
+5U11*zad2 5b11 15l5 15t9
+7f4 wynik{long_float} 12m4 13r13
+8f4 a{long_float} 12m35 12r35
+9f4 b{long_float} 12m38 12r38
+10f4 eps{long_float} 12m41 12r41
+
