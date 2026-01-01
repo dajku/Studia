@@ -7,9 +7,9 @@ RV NO_FLOATING_POINT
 RV NO_IO
 RV NO_STANDARD_STORAGE_POOLS
 
-U zad2%b		zad2.adb		d78c562b NE OO SU IL
+U zad2%b		zad2.adb		40548dd4 NE OO SU IL
 W ada%s			ada.ads			ada.ali
-W ada.float_text_io%s	a-flteio.ads		a-flteio.ali
+W ada.long_float_text_io%s  a-lfteio.ads	a-lfteio.ali
 Z ada.strings.text_buffers%s  a-sttebu.adb	a-sttebu.ali
 W ada.text_io%s		a-textio.adb		a-textio.ali
 W findzeropackage%s	findzeropackage.adb	findzeropackage.ali
@@ -18,8 +18,8 @@ Z system.img_lflt%s	s-imglfl.ads		s-imglfl.ali
 D ada.ads		20240521074738 76789da1 ada%s
 D a-assert.ads		20240521074737 ba465f5c ada.assertions%s
 D a-except.ads		20240521074738 2a7d8d70 ada.exceptions%s
-D a-flteio.ads		20240521074738 e18a47a0 ada.float_text_io%s
 D a-ioexce.ads		20240521074738 40018c65 ada.io_exceptions%s
+D a-lfteio.ads		20240521074738 4969a46f ada.long_float_text_io%s
 D a-numeri.ads		20240521074738 84bea7a3 ada.numerics%s
 D a-nubinu.ads		20240521074738 93f1f3d1 ada.numerics.big_numbers%s
 D a-nbnbig.ads		20240521074738 711e0174 ada.numerics.big_numbers.big_integers_ghost%s
@@ -33,7 +33,7 @@ D a-tags.ads		20240521074738 9eaa38c6 ada.tags%s
 D a-textio.ads		20240521074738 5c2c6153 ada.text_io%s
 D a-tiflio.ads		20240521074738 9fe024a2 ada.text_io.float_io%s
 D a-unccon.ads		20240521074738 0e9b276f ada.unchecked_conversion%s
-D findzeropackage.ads	20251227122817 e9b0a8b5 findzeropackage%s
+D findzeropackage.ads	20251228105157 e9b0a8b5 findzeropackage%s
 D interfac.ads		20240521074738 15f799c2 interfaces%s
 D i-cstrea.ads		20240521074738 e53d8b8e interfaces.c_streams%s
 D system.ads		20240521074738 426dafb8 system%s
@@ -64,25 +64,28 @@ D s-vauspe.ads		20240521074738 a67b2f28 system.value_u_spec%s
 D s-wchcon.ads		20240521074738 d9032363 system.wch_con%s
 D s-widllu.ads		20240521074738 a6620b19 system.wid_llu%s
 D s-widthu.ads		20240521074738 b32f15e2 system.width_u%s
-D zad2.adb		20251227122829 839ad86d zad2%b
+D zad2.adb		20251228110559 bca1e05d zad2%b
 G a e
-G c Z b b [zad2 standard 5 11 none]
-G r c none [zad2 standard 5 11 none] [findzero findzeropackage 9 13 none]
+G c Z b b [zad2 standard 4 11 none]
+G r c none [zad2 standard 4 11 none] [findzero findzeropackage 9 13 none]
 X 1 ada.ads
-16K9*Ada 20e8 50|2r6 2r23 3r6 3r29
-X 4 a-flteio.ads
-20K13*Float_Text_IO[17|46] 50|3w10 3r33
+16K9*Ada 20e8 50|2r6 2r23 3r6 3r34
+X 5 a-lfteio.ads
+18K13*Long_Float_Text_IO[17|46] 50|3w10 3r38
 X 16 a-textio.ads
 58K13*Text_IO 787e16 50|2w10 2r27
-566U14*Put_Line 50|13s4
+519U14*Put 50|11s4 13s4 15s4
+566U14*Put_Line 50|18s4
+X 17 a-tiflio.ads
+61U14*Get 50|12s4[5|18] 14s4[5|18] 16s4[5|18]
 X 19 findzeropackage.ads
 3K9*FindZeroPackage 12e20 50|1w6 1r27
-7V13*cos_2{long_float} 50|12r22
-9V13*FindZero{long_float} 50|12s13
+7V13*cos_2{long_float} 50|17r22
+9V13*FindZero{long_float} 50|17s13
 X 50 zad2.adb
-5U11*zad2 5b11 15l5 15t9
-7f4 wynik{long_float} 12m4 13r13
-8f4 a{long_float} 12m35 12r35
-9f4 b{long_float} 12m38 12r38
-10f4 eps{long_float} 12m41 12r41
+4U11*zad2 4b11 20l5 20t9
+6f4 wynik{long_float} 17m4 18r13
+7f4 a{long_float} 12m8 17m35 17r35
+8f4 b{long_float} 14m8 17m38 17r38
+9f4 eps{long_float} 16m8 17m41 17r41
 

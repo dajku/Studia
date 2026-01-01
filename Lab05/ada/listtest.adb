@@ -9,7 +9,6 @@ procedure listTest is
    l : ListT;
    r : Integer;
    index: Integer;
-   wynik: Integer;
    command : Unbounded_String;
    continue : Boolean := True;
 begin
@@ -38,9 +37,9 @@ begin
       elsif command = "Print" then
          Put ("Result: ");
          Print (l);
-      --  elsif command = "Length" then
-      --     r := list.Length (l);
-      --     Put_Line ("Result: " & r'Image);
+      elsif command = "Length" then
+         r := list.Length(l);
+         Put_Line ("Result: " & r'Image);
       elsif command = "Get" then
          Put("Value: ");
          Get(r);
