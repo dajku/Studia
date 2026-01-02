@@ -3,7 +3,7 @@ package body findzeropackage is
 
    function cos_2(X: Long_Float) return Long_Float is
    begin
-      return Long_Float(Cos(Float(X) / 2.0));
+      return Long_Float(Cos(X / 2.0));
    end cos_2;
 
    function FindZero(f: FuncType;a,b,eps: in out Long_Float) return Long_Float is
