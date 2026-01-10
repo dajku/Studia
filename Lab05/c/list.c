@@ -91,7 +91,7 @@ void delete(list l, int i){
   node_ptr prev_node;
 
   if (i == 0){
-    if (l->first = l->last) {
+    if (l->first == l->last) {
       tmp = l->first;
       l->first = NULL;
       l->last = NULL;

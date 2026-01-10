@@ -46,7 +46,7 @@ begin
          Skip_Line;
          if r > 0 and r <= Length(l) then
             Put("Result :");
-            Put(get(l, r)'Image);
+            Put_Line(get(l, r)'Image);
          else
             Put_Line ("Zły indeks");
          end if;

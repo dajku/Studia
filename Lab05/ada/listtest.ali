@@ -11,7 +11,7 @@ RV NO_NESTED_FINALIZATION
 RV NO_DEFAULT_INITIALIZATION
 RV NO_DYNAMIC_SIZED_OBJECTS
 
-U listtest%b		listtest.adb		de80c914 NE OO SU
+U listtest%b		listtest.adb		9ce6f239 NE OO SU
 W ada%s			ada.ads			ada.ali
 Z ada.exceptions%s	a-except.adb		a-except.ali
 W ada.integer_text_io%s	a-inteio.ads		a-inteio.ali
@@ -51,8 +51,8 @@ D a-unccon.ads		20240521074738 0e9b276f ada.unchecked_conversion%s
 D a-uncdea.ads		20240521074738 c3a8ac65 ada.unchecked_deallocation%s
 D interfac.ads		20240521074738 15f799c2 interfaces%s
 D i-cstrea.ads		20240521074738 e53d8b8e interfaces.c_streams%s
-D list.ads		20251225185418 4e05d232 list%s
-D listtest.adb		20251225190158 67c16a6b listtest%b
+D list.ads		20251227020937 4e05d232 list%s
+D listtest.adb		20260110112608 25a75146 listtest%b
 D system.ads		20240521074738 426dafb8 system%s
 D s-assert.ads		20240521074738 9c4520c7 system.assertions%s
 D s-atocou.ads		20240521074738 dc18efc3 system.atomic_counters%s
@@ -110,48 +110,47 @@ X 13 a-string.ads
 16K13*Strings 35e16 27|3r10 3r38 4r10 4r45
 X 16 a-strunb.ads
 85K21*Unbounded 766e26 27|3w18 3r46 4r18 4r53
-91R9*Unbounded_String<6|43R9> 745e15 27|13r14
-249V14*"="{boolean} 27|19s18 26s21 32s21 38s21 44s21 54s21 68s21 81s21 95s21
-. 99s21
+91R9*Unbounded_String<6|43R9> 745e15 27|12r14
+249V14*"="{boolean} 27|18s18 25s21 31s21 37s21 40s21 43s21 53s21 67s21 80s21
+. 94s21 98s21
 X 17 a-suteio.ads
 39K31*Text_IO 61e34 27|4w28 4r63
-50U14*Get_Line 27|18s7
+50U14*Get_Line 27|17s7
 X 20 a-textio.ads
 58K13*Text_IO 787e16 27|1w10 1r27
-293U14*Skip_Line 27|29s10 35s10 47s10 61s13 66s13 74s13 79s13 86s13 92s13
-519U14*Put 27|17s7 27s10 33s10 39s10 45s10 49s13 50s13 55s10 59s13 69s10
-. 72s13 82s10
-566U14*Put_Line 27|22s13 24s13 31s10 37s10 52s13 63s13 65s13 76s13 78s13
-. 88s13 91s13 97s10 102s10
+293U14*Skip_Line 27|28s10 34s10 46s10 60s13 65s13 73s13 78s13 85s13 91s13
+519U14*Put 27|16s7 26s10 32s10 38s10 44s10 48s13 54s10 58s13 68s10 71s13
+. 81s10
+566U14*Put_Line 27|21s13 23s13 30s10 36s10 42s10 49s13 51s13 62s13 64s13
+. 75s13 77s13 87s13 90s13 96s10 101s10
 X 21 a-tiinio.ads
-60U14*Get 27|28s10[7|18] 34s10[7|18] 46s10[7|18] 56s10[7|18] 60s13[7|18]
-. 70s10[7|18] 73s13[7|18] 83s10[7|18]
+60U14*Get 27|27s10[7|18] 33s10[7|18] 45s10[7|18] 55s10[7|18] 59s13[7|18]
+. 69s10[7|18] 72s13[7|18] 82s10[7|18]
 X 26 list.ads
-3K9*list 38e9 27|6w6 6r16
+3K9*list 38e9 27|6w6 6r16 41r15
 4R9*ListT 34e14 27|9r8
-6V13*isEmpty{boolean} 27|20s17 106s14
-8V13*Pop{integer} 27|21s18 107s12
-9U14*Push 27|30s10
-10U14*Append 27|36s10
-12V13*get{integer} 27|50s17
-13U14*put 27|62s13
-14U14*insert 27|75s13
-15U14*delete 27|87s13
-17U14*Print 27|40s10
-18U14*Clean 27|96s10
-21V13*Length{integer} 27|48s28 57s27 71s27 84s27
+6V13*isEmpty{boolean} 27|19s17 105s14
+8V13*Pop{integer} 27|20s18 106s12
+9U14*Push 27|29s10
+10U14*Append 27|35s10
+12V13*get{integer} 27|49s22
+13U14*put 27|61s13
+14U14*insert 27|74s13
+15U14*delete 27|86s13
+17U14*Print 27|39s10
+18U14*Clean 27|95s10
+21V13*Length{integer} 27|41s20 47s28 56s27 70s27 83s27
 X 27 listtest.adb
-8U11*listTest 8b11 109l5 109t13
-9r4 l{26|4R9} 20r26 21m23 21r23 30m16 30r16 36m18 36r18 40r17 48r35 50r21
-. 57r34 62m17 62r17 71r35 75m20 75r20 84r35 87m20 87r20 96m16 96r16 106r23
-. 107m17 107r17
-10i4 r{integer} 21m13 22r36 28m15 30r19 34m15 36r21 46m14 48r13 48r23 50r24
-. 60m17 62r27 73m17 75r30 107m7
-11i4 index{integer} 56m14 57r13 62r20 70m14 71r13 75r23 83m14 84r13 87r23
-12i4 wynik{integer}
-13r4 command{16|91R9} 18m17 19r10 26r13 32r13 38r13 44r13 54r13 68r13 81r13
-. 95r13 99r13
-14b4 continue{boolean} 16r10 100m10
+8U11*listTest 8b11 108l5 108t13
+9r4 l{26|4R9} 19r26 20m23 20r23 29m16 29r16 35m18 35r18 39r17 41r27 47r35
+. 49r26 56r34 61m17 61r17 70r35 74m20 74r20 83r35 86m20 86r20 95m16 95r16
+. 105r23 106m17 106r17
+10i4 r{integer} 20m13 21r36 27m15 29r19 33m15 35r21 41m10 42r33 45m14 47r13
+. 47r23 49r29 59m17 61r27 72m17 74r30 106m7
+11i4 index{integer} 55m14 56r13 61r20 69m14 70r13 74r23 82m14 83r13 86r23
+12r4 command{16|91R9} 17m17 18r10 25r13 31r13 37r13 40r13 43r13 53r13 67r13
+. 80r13 94r13 98r13
+13b4 continue{boolean} 15r10 99m10
 X 28 system.ads
 67M9*Address
 X 39 s-memory.ads
