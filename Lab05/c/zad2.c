@@ -18,8 +18,8 @@ int main(int argc, char *argv[]){
     
     for (int i = 1; i < 9; i++){
         eps = eps/10;
-        wynik = findzero(*cos_2, a,b, eps);
-        printf("Dla eps = %lf, wynik = %.10lf\n", eps, wynik);
+        wynik = findzero(cos_2, a,b, eps);
+        printf("Dla eps = %.10lf, wynik = %.10lf\n", eps, wynik);
     }
     
 }

@@ -111,7 +111,7 @@ void delete(list l, int i){
     for (int j = 1; j < i; j++){
       prev_node = prev_node->next;
     }
-    tmp = prev_node->next;
+    tmp = prev_node->next; // tmp - to ten ktory bedziemy usuwać
     prev_node->next = tmp->next;
     free(tmp);
     l->length = l->length - 1;

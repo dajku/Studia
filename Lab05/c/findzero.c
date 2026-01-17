@@ -12,12 +12,12 @@ double findzero(functype f, double a, double b, double eps){
     while (fabs(a-b) > eps){
         if (f(a) * f(srodek) < 0.0){
             b = srodek;
-            srodek = (a+b)/2;
         }
         else{
             a = srodek;
-            srodek = (a+b)/2;
         }
+        srodek = (a+b)/2;
+
     }
     return srodek;
 }
