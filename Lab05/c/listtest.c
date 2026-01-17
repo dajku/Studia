@@ -25,15 +25,25 @@ int main() {
     }
     else if (!strcmp(command, "push")) {
       printf("Value: ");
-      scanf("%d", &r);
+      if (scanf("%d", &r)){
       push(l, r);
       printf("Result: OK\n");
+      }
+      else{
+        printf("Zła wartość\n");
+        
+      }
     }
     else if (!strcmp(command, "append")) {
       printf("Value: ");
-      scanf("%d", &r);
+      if (scanf("%d", &r)){
+
       append(l, r);
       printf("Result: OK\n");
+      }
+      else{
+        printf("Zła wartość");
+      }
     }
     else if (!strcmp(command, "print")) {
       printf("Result: ");
@@ -67,9 +77,13 @@ int main() {
       scanf("%d", &index);
       if (index <= length(l)){
         printf("Value: ");
-        scanf("%d", &r);
-        insert(l, index, r);
-        printf("Result: OK\n");
+        if (scanf("%d", &r)){
+          insert(l, index, r);  
+          printf("Result: OK\n");
+        }
+        else{
+          printf("Zła wartość\n");
+        }
       }
       else{
         printf("Zły indeks\n");
