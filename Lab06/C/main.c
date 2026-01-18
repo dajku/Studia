@@ -18,14 +18,25 @@ int main(int argc, char* argv[]){
     
     genTab(permutacje, n);
     
+    int solutions = 0;
+    bool wynik = isSolution(permutacje, n);
 
-    for(int i = 0; i<n; i++){
-        printf("%d",permutacje[i]);
-        printf("\n");
+    if (wynik){
+        solutions = solutions + 1;
+        for(int i = 0; i < n; i++){
+            printf("%d", permutacje[i]);
+        }
     }
 
     while (nextPerm(permutacje, n)){
-        bool wynik = isSolution(permutacje, n);
-        printf("%d", wynik);
+        wynik = isSolution(permutacje, n);
+        if (wynik){
+            solutions = solutions + 1;
+            for(int i = 0; i < n; i++){
+                printf("%d ", permutacje[i]);
+            }
+            printf("\n");
+        }        
     }
+    printf("Number of solutions: %d\n", solutions);
 }
