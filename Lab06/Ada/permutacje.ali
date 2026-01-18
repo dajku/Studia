@@ -1,0 +1,60 @@
+V "GNAT Lib v13"
+P ZX
+
+RN
+RV NO_DYNAMIC_SIZED_OBJECTS
+
+U permutacje%b		permutacje.adb		9fc0849c NE OO PK IL
+W ada%s			ada.ads			ada.ali
+W ada.numerics%s	a-numeri.ads		a-numeri.ali
+W ada.numerics.elementary_functions%s  a-nuelfu.ads  a-nuelfu.ali
+
+U permutacje%s		permutacje.ads		aa4ff20e EE NE OO PK IL
+
+D ada.ads		20240521074738 76789da1 ada%s
+D a-numeri.ads		20240521074738 84bea7a3 ada.numerics%s
+D a-nuelfu.ads		20240521074738 dc1b3a37 ada.numerics.elementary_functions%s
+D a-ngelfu.ads		20240521074738 58d8ffc8 ada.numerics.generic_elementary_functions%s
+D a-unccon.ads		20240521074738 0e9b276f ada.unchecked_conversion%s
+D permutacje.ads	20260118183517 aa4ff20e permutacje%s
+D permutacje.adb	20260118183532 e9944ca5 permutacje%b
+D system.ads		20240521074738 426dafb8 system%s
+D s-exctab.ads		20240521074738 91bef6ef system.exception_table%s
+D s-stalib.ads		20240521074738 1c9580f6 system.standard_library%s
+G a e
+G c Z s b [nextperm permutacje 6 13 none]
+G c Z s b [issolution permutacje 8 13 none]
+G c Z s b [gentab permutacje 10 14 none]
+G c Z s s [permutationsIP permutacje 3 9 none]
+G c Z b b [odwroc permutacje 5 14 none]
+X 1 ada.ads
+16K9*Ada 20e8 7|1r6 1r45
+X 2 a-numeri.ads
+16K13*Numerics 35e17 7|1r10 1r49
+X 3 a-nuelfu.ads
+18K22*Elementary_Functions[4|39] 7|1w19 1r58
+X 6 permutacje.ads
+1K9*permutacje 12l5 12e15 7|3b14 78l5 78t15
+3A9*Permutations(integer)<integer> 6r34 8r36 10r30 7|5r33 24r34 53r30 62r36
+6V13*nextPerm{boolean} 6=22 7|24b13 50l8 50t16
+6a22 tab{3A9} 7|24b22 26r21 27r21 32r29 32r39 40r13 40r23 44r15 45m7 45r17
+. 46m7 47m14 47r24
+8V13*isSolution{boolean} 8=24 7|62b13 76l8 76t18
+8a24 tab{3A9} 7|62b24 65r21 66r26 67r20 67r29
+10U14*genTab 10<21 7|53b14 60l8 60t14
+10a21 tab{3A9} 7|53b21 56r16 57m10
+X 7 permutacje.adb
+5U14 odwroc 5b14 5=21 5>47 5>59 22l8 22t14 47s7
+5a21 tab{6|3A9} 13r18 14m10 14r20 15m10
+5i47 p{integer} 7r21
+5i59 k{integer} 8r21
+7i7 i{integer} 12r14 13r22 14r14 17m10 17r15
+8i7 j{integer} 12r18 14r24 15r14 18m10 18r15
+9i7 temp{integer} 13m10 15r20
+26i7 i{integer} 32r13 32r33 32r43 33m10 33r15 36r11 40r27 44r19 45r11 47r19
+27i7 j{integer} 40r17 41m10 41r15 45r21 46r11
+28i7 temp{integer} 44m7 46r17
+56i11 i{integer} 57r14 57r20
+65i11 i{integer} 66r19 67r24 67r43
+66i14 j{integer} 67r33 67r47
+

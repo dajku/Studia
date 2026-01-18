@@ -48,7 +48,6 @@ bool isSolution(int* tab, int n){
 
 
     for(int i = 0; i < n; i++){
-        int aktualna_liczba = tab[i];
         for(int j = i+1; j < n; j++){
             // roznica wierszy jest równa roznicy kolumn to wtedy biją się po skosie.
             if(abs(tab[i] - tab[j]) == abs(i - j)){
