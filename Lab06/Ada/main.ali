@@ -7,7 +7,7 @@ RV NO_IO
 RV NO_SECONDARY_STACK
 RV NO_DYNAMIC_SIZED_OBJECTS
 
-U main%b		main.adb		0cf185a4 NE OO SU IL
+U main%b		main.adb		83ad6ed8 NE OO SU IL
 W ada%s			ada.ads			ada.ali
 W ada.command_line%s	a-comlin.adb		a-comlin.ali
 Z ada.strings.text_buffers%s  a-sttebu.adb	a-sttebu.ali
@@ -35,7 +35,7 @@ D a-textio.ads		20240521074738 5c2c6153 ada.text_io%s
 D a-unccon.ads		20240521074738 0e9b276f ada.unchecked_conversion%s
 D interfac.ads		20240521074738 15f799c2 interfaces%s
 D i-cstrea.ads		20240521074738 e53d8b8e interfaces.c_streams%s
-D main.adb		20260118183606 b0347391 main%b
+D main.adb		20260119165535 3f6898ed main%b
 D permutacje.ads	20260118183517 aa4ff20e permutacje%s
 D system.ads		20240521074738 426dafb8 system%s
 D s-assert.ads		20240521074738 9c4520c7 system.assertions%s
@@ -79,20 +79,20 @@ X 3 a-comlin.ads
 52V13*Argument{string} 18|17s23
 X 14 a-textio.ads
 58K13*Text_IO 787e16 18|2w10 2r27
-519U14*Put 18|30s13 41s16
-566U14*Put_Line 18|13s7 31s13 43s13 50s4
+519U14*Put 18|35s13 46s16
+566U14*Put_Line 18|13s7 20s7 36s13 48s13 55s4
 X 18 main.adb
-5U11*main 5b11 54l5 54t9
-6i4 n{integer} 17m4 20r42 29r24 40r27
-7i4 solutions{integer} 28m10 28r23 39m13 39r26 50r40
-8b4 wynik{boolean} 25m7 27r11 36m10 38r14
-20a7 tab{19|3A9} 23m25 25m38 25r38 30r17 35m34 35r34 36m41 36r41 41r20
-29i14 i{integer} 30r21
-40i17 i{integer} 41r24
+5U11*main 5b11 59l5 59t9
+6i4 n{integer} 17m4 19r8 25r42 34r24 45r27
+7i4 solutions{integer} 33m10 33r23 44m13 44r26 55r40
+8b4 wynik{boolean} 30m7 32r11 41m10 43r14
+25a7 tab{19|3A9} 28m25 30m38 30r38 35r17 40m34 40r34 41m41 41r41 46r20
+34i14 i{integer} 35r21
+45i17 i{integer} 46r24
 X 19 permutacje.ads
-1K9*permutacje 18|1w6 1r22 20r13 23r7 25r16 35r14 36r19 19|12e15
-3A9*Permutations(integer)<integer> 18|20r24
-6V13*nextPerm{boolean} 18|35s25
-8V13*isSolution{boolean} 18|25s27 36s30
-10U14*genTab 18|23s18
+1K9*permutacje 18|1w6 1r22 25r13 28r7 30r16 40r14 41r19 19|12e15
+3A9*Permutations(integer)<integer> 18|25r24
+6V13*nextPerm{boolean} 18|40s25
+8V13*isSolution{boolean} 18|30s27 41s30
+10U14*genTab 18|28s18
 

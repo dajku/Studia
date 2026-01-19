@@ -1,0 +1,1 @@
+from .permutacje import odwroc, isSolution, nextPerm

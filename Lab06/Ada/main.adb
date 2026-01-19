@@ -15,6 +15,11 @@ begin
    end if;
 
    n := Integer'Value(Argument(1));
+
+   if (n <= 1) then
+      Put_Line ("Błędny argument");
+      return;
+   end if;
    
    declare -- uzycie declare po to aby tablica miała rozmiar od 1 do n
       tab : permutacje.Permutations(1 .. n);
