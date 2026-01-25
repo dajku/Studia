@@ -12,7 +12,7 @@ void Ustaw(int i,int n, int* position,bool* bije_kolumne, bool* bije_przek1, boo
 
         int index_przek2 = i - j + (n - 1);
 
-        if (!bije_kolumne[j] && !bije_przek1[index_przek1] && !bije_przek2[index_przek2]){
+        if (!(bije_kolumne[j] || bije_przek1[index_przek1] || bije_przek2[index_przek2])){
             position[i] = j;
             bije_kolumne[j] = true;
             bije_przek1[index_przek1] = true;
@@ -23,10 +23,10 @@ void Ustaw(int i,int n, int* position,bool* bije_kolumne, bool* bije_przek1, boo
             }
             else{
                 (*licznik)++; // w nawiasach aby zwiększyć wartość zmiennej a nie adres
-                // for (int k = 0; k < n; k++){
-                    // printf("%d ", position[k] + 1);
-                // }
-                // printf("\n");
+                for (int k = 0; k < n; k++){
+                    printf("%d ", position[k] + 1);
+                }
+                printf("\n");
             }
             position[i] = 0;
             bije_kolumne[j] = false;
@@ -63,10 +63,6 @@ int main(int argc, char* argv[]){
         printf("Błędny argument\n");
         return 1;
     }
-    // for(int i = 1; i < 13;i++){
-    //     printf("%d", hetmani(i));
-    //     printf("\n");
-    // }
     printf("%d", hetmani(n));
     printf("\n");
     return 0;
