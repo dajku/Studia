@@ -1,0 +1,99 @@
+V "GNAT Lib v13"
+M P W=b
+P ZX
+
+RN
+RV NO_IO
+
+U mastermind%b		mastermind.adb		362a2c7c NE OO SU
+W ada%s			ada.ads			ada.ali
+W ada.integer_text_io%s	a-inteio.ads		a-inteio.ali
+Z ada.strings.text_buffers%s  a-sttebu.adb	a-sttebu.ali
+W ada.text_io%s		a-textio.adb		a-textio.ali
+
+D ada.ads		20240521074738 76789da1 ada%s
+D a-except.ads		20240521074738 2a7d8d70 ada.exceptions%s
+D a-inteio.ads		20240521074738 f64b89a4 ada.integer_text_io%s
+D a-ioexce.ads		20240521074738 40018c65 ada.io_exceptions%s
+D a-stream.ads		20240521074738 119b8fb3 ada.streams%s
+D a-string.ads		20240521074738 90ac6797 ada.strings%s
+D a-sttebu.ads		20240521074738 f1ad67a2 ada.strings.text_buffers%s
+D a-stuten.ads		20240521074738 c6ced0ae ada.strings.utf_encoding%s
+D a-tags.ads		20240521074738 9eaa38c6 ada.tags%s
+D a-textio.ads		20240521074738 5c2c6153 ada.text_io%s
+D a-tiinio.ads		20240521074738 e58fa6fb ada.text_io.integer_io%s
+D a-unccon.ads		20240521074738 0e9b276f ada.unchecked_conversion%s
+D interfac.ads		20240521074738 15f799c2 interfaces%s
+D i-cstrea.ads		20240521074738 e53d8b8e interfaces.c_streams%s
+D mastermind.adb	20260126183536 9c4dc48b mastermind%b
+D system.ads		20240521074738 426dafb8 system%s
+D s-crtl.ads		20240521074738 8a0692f8 system.crtl%s
+D s-exctab.ads		20240521074738 91bef6ef system.exception_table%s
+D s-ficobl.ads		20240521074738 dc5161d4 system.file_control_block%s
+D s-parame.ads		20240904144414 1f39ba92 system.parameters%s
+D s-putima.ads		20240521074738 17291fe4 system.put_images%s
+D s-secsta.ads		20240521074738 578279f5 system.secondary_stack%s
+D s-soflin.ads		20240521074738 df77073e system.soft_links%s
+D s-stache.ads		20240521074738 0b81c1fe system.stack_checking%s
+D s-stalib.ads		20240521074738 1c9580f6 system.standard_library%s
+D s-stoele.ads		20240521074738 ab5468e4 system.storage_elements%s
+D s-stoele.adb		20240521074738 8f5a9db6 system.storage_elements%b
+D s-traent.ads		20240521074738 c81cbf8c system.traceback_entries%s
+D s-unstyp.ads		20240521074738 fa2a7f59 system.unsigned_types%s
+D s-wchcon.ads		20240521074738 d9032363 system.wch_con%s
+G a e
+G c Z b b [mastermind standard 4 11 none]
+X 1 ada.ads
+16K9*Ada 20e8 15|1r6 1r23 2r6 2r31
+X 3 a-inteio.ads
+18K13*Integer_Text_IO[11|46] 15|2w10 2r35
+X 10 a-textio.ads
+58K13*Text_IO 787e16 15|1w10 1r27
+282U14*New_Line 15|109s7
+519U14*Put 15|103s7 108s7 111s7 120s7
+566U14*Put_Line 15|98s10 115s10
+X 11 a-tiinio.ads
+60U14*Get 15|112s7[3|18] 121s7[3|18]
+83U14*Put 15|102s7[3|18] 104s7[3|18] 105s7[3|18] 106s7[3|18] 107s7[3|18]
+X 15 mastermind.adb
+4U11*Mastermind 4b11 128l5 128t15
+6A9 Kod_Array(integer)<integer> 7r45 29r41 31r16 32r16 61r103
+7A9 Kody_Matrix(6A9)<integer> 10r32 61r33 76r20
+8A9 Mozliwy_Array(boolean)<integer> 10r63 61r67 77r20
+10U14 start 10b14 10<21 10<45 27l8 27t13 85s4
+10a21 kody{7A9} 17m19 18m19 19m19 20m19
+10a45 czy_mozliwy{8A9} 21m19
+11i7 index{integer} 17r24 18r24 19r24 20r24 21r31 22m19 22r28
+13i11 i{integer} 17r37
+14i14 j{integer} 18r37
+15i17 k{integer} 19r37
+16i20 l{integer} 20r37
+29U14 symulacja 29b14 29>25 29>31 29<52 29<73 59l8 59t17 67s13
+29a25 kod1{6A9} 31r29
+29a31 kod2{6A9} 32r29
+29i52 trafionych_lokalnie{integer} 35m7 40m13 40r36
+29i73 nietrafione_lokalnie{integer} 36m7 51m22 51r46
+31a7 kopia1{6A9} 39r13 41m13 47r13 50r22
+32a7 kopia2{6A9} 39r25 42m13 49r19 50r34 52m22
+38i11 i{integer} 39r20 39r32 41r20 42r20
+46i11 i{integer} 47r20 50r29
+48i17 j{integer} 49r26 50r41 52r29
+61U14 filtruj 61b14 61>23 61=46 61>82 61>114 61>124 74l8 74t15 123s7
+61a23 kody{7A9} 67r23
+61a46 czy_mozliwy{8A9} 66r13 70m16
+61a82 aktualny_strzal{6A9} 67r32
+61i114 trafione{integer} 69r16
+61i124 nietrafione{integer} 69r54
+62i7 trafione_lokalnie{integer} 67m49 69r28
+63i7 nietrafione_lokalnie{integer} 67m68 69r69
+65i11 i{integer} 66r25 67r28 70r28
+76a4 kody{7A9} 85m10 104r11 105r11 106r11 107r11 123r15 123r34
+77a4 czy_mozliwy{8A9} 85m16 91r13 123m21 123r21
+78b4 czy_koniec{boolean} 87r14 116m10
+79i4 runda{integer} 102r11 125m7 125r16
+80i4 index_strzalu{integer} 88m7 92m13 97r10 104r16 105r16 106r16 107r16
+. 123r39
+81i4 trafione{integer} 112m11 114r10 123r55
+82i4 nietrafione{integer} 121m11 123r65
+90i11 i{integer} 91r25 92r30
+

@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <stdbool.h>
 
-// GENEROWANIE KODÓW
+// generowanie kodow
 void start(int kody[][4], bool czy_mozliwy[])
 { // kody[][] wyrzuca bład, rozmiar wewnetrznych tablic musi być stały
     int index = 0;
@@ -27,7 +27,6 @@ void start(int kody[][4], bool czy_mozliwy[])
         }
     }
 }
-
 
 void symulacja(int kod1[], int kod2[], int *trafionych_lokalnie, int *nietrafione_lokalnie)
 {
@@ -67,11 +66,13 @@ void symulacja(int kod1[], int kod2[], int *trafionych_lokalnie, int *nietrafion
 
         for (int j = 0; j < 4; j++)
         {
-            if(kopia2[j] == -1){
+            if (kopia2[j] == -1)
+            {
                 continue;
             }
 
-            if(kopia1[i] == kopia2[j]){
+            if (kopia1[i] == kopia2[j])
+            {
                 (*nietrafione_lokalnie)++;
                 kopia2[j] = -1;
                 break;
@@ -98,8 +99,9 @@ void filtruj(int kody[][4], bool czy_mozliwy[], int aktualny_strzal[], int trafi
 
             symulacja(kody[i], aktualny_strzal, &trafione_lokalnie, &nietrafione_lokalnie);
 
-            if(trafione != trafione_lokalnie || nietrafione != nietrafione_lokalnie){
-                czy_mozliwy[i] = false; 
+            if (trafione != trafione_lokalnie || nietrafione != nietrafione_lokalnie)
+            {
+                czy_mozliwy[i] = false;
             }
         }
     }
@@ -121,7 +123,6 @@ int main(int argc, char *argv[])
 
         int index_strzalu = -1;
 
-
         // Szukamy pierwszego wolnego kodu
         for (int i = 0; i < 1296; i++)
         {
@@ -132,7 +133,7 @@ int main(int argc, char *argv[])
             }
         }
 
-        if(index_strzalu == -1)
+        if (index_strzalu == -1)
         {
             printf("Oszukujesz!\n");
             break;
@@ -154,8 +155,6 @@ int main(int argc, char *argv[])
 
         printf("Nie na swoim miejscu: ");
         scanf("%d", &nietrafione);
-
-
 
         filtruj(kody, czy_mozliwy, kody[index_strzalu], trafione, nietrafione);
 
