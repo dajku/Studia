@@ -59,7 +59,7 @@ int main(int argc, char* argv[]){
 
     int n = atoi(argv[1]);
     
-    if (n <= 1){
+    if (n < 1){
         printf("Błędny argument\n");
         return 1;
     }

@@ -8,7 +8,7 @@ RV NO_RECURSION
 RV NO_SECONDARY_STACK
 RV NO_DYNAMIC_SIZED_OBJECTS
 
-U hetmani%b		hetmani.adb		a34b812c NE OO SU IL
+U hetmani%b		hetmani.adb		2d391f18 NE OO SU IL
 W ada%s			ada.ads			ada.ali
 W ada.command_line%s	a-comlin.adb		a-comlin.ali
 W ada.integer_text_io%s	a-inteio.ads		a-inteio.ali
@@ -36,7 +36,7 @@ D a-tags.ads		20240521074738 9eaa38c6 ada.tags%s
 D a-textio.ads		20240521074738 5c2c6153 ada.text_io%s
 D a-tiinio.ads		20240521074738 e58fa6fb ada.text_io.integer_io%s
 D a-unccon.ads		20240521074738 0e9b276f ada.unchecked_conversion%s
-D hetmani.adb		20260125173353 438a0cb3 hetmani%b
+D hetmani.adb		20260125190732 cdf89287 hetmani%b
 D interfac.ads		20240521074738 15f799c2 interfaces%s
 D i-cstrea.ads		20240521074738 e53d8b8e interfaces.c_streams%s
 D system.ads		20240521074738 426dafb8 system%s
@@ -80,18 +80,18 @@ X 5 a-inteio.ads
 18K13*Integer_Text_IO[16|46] 18|2w10 2r35
 X 15 a-textio.ads
 58K13*Text_IO 787e16 18|3w10 3r27
-519U14*Put 18|44s22
-566U14*Put_Line 18|12s7 49s19 65s7
+519U14*Put 18|49s22
+566U14*Put_Line 18|12s7 19s7 54s19 70s7
 X 18 hetmani.adb
-5U11*hetmani 5b11 74l5 74t12
-7i4 n{integer} 16m4 19r30 20r34 21r34 22r28 22r37 28r24 36r23 42r33
-19a7 position(integer) 31m16 44r26 53m16
-20a7 bije_kolumne(boolean) 29r21 32m16 54m16
-21a7 bije_przek1(boolean) 29r45 33m16 55m16
-22a7 bije_przek2(boolean) 29r72 34m16 56m16
-23i7 licznik{integer} 48m19 48r30 65r17
-25U17 Ustaw 25b17 25>23 38s19 61l11 61t16 64s7
-25i23 i{integer} 29r57 29r84 31r25 33r28 34r28 36r19 38r26 53r25 55r28 56r28
-28i14 j{integer} 29r34 29r61 29r86 31r31 32r29 33r30 34r30 54r29 55r32 56r32
-42i23 k{integer} 44r35
+5U11*hetmani 5b11 79l5 79t12
+7i4 n{integer} 16m4 18r7 24r30 25r34 26r34 27r28 27r37 33r24 41r23 47r33
+24a7 position(integer) 36m16 49r26 58m16
+25a7 bije_kolumne(boolean) 34r21 37m16 59m16
+26a7 bije_przek1(boolean) 34r45 38m16 60m16
+27a7 bije_przek2(boolean) 34r72 39m16 61m16
+28i7 licznik{integer} 53m19 53r30 70r17
+30U17 Ustaw 30b17 30>23 43s19 66l11 66t16 69s7
+30i23 i{integer} 34r57 34r84 36r25 38r28 39r28 41r19 43r26 58r25 60r28 61r28
+33i14 j{integer} 34r34 34r61 34r86 36r31 37r29 38r30 39r30 59r29 60r32 61r32
+47i23 k{integer} 49r35
 

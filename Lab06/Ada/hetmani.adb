@@ -15,6 +15,11 @@ begin
 
    n := Integer'Value(Argument(1));
 
+   if n < 1 then
+      Put_Line ("Blędny argument");
+      return;
+   end if;
+
    declare
       position : array (1 .. n) of Integer := (others => 0);
       bije_kolumne : array (1 .. n) of Boolean := (others => False);
