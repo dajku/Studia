@@ -1,3 +1,4 @@
+
 def start():
     kody = []
     czy_mozliwy = []
@@ -12,7 +13,7 @@ def start():
     return kody, czy_mozliwy
 
 def symulacja(kod1, kod2):
-    trafionych_lokalnie = 0
+    trafione_lokalnie = 0
     nietrafione_lokalnie = 0
 
     kopia1 = kod1[:]
@@ -20,7 +21,7 @@ def symulacja(kod1, kod2):
 
     for i in range(4):
         if kopia1[i] == kopia2[i]:
-            trafionych_lokalnie += 1
+            trafione_lokalnie += 1
             kopia1[i] = -1
             kopia2[i] = -1
 
@@ -33,14 +34,14 @@ def symulacja(kod1, kod2):
                         kopia2[j] = -1
                         break
 
-    return trafionych_lokalnie, nietrafione_lokalnie
+    return trafione_lokalnie, nietrafione_lokalnie
 
 def filtruj(kody, czy_mozliwy, aktualny_strzal, trafione, nietrafione):
     for i in range(1296):
         if czy_mozliwy[i]:
-            sym_trafione, sym_nietrafione = symulacja(kody[i], aktualny_strzal)
+            trafione_lokalnie, nietrafione_lokalnie = symulacja(kody[i], aktualny_strzal)
 
-            if trafione != sym_trafione or nietrafione != sym_nietrafione:
+            if trafione != trafione_lokalnie or  nietrafione != nietrafione_lokalnie:
                 czy_mozliwy[i] = False
 
 def main():

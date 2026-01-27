@@ -5,7 +5,7 @@ P ZX
 RN
 RV NO_IO
 
-U mastermind%b		mastermind.adb		362a2c7c NE OO SU
+U mastermind%b		mastermind.adb		27b60207 NE OO SU
 W ada%s			ada.ads			ada.ali
 W ada.integer_text_io%s	a-inteio.ads		a-inteio.ali
 Z ada.strings.text_buffers%s  a-sttebu.adb	a-sttebu.ali
@@ -25,7 +25,7 @@ D a-tiinio.ads		20240521074738 e58fa6fb ada.text_io.integer_io%s
 D a-unccon.ads		20240521074738 0e9b276f ada.unchecked_conversion%s
 D interfac.ads		20240521074738 15f799c2 interfaces%s
 D i-cstrea.ads		20240521074738 e53d8b8e interfaces.c_streams%s
-D mastermind.adb	20260126183536 9c4dc48b mastermind%b
+D mastermind.adb	20260127092040 8dd1eaf0 mastermind%b
 D system.ads		20240521074738 426dafb8 system%s
 D s-crtl.ads		20240521074738 8a0692f8 system.crtl%s
 D s-exctab.ads		20240521074738 91bef6ef system.exception_table%s
@@ -57,33 +57,33 @@ X 11 a-tiinio.ads
 83U14*Put 15|102s7[3|18] 104s7[3|18] 105s7[3|18] 106s7[3|18] 107s7[3|18]
 X 15 mastermind.adb
 4U11*Mastermind 4b11 128l5 128t15
-6A9 Kod_Array(integer)<integer> 7r45 29r41 31r16 32r16 61r103
-7A9 Kody_Matrix(6A9)<integer> 10r32 61r33 76r20
-8A9 Mozliwy_Array(boolean)<integer> 10r63 61r67 77r20
-10U14 start 10b14 10<21 10<45 27l8 27t13 85s4
+6A9 KodTab(integer)<integer> 7r41 29r41 31r16 32r16 61r96
+7A9 KodyTab(6A9)<integer> 10r32 61r33 76r20
+8A9 MozliweTab(boolean)<integer> 10r59 61r63 77r20
+10U14 start 10b14 10<21 10<41 27l8 27t13 85s4
 10a21 kody{7A9} 17m19 18m19 19m19 20m19
-10a45 czy_mozliwy{8A9} 21m19
+10a41 czy_mozliwy{8A9} 21m19
 11i7 index{integer} 17r24 18r24 19r24 20r24 21r31 22m19 22r28
 13i11 i{integer} 17r37
 14i14 j{integer} 18r37
 15i17 k{integer} 19r37
 16i20 l{integer} 20r37
-29U14 symulacja 29b14 29>25 29>31 29<52 29<73 59l8 59t17 67s13
-29a25 kod1{6A9} 31r29
-29a31 kod2{6A9} 32r29
-29i52 trafionych_lokalnie{integer} 35m7 40m13 40r36
-29i73 nietrafione_lokalnie{integer} 36m7 51m22 51r46
+29U14 symulacja 29b14 29>25 29>31 29<49 29<70 59l8 59t17 67s13
+29a25 kod1{6A9} 31r26
+29a31 kod2{6A9} 32r26
+29i49 trafionych_lokalnie{integer} 35m7 40m13 40r36
+29i70 nietrafione_lokalnie{integer} 36m7 51m22 51r46
 31a7 kopia1{6A9} 39r13 41m13 47r13 50r22
 32a7 kopia2{6A9} 39r25 42m13 49r19 50r34 52m22
 38i11 i{integer} 39r20 39r32 41r20 42r20
 46i11 i{integer} 47r20 50r29
 48i17 j{integer} 49r26 50r41 52r29
-61U14 filtruj 61b14 61>23 61=46 61>82 61>114 61>124 74l8 74t15 123s7
+61U14 filtruj 61b14 61>23 61=42 61>75 61>104 61>114 74l8 74t15 123s7
 61a23 kody{7A9} 67r23
-61a46 czy_mozliwy{8A9} 66r13 70m16
-61a82 aktualny_strzal{6A9} 67r32
-61i114 trafione{integer} 69r16
-61i124 nietrafione{integer} 69r54
+61a42 czy_mozliwy{8A9} 66r13 70m16
+61a75 aktualny_strzal{6A9} 67r32
+61i104 trafione{integer} 69r16
+61i114 nietrafione{integer} 69r54
 62i7 trafione_lokalnie{integer} 67m49 69r28
 63i7 nietrafione_lokalnie{integer} 67m68 69r69
 65i11 i{integer} 66r25 67r28 70r28

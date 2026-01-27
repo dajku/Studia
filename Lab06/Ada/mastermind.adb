@@ -3,11 +3,11 @@ with Ada.Integer_Text_IO; use Ada.Integer_Text_IO;
 
 procedure Mastermind is
 
-   type Kod_Array is array (1 .. 4) of Integer;
-   type Kody_Matrix is array (1 .. 1296) of Kod_Array;
-   type Mozliwy_Array is array (1 .. 1296) of Boolean;
+   type KodTab is array (1 .. 4) of Integer;
+   type KodyTab is array (1 .. 1296) of KodTab;
+   type MozliweTab is array (1 .. 1296) of Boolean;
 
-   procedure start (kody : out Kody_Matrix; czy_mozliwy : out Mozliwy_Array) is
+   procedure start (kody : out KodyTab; czy_mozliwy : out MozliweTab) is
       index : Integer := 1;
    begin
       for i in 1 .. 6 loop
@@ -26,10 +26,10 @@ procedure Mastermind is
       end loop;
    end start;
 
-   procedure symulacja (kod1, kod2 : in Kod_Array; trafionych_lokalnie, nietrafione_lokalnie : out Integer) is
+   procedure symulacja (kod1, kod2 : in KodTab; trafionych_lokalnie, nietrafione_lokalnie : out Integer) is
    
-      kopia1 : Kod_Array := kod1;
-      kopia2 : Kod_Array := kod2;
+      kopia1 : KodTab := kod1;
+      kopia2 : KodTab := kod2;
 
    begin
       trafionych_lokalnie := 0;
@@ -58,7 +58,7 @@ procedure Mastermind is
       end loop;
    end symulacja;
 
-   procedure filtruj (kody : in Kody_Matrix; czy_mozliwy : in out Mozliwy_Array; aktualny_strzal : in Kod_Array; trafione, nietrafione : in Integer) is
+   procedure filtruj (kody : in KodyTab; czy_mozliwy : in out MozliweTab; aktualny_strzal : in KodTab; trafione, nietrafione : in Integer) is
       trafione_lokalnie    : Integer;
       nietrafione_lokalnie : Integer;
    begin
@@ -73,8 +73,8 @@ procedure Mastermind is
       end loop;
    end filtruj;
 
-   kody          : Kody_Matrix;
-   czy_mozliwy   : Mozliwy_Array;
+   kody          : KodyTab;
+   czy_mozliwy   : MozliweTab;
    czy_koniec    : Boolean := False;
    runda         : Integer := 1;
    index_strzalu : Integer;
