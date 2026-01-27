@@ -38,7 +38,5 @@ def main():
     print(f"Number of solutions: {solutions}")
 
 
-
-
 if __name__ == "__main__":
     main()

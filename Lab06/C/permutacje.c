@@ -12,7 +12,6 @@ void odwroc(int* tab, int p, int k){
         tab[j] = temp;
         i = i + 1;
         j = j - 1;
-
     }
 
 }
@@ -27,7 +26,7 @@ bool nextPerm(int* tab, int n){
         return false;
     }
     int j = n-1;
-    while (tab[j] <= tab[i]){
+    while (tab[j] <= tab[i]){  
         j = j-1;
     }
     int temp = tab[i];
@@ -54,7 +53,6 @@ bool isSolution(int* tab, int n){
                 return false;
             }
         }
-        
     }
     return true;
 

@@ -1,18 +1,20 @@
 #include <stdio.h>
 #include <stdbool.h>
 
+#define DIGITS 6
+
 // generowanie kodow
 void start(int kody[][4], bool czy_mozliwy[])
 { // kody[][] wyrzuca bład, rozmiar wewnetrznych tablic musi być stały
     int index = 0;
 
-    for (int i = 1; i < 7; i++)
+    for (int i = 1; i <= DIGITS; i++)
     {
-        for (int j = 1; j < 7; j++)
+        for (int j = 1; j <= DIGITS; j++)
         {
-            for (int k = 1; k < 7; k++)
+            for (int k = 1; k <= DIGITS; k++)
             {
-                for (int l = 1; l < 7; l++)
+                for (int l = 1; l <= DIGITS; l++)
                 {
                     kody[index][0] = i;
                     kody[index][1] = j;
@@ -83,10 +85,6 @@ void symulacja(int kod1[], int kod2[], int *trafionych_lokalnie, int *nietrafion
 
 void filtruj(int kody[][4], bool czy_mozliwy[], int aktualny_strzal[], int trafione, int nietrafione)
 {
-
-    // np. 1 2 3 4 -> wyrzucamy wszstskie kody które mają te cyfry
-    // iterujemy po wszystkich kodach i sprawdzamy czy zawierają te cyfry
-    // z tablicy czy_mozliwy na indeksie kodu ktory nie pasuje dajemy false
 
     // Mozemy przeprowadzić małą symulacje dla każdego z kodów z tablicy i porównać wartosci zwracanych trafionych i nietrafionych
 
