@@ -1,82 +1,82 @@
-with Ada.Text_IO; use Ada.Text_IO;
-with Ada.Integer_Text_IO; use Ada.Integer_Text_IO;
+with Ada.Text_iO; use Ada.Text_iO;
+with Ada.integer_Text_iO; use Ada.integer_Text_iO;
 with Ada.Command_Line; use Ada.Command_Line;
 
 procedure Coins is
 
-   type Int_Array is array (Integer range <>) of Integer;
-   type Int_Array_Access is access Int_Array;
+   type int_Array is array (integer range <>) of integer;
+   type int_Array_Access is access int_Array;
 
-   procedure Obliczanie_Reszty (R : Integer; Nominaly : Int_Array; Nominaly_Dlugosc : Integer) is
-      C : array (0 .. R) of Integer;
-      D : array (0 .. R) of Integer;
-      Liczniki : array (0 .. Nominaly_Dlugosc - 1) of Integer;
-      Aktualna_Moneta : Integer;
-      Reszta : Integer;
-      Nowy_Koszt : Integer;
-      Temp_R : Integer;
-      Moneta : Integer;
+   procedure Obliczanie_reszty (r : integer; Nominaly : int_Array; Nominaly_Dlugosc : integer) is
+      C : array (0 .. r) of integer;
+      D : array (0 .. r) of integer;
+      liczniki : array (0 .. Nominaly_Dlugosc - 1) of integer;
+      aktualna_moneta : integer;
+      reszta : integer;
+      nowy_koszt : integer;
+      temp_r : integer;
+      moneta : integer;
    begin
       C(0) := 0;
       D(0) := -1;
 
-      for I in 1 .. R loop
-         C(I) := R + 1;
-         D(I) := -1;
+      for i in 1 .. r loop
+         C(i) := r + 1;
+         D(i) := -1;
 
          for J in 0 .. Nominaly_Dlugosc - 1 loop
-            Aktualna_Moneta := Nominaly(J);
+            aktualna_moneta := Nominaly(J);
 
-            if I >= Aktualna_Moneta then
-               Reszta := I - Aktualna_Moneta;
+            if i >= aktualna_moneta then
+               reszta := i - aktualna_moneta;
 
-               if C(Reszta) /= R + 1 then
-                  Nowy_Koszt := C(Reszta) + 1;
+               if C(reszta) /= r + 1 then
+                  nowy_koszt := C(reszta) + 1;
 
-                  if Nowy_Koszt < C(I) then
-                     C(I) := Nowy_Koszt;
-                     D(I) := Aktualna_Moneta;
+                  if nowy_koszt < C(i) then
+                     C(i) := nowy_koszt;
+                     D(i) := aktualna_moneta;
                   end if;
                end if;
             end if;
          end loop;
       end loop;
 
-      if C(R) > R then
-         Put(R, 0); Put(" ==> No solution!"); New_Line;
+      if C(r) > r then
+         Put(r, 0); Put(" ==> No solution!"); New_Line;
          return;
       end if;
 
-      Put(R, 0); Put(" ==> "); Put(C(R), 0); New_Line;
+      Put(r, 0); Put(" ==> "); Put(C(r), 0); New_Line;
 
-      for I in 0 .. Nominaly_Dlugosc - 1 loop
-         Liczniki(I) := 0;
+      for i in 0 .. Nominaly_Dlugosc - 1 loop
+         liczniki(i) := 0;
       end loop;
 
-      Temp_R := R;
-      while Temp_R > 0 loop
-         Moneta := D(Temp_R);
+      temp_r := r;
+      while temp_r > 0 loop
+         moneta := D(temp_r);
 
-         for I in 0 .. Nominaly_Dlugosc - 1 loop
-            if Nominaly(I) = Moneta then
-               Liczniki(I) := Liczniki(I) + 1;
+         for i in 0 .. Nominaly_Dlugosc - 1 loop
+            if Nominaly(i) = moneta then
+               liczniki(i) := liczniki(i) + 1;
                exit;
             end if;
          end loop;
-         Temp_R := Temp_R - Moneta;
+         temp_r := temp_r - moneta;
       end loop;
 
-      for I in 0 .. Nominaly_Dlugosc - 1 loop
-         if Liczniki(I) > 0 then
-            Put("    "); Put(Liczniki(I), 0); Put(" x "); Put(Nominaly(I), 0); New_Line;
+      for i in 0 .. Nominaly_Dlugosc - 1 loop
+         if liczniki(i) > 0 then
+            Put("    "); Put(liczniki(i), 0); Put(" x "); Put(Nominaly(i), 0); New_Line;
          end if;
       end loop;
 
-   end Obliczanie_Reszty;
+   end Obliczanie_reszty;
 
    Plik : File_Type;
-   N : Integer;
-   Nominaly : Int_Array_Access;
+   N : integer;
+   Nominaly : int_Array_Access;
 
 begin
    if Argument_Count < 2 then
@@ -84,18 +84,18 @@ begin
       return;
    end if;
 
-   Open(Plik, In_File, Argument(1));
+   Open(Plik, in_File, Argument(1));
    Get(Plik, N);
 
-   Nominaly := new Int_Array (0 .. N - 1);
+   Nominaly := new int_Array (0 .. N - 1);
 
-   for I in 0 .. N - 1 loop
-      Get(Plik, Nominaly(I));
+   for i in 0 .. N - 1 loop
+      Get(Plik, Nominaly(i));
    end loop;
    Close(Plik);
 
-   for I in 2 .. Argument_Count loop
-      Obliczanie_Reszty(Integer'Value(Argument(I)), Nominaly.all, N);
+   for i in 2 .. Argument_Count loop
+      Obliczanie_reszty(integer'Value(Argument(i)), Nominaly.all, N);
    end loop;
 
 end Coins;

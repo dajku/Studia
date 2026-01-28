@@ -34,7 +34,7 @@ D a-tags.ads		20240521074738 9eaa38c6 ada.tags%s
 D a-textio.ads		20240521074738 5c2c6153 ada.text_io%s
 D a-tiinio.ads		20240521074738 e58fa6fb ada.text_io.integer_io%s
 D a-unccon.ads		20240521074738 0e9b276f ada.unchecked_conversion%s
-D coins.adb		20260128204059 9db5224c coins%b
+D coins.adb		20260128211104 9db5224c coins%b
 D interfac.ads		20240521074738 15f799c2 interfaces%s
 D i-cstrea.ads		20240521074738 e53d8b8e interfaces.c_streams%s
 D system.ads		20240521074738 426dafb8 system%s
@@ -83,29 +83,29 @@ X 12 a-tiinio.ads
 83U14*Put 14|46s10[4|18] 50s7[4|18] 50s32[4|18] 71s26[4|18] 71s59[4|18]
 X 14 coins.adb
 5U11*Coins 5b11 101l5 101t10
-7A9 Int_Array(integer)<integer> 8r36 10r57 90r20
-8P9 Int_Array_Access(7A9) 79r15
-10U14 Obliczanie_Reszty 10b14 10>33 10>46 10>68 75l8 75t25 98s7
-10i33 R{integer} 11r23 12r23 23r21 24r18 33r32 45r12 45r17 46r14 50r11 50r38
+7A9 int_Array(integer)<integer> 8r36 10r57 90r20
+8P9 int_Array_Access(7A9) 79r15
+10U14 Obliczanie_reszty 10b14 10>33 10>46 10>68 75l8 75t25 98s7
+10i33 r{integer} 11r23 12r23 23r21 24r18 33r32 45r12 45r17 46r14 50r11 50r38
 . 56r17
 10a46 Nominaly{7A9} 28r32 61r16 71r63
 10i68 Nominaly_Dlugosc{integer} 13r30 27r24 52r21 60r24 69r21
 11a7 C(integer) 20m7 24m10 33r19 34r33 36r35 37m22 45r10 50r36
 12a7 D(integer) 21m7 25m10 38m22 58r20
-13a7 Liczniki(integer) 53m10 62m16 62r31 70r13 71r30
-14i7 Aktualna_Moneta{integer} 28m13 30r21 31r30 38r30
-15i7 Reszta{integer} 31m16 33r21 34r35
-16i7 Nowy_Koszt{integer} 34m19 36r22 37r30
-17i7 Temp_R{integer} 56m7 57r13 58r22 66m10 66r20
-18i7 Moneta{integer} 58m10 61r30 66r29
-23i11 I{integer} 24r12 25r12 30r16 31r26 36r37 37r24 38r24
+13a7 liczniki(integer) 53m10 62m16 62r31 70r13 71r30
+14i7 aktualna_moneta{integer} 28m13 30r21 31r30 38r30
+15i7 reszta{integer} 31m16 33r21 34r35
+16i7 nowy_koszt{integer} 34m19 36r22 37r30
+17i7 temp_r{integer} 56m7 57r13 58r22 66m10 66r20
+18i7 moneta{integer} 58m10 61r30 66r29
+23i11 i{integer} 24r12 25r12 30r16 31r26 36r37 37r24 38r24
 27i14 J{integer} 28r41
-52i11 I{integer} 53r19
-60i14 I{integer} 61r25 62r25 62r40
-69i11 I{integer} 70r22 71r39 71r72
+52i11 i{integer} 53r19
+60i14 i{integer} 61r25 62r25 62r40
+69i11 i{integer} 70r22 71r39 71r72
 77p4 Plik{11|66P9} 87m9 87r9 88r8 93r11 95m10 95r10
 78i4 N{integer} 88m14 90r36 92r18 98r67
 79p4 Nominaly{8P9} 90m4 93r17 98r53
-92i8 I{integer} 93r26
-97i8 I{integer} 98r48
+92i8 i{integer} 93r26
+97i8 i{integer} 98r48
 
