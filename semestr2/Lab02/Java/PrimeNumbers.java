@@ -1,31 +1,34 @@
 
+
 public class PrimeNumbers {
-    int length = 0;
-    int[] primes;
+    private int length = 0;
+    private int[] primes;
 
 
     public PrimeNumbers(int n) {
-        boolean[] sieve = new boolean[n];
-        primes = new int[n];
-        for (int i = 2; i < n; i++) {
+        boolean[] sieve = new boolean[n+1];
+        primes = new int[n+1];
+        for (int i = 0; i <= n; i++) {
             sieve[i] = true;
         }
-
-        for (int i = 2; i < n; i++) {
+        sieve[0] = sieve[1] = false;
+        
+        // sprawdzanie do sqrt(n)
+        for (int i = 2; i * i <= n; i++) {
             if (sieve[i]) {
-                for (int j = i + i; j < n; j = j + i) {
+                for (int j = i * i; j <= n; j = j + i) {
                     sieve[j] = false;
                 }
             }
         }
-
-        int index = 0;
-        for (int i = 0; i < n; i++) {
+        
+        for (int i = 0; i <= n; i++) {
             if (sieve[i]) {
-                primes[index] = i;
+                
+                primes[length] = i;
                 length++;
+
             }
-            index++;
         }
     }
 
@@ -40,6 +43,10 @@ public class PrimeNumbers {
 
 class Test {
     public static void main(String[] args) {
+        if(args.length == 0){
+            System.out.println("Nie podano argumentów");
+            return;
+        }
         try {
             int n = Integer.parseInt(args[0]);
             if (n <= 1) {
@@ -50,7 +57,7 @@ class Test {
             for (int i = 1; i < args.length; i++) {
                 try {
                     int currentInteger = Integer.parseInt(args[i]);
-                    if (currentInteger >= primes.getLength()) {
+                    if (currentInteger >= primes.getLength() || currentInteger < 0) {
                         System.out.println(args[i] + " - " + " liczba spoza zakresu");
                     } else {
                         System.out.println(args[i] + " - " + primes.getNumber(currentInteger));
