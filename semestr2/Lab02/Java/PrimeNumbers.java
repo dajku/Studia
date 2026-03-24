@@ -5,7 +5,11 @@ public class PrimeNumbers {
     private int[] primes;
 
 
-    public PrimeNumbers(int n) {
+    public PrimeNumbers(int n) { 
+        makePrimes(n);
+    }
+
+    void makePrimes(int n){
         boolean[] sieve = new boolean[n+1];
         primes = new int[n+1];
         for (int i = 0; i <= n; i++) {
@@ -16,6 +20,7 @@ public class PrimeNumbers {
         // sprawdzanie do sqrt(n)
         for (int i = 2; i * i <= n; i++) {
             if (sieve[i]) {
+                // zaczynamy od i*i bo wszystkie i+i przed i*i zostały już sprawdzone przez mniejsze dzielniki  
                 for (int j = i * i; j <= n; j = j + i) {
                     sieve[j] = false;
                 }
@@ -53,7 +58,9 @@ class Test {
                 System.out.println(n + " - " + " Nieprawidłowy zakres");
                 return;
             }
+            
             PrimeNumbers primes = new PrimeNumbers(n);
+
             for (int i = 1; i < args.length; i++) {
                 try {
                     int currentInteger = Integer.parseInt(args[i]);

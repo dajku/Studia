@@ -66,6 +66,7 @@ int main(int argc, char *argv[])
             std::cout << n << " - " << " nieprawidłowy zakres\n";
             return 0;
         }
+        // PrimeNumbers primes(n);
         PrimeNumbers *primes = new PrimeNumbers(n);
         for (int i = 2; i < argc; i++)
         {
