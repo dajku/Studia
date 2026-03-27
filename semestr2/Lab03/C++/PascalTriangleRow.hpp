@@ -1,8 +1,23 @@
+#include <vector>
+#include <stdexcept>
+#include <iostream>
+#include <string>
+
+class InvalidIndex : public std::runtime_error{
+    public:
+    InvalidIndex() : std::runtime_error("liczba spoza zakresu"){}
+};
+
+class InvalidArraySize : public std::runtime_error{
+    public:
+    InvalidArraySize() : std::runtime_error("Nieprawidłowy wiersz trójkąta Pascala"){}
+};
+
 class PascalTriangleRow{
     private:
-        int* C;
-        int min(int x, int y);
-        void calcPascalRow(int n, int k);
+        std::vector<int> factors;
+        int size;
+        void calcPascalRow(int n);
     
     public:
         int pascalValue(int k);
