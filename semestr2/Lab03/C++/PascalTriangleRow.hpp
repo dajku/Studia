@@ -1,11 +1,18 @@
-#include <vector>
+#pragma once
+
 #include <stdexcept>
 #include <iostream>
 #include <string>
 
+
+class InvalidInput : public std::runtime_error{
+    public:
+    InvalidInput() : std::runtime_error("Nieprawidłowa dana"){};
+};
+
 class InvalidIndex : public std::runtime_error{
     public:
-    InvalidIndex() : std::runtime_error("liczba spoza zakresu"){}
+    InvalidIndex() : std::runtime_error("Liczba spoza zakresu"){}
 };
 
 class InvalidArraySize : public std::runtime_error{
@@ -15,7 +22,7 @@ class InvalidArraySize : public std::runtime_error{
 
 class PascalTriangleRow{
     private:
-        std::vector<int> factors;
+        int* factors;
         int size;
         void calcPascalRow(int n);
     
