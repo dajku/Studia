@@ -71,8 +71,5 @@ int main(int argc, char *argv[]){
     catch(const std::out_of_range& ex){
         std::cout << argv[1] << " - " << "Za duża liczba" << "\n";
     }
-    // catch(InvalidIndex ex) {
-    //     std::cout << ex.what() << ": " << argv[1] << " - nieprawidłowy wiersz trójkąta Pascala\n";
-    //     return 0;
-    // } 
+
 }
