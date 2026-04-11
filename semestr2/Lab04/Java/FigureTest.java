@@ -110,7 +110,7 @@ class Pentagon extends Figure{
     }
 
     public double calculateArea(){
-        return ((side * side)/4)*(Math.sqrt(25 + (10 * Math.sqrt(5))));
+        return ((side * side)/4.0)*(Math.sqrt(25 + (10 * Math.sqrt(5))));
     }
 
     public double calculatePerimeter(){

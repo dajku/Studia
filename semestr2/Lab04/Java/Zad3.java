@@ -47,11 +47,13 @@ class Figure {
         PENTAGON{
             @Override
             public double calculateArea(int a){
-                return ((a * a)/4)*(Math.sqrt(25 + (10 * Math.sqrt(5))));
+                return ((a * a)/4.0)*(Math.sqrt(25 + (10 * Math.sqrt(5))));
             }
+            @Override
             public double calculatePerimeter(int a){
                 return 5*a;
             }
+            @Override
             public String getName(){
                 return "Pentagon";
             }
