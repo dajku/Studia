@@ -1,4 +1,5 @@
 import java.lang.Math;
+import java.util.ArrayList;
 
 interface Calculate{
     double calculateArea();
@@ -145,6 +146,7 @@ public class FigureTest{
             System.out.println("Nie podano argumentów");
             return;
         }
+        ArrayList<Figure> figures = new ArrayList<>();
         int i = 0;
         while(i < args.length){
             String figure = args[i];
@@ -159,21 +161,15 @@ public class FigureTest{
                 i += 5;
                 if(side1 == side2 && side2 == side3 && side3 == side4 && angle == 90){
                     Square f = new Square(side1);
-                    System.out.println(f.getName());
-                    System.out.println("Area: " + f.calculateArea());
-                    System.out.println("Perimeter: " + f.calculatePerimeter() + "\n");
+                    figures.add(f);
                 }
-                if(side1 == side2 && side3 == side4){
+                else if(side1 == side2 && side3 == side4){
                     Rectangle f = new Rectangle(side1, side3);
-                    System.out.println(f.getName());
-                    System.out.println("Area: " + f.calculateArea());
-                    System.out.println("Perimeter: " + f.calculatePerimeter() + "\n");
+                    figures.add(f);
                 }
-                if(side1 == side2 && side2 == side3 && side3 == side4){
+                else if(side1 == side2 && side2 == side3 && side3 == side4){
                     Diamond f = new Diamond(side1, angle);
-                    System.out.println(f.getName());
-                    System.out.println("Area: " + f.calculateArea());
-                    System.out.println("Perimeter: " + f.calculatePerimeter() + "\n");
+                    figures.add(f);
                 }
 
             }
@@ -181,28 +177,32 @@ public class FigureTest{
                 int radius = Integer.parseInt(args[i]);
                 i += 1;
                 Circle f = new Circle(radius);
-                System.out.println(f.getName());
-                System.out.println("Area: " + f.calculateArea());
-                System.out.println("Perimeter: " + f.calculatePerimeter() + "\n");
+                figures.add(f);
             }
             else if(figure.equals("p")){
                 int side = Integer.parseInt(args[i]);
                 i += 1;
                 Pentagon f = new Pentagon(side);
-                System.out.println(f.getName());
-                System.out.println("Area: " + f.calculateArea());
-                System.out.println("Perimeter: " + f.calculatePerimeter() + "\n");
+                figures.add(f);
+
             }
             else if(figure.equals("h")){
                 int side = Integer.parseInt(args[i]);
                 i += 1;
                 Hexagon f = new Hexagon(side);
-                System.out.println(f.getName());
-                System.out.println("Area: " + f.calculateArea());
-                System.out.println("Perimeter: " + f.calculatePerimeter() + "\n");
+
+                figures.add(f);
+
                 
             }
         }
-        
+
+        for (Figure f : figures) {
+            System.out.println(f.getName());
+            System.out.println("Area: " + f.calculateArea());
+            System.out.println("Perimeter: " + f.calculatePerimeter() + "\n");
+        }
+
+
     }
 }
