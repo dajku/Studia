@@ -149,51 +149,80 @@ public class FigureTest{
         ArrayList<Figure> figures = new ArrayList<>();
         int i = 0;
         while(i < args.length){
-            String figure = args[i];
-            i++;
-            if(figure.equals("q")){
+            try{
+                String figure = args[i];
+                i++;
+                if(figure.equals("q")){
 
-                int side1 = Integer.parseInt(args[i]);
-                int side2 = Integer.parseInt(args[i+1]);
-                int side3 = Integer.parseInt(args[i+2]);
-                int side4 = Integer.parseInt(args[i+3]);
-                int angle = Integer.parseInt(args[i+4]);
-                i += 5;
-                if(side1 == side2 && side2 == side3 && side3 == side4 && angle == 90){
-                    Square f = new Square(side1);
+                    int side1 = Integer.parseInt(args[i]);
+                    int side2 = Integer.parseInt(args[i+1]);
+                    int side3 = Integer.parseInt(args[i+2]);
+                    int side4 = Integer.parseInt(args[i+3]);
+                    int angle = Integer.parseInt(args[i+4]);
+                    i += 5;
+
+                    if(side1 <= 0 || side2 <= 0 || side3 <= 0 || side4 <= 0){
+                        System.out.println("Nieprawidłowy bok dla: Quadrangle");
+                        continue;
+                    }
+                    if(side1 == side2 && side2 == side3 && side3 == side4 && angle == 90){
+                        Square f = new Square(side1);
+                        figures.add(f);
+                    }
+                    else if(side1 == side2 && side2 == side3 && side3 == side4){
+                        Diamond f = new Diamond(side1, angle);
+                        figures.add(f);
+                    }
+                    else if(side1 == side2 && side3 == side4){
+                        Rectangle f = new Rectangle(side1, side3);
+                        figures.add(f);
+                    }
+
+
+                }
+                else if(figure.equals("c")){
+                    int radius = Integer.parseInt(args[i]);
+                    i += 1;
+                    Circle f = new Circle(radius);
+                    if(radius <= 0){
+                        System.out.println("Nieprawidłowy promień dla: " + f.getName());
+                        continue;
+                    }
                     figures.add(f);
                 }
-                else if(side1 == side2 && side3 == side4){
-                    Rectangle f = new Rectangle(side1, side3);
+                else if(figure.equals("p")){
+                    int side = Integer.parseInt(args[i]);
+                    i += 1;
+                    Pentagon f = new Pentagon(side);
+                    if(side <= 0){
+                        System.out.println("Nieprawidłowy bok dla: " + f.getName());
+                        continue;
+                    }
                     figures.add(f);
+
                 }
-                else if(side1 == side2 && side2 == side3 && side3 == side4){
-                    Diamond f = new Diamond(side1, angle);
+                else if(figure.equals("h")){
+                    int side = Integer.parseInt(args[i]);
+                    i += 1;
+
+                    Hexagon f = new Hexagon(side);
+                    if(side <= 0){
+                        System.out.println("Nieprawidłowy bok dla: " + f.getName());
+                        continue;
+                    }
+
                     figures.add(f);
+
+                    
                 }
-
+            } 
+            catch(NumberFormatException ex){
+                System.out.println(" Nieprawidłowa dana: " + ex.getMessage());
+                return; 
             }
-            else if(figure.equals("c")){
-                int radius = Integer.parseInt(args[i]);
-                i += 1;
-                Circle f = new Circle(radius);
-                figures.add(f);
-            }
-            else if(figure.equals("p")){
-                int side = Integer.parseInt(args[i]);
-                i += 1;
-                Pentagon f = new Pentagon(side);
-                figures.add(f);
-
-            }
-            else if(figure.equals("h")){
-                int side = Integer.parseInt(args[i]);
-                i += 1;
-                Hexagon f = new Hexagon(side);
-
-                figures.add(f);
-
-                
+            catch(ArrayIndexOutOfBoundsException ex){
+                System.out.println("Za mało parametrów");
+                return;
             }
         }
 
