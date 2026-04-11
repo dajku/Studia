@@ -162,7 +162,7 @@ public class FigureTest{
                     i += 5;
 
                     if(side1 <= 0 || side2 <= 0 || side3 <= 0 || side4 <= 0){
-                        System.out.println("Nieprawidłowy bok dla: Quadrangle");
+                        System.out.println("Nieprawidłowy bok dla: " + figure);
                         continue;
                     }
                     if(side1 == side2 && side2 == side3 && side3 == side4 && angle == 90){
@@ -183,46 +183,42 @@ public class FigureTest{
                 else if(figure.equals("c")){
                     int radius = Integer.parseInt(args[i]);
                     i += 1;
-                    Circle f = new Circle(radius);
                     if(radius <= 0){
-                        System.out.println("Nieprawidłowy promień dla: " + f.getName());
+                        System.out.println("Nieprawidłowy promień dla: " + figure);
                         continue;
                     }
+                    Circle f = new Circle(radius);
                     figures.add(f);
                 }
                 else if(figure.equals("p")){
                     int side = Integer.parseInt(args[i]);
                     i += 1;
-                    Pentagon f = new Pentagon(side);
                     if(side <= 0){
-                        System.out.println("Nieprawidłowy bok dla: " + f.getName());
+                        System.out.println("Nieprawidłowy bok dla: " + figure);
                         continue;
                     }
+                    Pentagon f = new Pentagon(side);
                     figures.add(f);
 
                 }
                 else if(figure.equals("h")){
                     int side = Integer.parseInt(args[i]);
                     i += 1;
-
-                    Hexagon f = new Hexagon(side);
                     if(side <= 0){
-                        System.out.println("Nieprawidłowy bok dla: " + f.getName());
+                        System.out.println("Nieprawidłowy bok dla: " + figure);
                         continue;
                     }
-
+                    Hexagon f = new Hexagon(side);
                     figures.add(f);
-
-                    
                 }
             } 
             catch(NumberFormatException ex){
                 System.out.println(" Nieprawidłowa dana: " + ex.getMessage());
-                return; 
+                continue;
             }
             catch(ArrayIndexOutOfBoundsException ex){
                 System.out.println("Za mało parametrów");
-                return;
+                continue;
             }
         }
 
