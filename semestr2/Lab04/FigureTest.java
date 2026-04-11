@@ -139,4 +139,32 @@ class Hexagon extends Figure{
         return "Hexagon";
     }
 }
-public class Figures{}
+public class FigureTest{
+    public static void main(String[] args){
+        if (args.length == 0){
+            System.out.println("Nie podano argumentów");
+            return;
+        }
+
+        for(int i = 0; i < args.length-5; i = i + 5){
+            String figure = args[i];
+            System.out.println(figure);
+            if(figure == "q"){
+                System.out.println(args[i+1]);
+
+                int side1 = Integer.parseInt(args[i+1]);
+                int side2 = Integer.parseInt(args[i+2]);
+                int side3 = Integer.parseInt(args[i+3]);
+                int side4 = Integer.parseInt(args[i+4]);
+                int angle = Integer.parseInt(args[i+5]);
+                if(side1 == side2 && side2 == side3 && side3 == side4 && angle == 90){
+                    Square s = new Square(side1);
+                    System.out.println(s.getName());
+                    System.out.println("Area: " + s.calculateArea());
+                    System.out.println("Perimeter: " + s.calculatePerimeter());
+                }
+
+            }
+        }
+    }
+}
