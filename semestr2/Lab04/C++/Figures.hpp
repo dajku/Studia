@@ -56,6 +56,7 @@ class Diamond : public Quadrangle{
 };
 
 class Circle : public Figure{
+    int radius;
     public:
         Circle(int r);
 
@@ -71,6 +72,7 @@ class Circle : public Figure{
 };
 
 class Pentagon : public Figure{
+    int side;
     public:
         Pentagon(int a);
 
@@ -84,6 +86,7 @@ class Pentagon : public Figure{
 };
 
 class Hexagon : public Figure{
+    int side;
     public:
         Hexagon(int a);
 
