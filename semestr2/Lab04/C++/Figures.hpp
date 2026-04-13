@@ -5,7 +5,7 @@
 
 class Figure{
     public:
-        virtual double calculateArea() = 0;
+        virtual double calculateArea() = 0; 
         virtual double calculatePerimeter() = 0;
         virtual std::string getName() = 0;
     
@@ -16,6 +16,8 @@ class Quadrangle : public Figure{
     public:
         double calculatePerimeter() override;
     protected:
+        int side1, side2, side3, side4, angle;
+        
         Quadrangle(int a, int b, int c, int d, int k);
 
         ~Quadrangle();
