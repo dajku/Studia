@@ -15,12 +15,12 @@ class Figure{
 class Quadrangle : public Figure{
     public:
         double calculatePerimeter() override;
+        Quadrangle(int a, int b, int c, int d, int k);
+        ~Quadrangle();
+
     protected:
         int side1, side2, side3, side4, angle;
         
-        Quadrangle(int a, int b, int c, int d, int k);
-
-        ~Quadrangle();
 };
 
 class Square : public Quadrangle{
@@ -56,7 +56,8 @@ class Diamond : public Quadrangle{
 };
 
 class Circle : public Figure{
-    int radius;
+    protected:
+        int radius;
     public:
         Circle(int r);
 
@@ -72,7 +73,8 @@ class Circle : public Figure{
 };
 
 class Pentagon : public Figure{
-    int side;
+    protected:
+        int side;
     public:
         Pentagon(int a);
 
@@ -86,7 +88,8 @@ class Pentagon : public Figure{
 };
 
 class Hexagon : public Figure{
-    int side;
+    protected:
+        int side;
     public:
         Hexagon(int a);
 

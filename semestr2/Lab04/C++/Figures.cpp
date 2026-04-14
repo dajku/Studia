@@ -4,13 +4,7 @@
 #include <cmath>
 #include <vector>
 
-Quadrangle::Quadrangle(int a, int b, int c, int d, int k){
-    this->side1 = a;
-    this->side2 = b;
-    this->side3 = c;
-    this->side4 = d;
-    this->angle = k;
-}
+Quadrangle::Quadrangle(int a, int b, int c, int d, int k) : side1(a), side2(b), side3(c), side4(d), angle(k){}
 
 double Quadrangle::calculatePerimeter(){
     return side1 + side2 + side3 + side4;
@@ -46,9 +40,7 @@ std::string Diamond::getName(){
     return "Diamond";
 }
 
-Circle::Circle(int r){
-    this->radius = r;
-}
+Circle::Circle(int r) : radius(r){}
 
 double Circle::calculateArea(){
     return radius * radius * M_PI;
@@ -63,9 +55,7 @@ std::string Circle::getName(){
 }
 
 
-Pentagon::Pentagon(int a){
-    this->side = a;
-}
+Pentagon::Pentagon(int a) : side(a){}
 
 double Pentagon::calculateArea(){
     return ((side*side)/4.0)*(sqrt(25 + (10 * sqrt(5))));
@@ -79,9 +69,7 @@ std::string getName(){
     return "Pentagon";
 }
 
-Hexagon::Hexagon(int a){
-    this->side = a;
-}
+Hexagon::Hexagon(int a) : side(a){}
 
 double Hexagon::calculateArea(){
     return side * side * sqrt(6.75);
@@ -121,16 +109,16 @@ int main(int argc, char* argv[]){
                     continue;
                 }
                 if(side1 == side2 && side2 == side3 && side3 == side4 && angle == 90){
-                    Square f(side1);
-                    figures.push_back(&f);
+                    Square* f = new Square(side1);
+                    figures.push_back(f);
                 }
                 else if (side1 == side2 && side2 == side3 && side3 == side4){
-                    Diamond f(side1, angle);
-                    figures.push_back(&f);
+                    Diamond* f = new Diamond(side1, angle);
+                    figures.push_back(f);
                 }
                 else if(side1 == side2 && side3 == side4){
-                    Rectangle f(side1, side3);
-                    figures.push_back(&f);
+                    Rectangle* f = new Rectangle(side1, side3);
+                    figures.push_back(f);
                 }
 
             }
@@ -141,8 +129,8 @@ int main(int argc, char* argv[]){
                     std::cout << "Nieprawidłowy promień dla: " << figure << "\n";
                     continue;
                 }
-                Circle f(radius);
-                figures.push_back(&f);
+                Circle* f = new Circle(radius);
+                figures.push_back(f);
             }
             else if(figure == "p"){
                 int side = std::stoi(argv[i]);
@@ -151,8 +139,8 @@ int main(int argc, char* argv[]){
                     std::cout << "Nieprawidłowy bok dla: " << figure << "\n";
                     continue;
                 }
-                Pentagon f(side);
-                figures.push_back(&f);
+                Pentagon* f = new Pentagon(side);
+                figures.push_back(f);
             }
             else if(figure == "h"){
                 int side = std::stoi(argv[i]);
@@ -160,8 +148,8 @@ int main(int argc, char* argv[]){
                 if(side <= 0){
                     std::cout << "Nieprawidłowy bok dla " << figure << "\n";
                 }
-                Hexagon f(side);
-                figures.push_back(&f);
+                Hexagon* f = new Hexagon(side);
+                figures.push_back(f);
 
             }
         }
@@ -181,6 +169,7 @@ int main(int argc, char* argv[]){
             std::cout << f->getName() << "\n";
             std::cout << "Area: " << f->calculateArea() << "\n";
             std::cout << "Perimeter: " << f->calculatePerimeter() << "\n";
+            delete f;
         }
 
 
