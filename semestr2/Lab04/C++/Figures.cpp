@@ -97,10 +97,10 @@ std::string Hexagon::getName(){
 
 
 
-void main(int argc, char* argv[]){
+int main(int argc, char* argv[]){
     if(argc == 1){
         std::cout << "Nie podano argumentów" << "\n";
-        return;
+        return 1;
     }
     std::vector<Figure*> figures;
     int i = 1;
@@ -108,7 +108,7 @@ void main(int argc, char* argv[]){
         try{
             std::string figure  = argv[i];
             i++;
-            if(figure == "c"){
+            if(figure == "q"){
                 int side1 = std::stoi(argv[i]);
                 int side2 = std::stoi(argv[i+1]);
                 int side3 = std::stoi(argv[i+2]);
@@ -124,9 +124,64 @@ void main(int argc, char* argv[]){
                     Square f(side1);
                     figures.push_back(&f);
                 }
+                else if (side1 == side2 && side2 == side3 && side3 == side4){
+                    Diamond f(side1, angle);
+                    figures.push_back(&f);
+                }
+                else if(side1 == side2 && side3 == side4){
+                    Rectangle f(side1, side3);
+                    figures.push_back(&f);
+                }
+
+            }
+            else if(figure == "c"){
+                int radius = std::stoi(argv[i]);
+                i++;
+                if(radius <= 0){
+                    std::cout << "Nieprawidłowy promień dla: " << figure << "\n";
+                    continue;
+                }
+                Circle f(radius);
+                figures.push_back(&f);
+            }
+            else if(figure == "p"){
+                int side = std::stoi(argv[i]);
+                i++;
+                if(side <= 0 ){
+                    std::cout << "Nieprawidłowy bok dla: " << figure << "\n";
+                    continue;
+                }
+                Pentagon f(side);
+                figures.push_back(&f);
+            }
+            else if(figure == "h"){
+                int side = std::stoi(argv[i]);
+                i++;
+                if(side <= 0){
+                    std::cout << "Nieprawidłowy bok dla " << figure << "\n";
+                }
+                Hexagon f(side);
+                figures.push_back(&f);
+
             }
         }
+        catch(const std::invalid_argument& ex){
+            std::cout << "Nieprawidłowa dana" << ex.what() << "\n";
+            continue;
+        }
+        catch(const std::out_of_range& ex){
+            std::cout << "Za mało parametrów" << "\n";
+            continue;
+        } 
+        
+        
     }
+        for (Figure* f : figures)
+        {
+            std::cout << f->getName() << "\n";
+            std::cout << "Area: " << f->calculateArea() << "\n";
+            std::cout << "Perimeter: " << f->calculatePerimeter() << "\n";
+        }
 
 
 }
