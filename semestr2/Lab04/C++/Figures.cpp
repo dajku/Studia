@@ -65,7 +65,7 @@ double Pentagon::calculatePerimeter(){
     return 5 * side;
 }
 
-std::string getName(){
+std::string Pentagon::getName(){
     return "Pentagon";
 }
 
@@ -147,6 +147,7 @@ int main(int argc, char* argv[]){
                 i++;
                 if(side <= 0){
                     std::cout << "Nieprawidłowy bok dla " << figure << "\n";
+                    continue;
                 }
                 Hexagon* f = new Hexagon(side);
                 figures.push_back(f);

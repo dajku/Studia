@@ -16,7 +16,6 @@ class Quadrangle : public Figure{
     public:
         double calculatePerimeter() override;
         Quadrangle(int a, int b, int c, int d, int k);
-        ~Quadrangle();
 
     protected:
         int side1, side2, side3, side4, angle;
@@ -30,7 +29,6 @@ class Square : public Quadrangle{
         double calculateArea() override;
 
         std::string getName() override;
-        ~Square();
 };
 
 class Rectangle : public Quadrangle{
@@ -41,7 +39,6 @@ class Rectangle : public Quadrangle{
 
         std::string getName() override;
 
-        ~Rectangle();
 };
 
 class Diamond : public Quadrangle{
@@ -52,7 +49,6 @@ class Diamond : public Quadrangle{
 
         std::string getName() override;
 
-        ~Diamond();
 };
 
 class Circle : public Figure{
@@ -67,7 +63,6 @@ class Circle : public Figure{
 
         std::string getName() override;
 
-        ~Circle();
 
 
 };
@@ -84,7 +79,6 @@ class Pentagon : public Figure{
 
         std::string getName() override;
 
-        ~Pentagon();
 };
 
 class Hexagon : public Figure{
@@ -99,6 +93,5 @@ class Hexagon : public Figure{
 
         std::string getName() override;
 
-        ~Hexagon();
 };
 
