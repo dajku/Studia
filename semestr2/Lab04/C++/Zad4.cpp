@@ -1,10 +1,9 @@
-#pragma once
 #include <string>
 #include <cmath>
 #include "Zad4.hpp"
 
 
-
+Square::Square(){};
     
 double Square::calculateArea(int a){
     return a * a;
@@ -17,7 +16,9 @@ double Square::calculatePerimeter(int a){
 std::string Square::getName() {
     return "Square";
 }
+Square::~Square(){};
 
+Circle::Circle(){};
 
 double Circle::calculateArea(int a){
     return a * a * M_PI;
@@ -28,8 +29,9 @@ double Circle::calculatePerimeter(int a){
 std::string Circle::getName(){
     return "Circle";
 }
+Circle::~Circle(){};
 
-
+Pentagon::Pentagon(){};
 
 double Pentagon::calculateArea(int a){
     return ((a*a)/4.0)*(sqrt(25 + (10 * sqrt(5))));
@@ -43,6 +45,9 @@ std::string Pentagon::getName(){
     return "Pentagon";
 }
 
+Pentagon::Pentagon(){};
+
+Hexagon::Hexagon(){};
 
 double Hexagon::calculateArea(int a){
     return a * a * sqrt(6.75);
@@ -54,6 +59,9 @@ std::string Hexagon::getName(){
     return "Hexagon";
 }
 
+Hexagon::~Hexagon(){};
+
+Rectangle::Rectangle(){};
 
 double Rectangle::calculateArea(int a, int b){
     return a * b;
@@ -65,6 +73,10 @@ std::string Rectangle::getName(){
     return "Rectangle";
 }
 
+Rectangle::~Rectangle(){};
+
+
+Diamond::Diamond(){};
 
 double Diamond::calculateArea(int a, int b){
     return a*a*sin(b*(M_PI/180));
@@ -72,7 +84,16 @@ double Diamond::calculateArea(int a, int b){
 double Diamond::calculatePerimeter(int a, int b){
     return 4*a;
 }
+std::string Diamond::getName(){
+    return "Diamond";
+}
 
+Diamond::~Diamond(){};
+
+
+int main(int argc, char* argv[]){
+
+}
 
 
 
