@@ -33,7 +33,7 @@ std::string Rectangle::getName(){
 Diamond::Diamond(int a, int k) : Quadrangle(a, a, a, a, k){}
 
 double Diamond::calculateArea(){
-    return side1*side1*sqrt(angle*(M_PI/180));
+    return side1*side1*sin(angle*(M_PI/180));
 }
 
 std::string Diamond::getName(){
@@ -96,6 +96,24 @@ int main(int argc, char* argv[]){
         try{
             std::string figure  = argv[i];
             i++;
+            if(figure == "q" and std::stoi(argv[i+1]) == 90){
+                int side1 = std::stoi(argv[i]);
+                int side2 = std::stoi(argv[i]);
+                int side3 = std::stoi(argv[i]);
+                int side4 = std::stoi(argv[i]);
+                int angle = std::stoi(argv[i+1]);
+                i+=2;
+                if(side1 <= 0 || side2 <= 0 || side3 <= 0 || side4 <= 0){
+                    std::cout << "Nieprawidłowy bok dla: " << figure << "\n";
+                    continue;
+                }
+                if(side1 == side2 && side2 == side3 && side3 == side4 && angle == 90){
+                    Square* f = new Square(side1);
+                    figures.push_back(f);
+                }
+                continue;
+
+            }
             if(figure == "q"){
                 int side1 = std::stoi(argv[i]);
                 int side2 = std::stoi(argv[i+1]);
@@ -155,14 +173,17 @@ int main(int argc, char* argv[]){
             }
         }
         catch(const std::invalid_argument& ex){
-            std::cout << "Nieprawidłowa dana" << ex.what() << "\n";
+            std::cout << "Nieprawidłowa dana: " << ex.what() << "\n";
             continue;
         }
         catch(const std::out_of_range& ex){
             std::cout << "Za mało parametrów" << "\n";
             continue;
         } 
-        
+        catch(const std::logic_error& ex){
+            std::cout << "Błędne podanie parametrów" << "\n";
+            continue;
+        }
         
     }
         for (Figure* f : figures)
