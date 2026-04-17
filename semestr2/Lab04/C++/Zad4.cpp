@@ -146,9 +146,6 @@ int main(int argc, char *argv[])
         return 1;
     }
 
-    std::vector<Figure::OneParameterCalc *> oneParamFigures;
-    std::vector<Figure::TwoParameterCalc *> TwoParamFigures;
-
     int i = 1;
     while (i < argc)
     {
@@ -278,6 +275,10 @@ int main(int argc, char *argv[])
                 std::cout << "Area: " << f->calculateArea(side) << "\n";
                 std::cout << "Perimeter: " << f->calculatePerimeter(side) << "\n";
                 delete f;
+            }
+            else{
+                std::cout << "Nieprawidłowa figura \n";
+                continue;
             }
         }
         catch (const std::invalid_argument &ex)

@@ -152,6 +152,23 @@ public class FigureTest{
             try{
                 String figure = args[i];
                 i++;
+                if(figure.equals("q") && Integer.parseInt(args[i+1]) == 90){
+                    int side1 = Integer.parseInt(args[i]);
+                    int side2 = Integer.parseInt(args[i]);
+                    int side3 = Integer.parseInt(args[i]);
+                    int side4 = Integer.parseInt(args[i]);
+                    int angle = Integer.parseInt(args[i+1]);
+                    i += 2;
+                    if(side1 <= 0 || side2 <= 0 || side3 <= 0 || side4 <= 0){
+                        System.out.println("Nieprawidłowy bok dla: " + figure);
+                        continue;
+                    }
+                    if(side1 == side2 && side2 == side3 && side3 == side4 && angle == 90){
+                        Square f = new Square(side1);
+                        figures.add(f);
+                    }
+                    continue;
+                }
                 if(figure.equals("q")){
 
                     int side1 = Integer.parseInt(args[i]);
@@ -173,11 +190,15 @@ public class FigureTest{
                         Diamond f = new Diamond(side1, angle);
                         figures.add(f);
                     }
-                    else if(side1 == side2 && side3 == side4){
+
+                    else if(side1 == side2 && side3 == side4 && angle == 90){
                         Rectangle f = new Rectangle(side1, side3);
                         figures.add(f);
                     }
-
+                    else if(side1 == side3 && side2 == side4 && angle == 90){
+                        Rectangle f = new Rectangle(side1, side2);
+                        figures.add(f);
+                    }
 
                 }
                 else if(figure.equals("c")){
@@ -211,7 +232,12 @@ public class FigureTest{
                     Hexagon f = new Hexagon(side);
                     figures.add(f);
                 }
+                else{
+                    System.out.println("Nieprawidłowa figura");
+                    continue;
+                }
             } 
+
             catch(NumberFormatException ex){
                 System.out.println(" Nieprawidłowa dana: " + ex.getMessage());
                 continue;

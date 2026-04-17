@@ -157,11 +157,16 @@ int main(int argc, char *argv[])
                     Diamond *f = new Diamond(side1, angle);
                     figures.push_back(f);
                 }
-                else if (side1 == side2 && side3 == side4)
+                else if (side1 == side2 && side3 == side4 && angle == 90)
                 {
                     Rectangle *f = new Rectangle(side1, side3);
                     figures.push_back(f);
                 }
+                else if (side1 == side3 && side2 == side4 && angle == 90)
+                {
+                    Rectangle *f = new Rectangle(side1, side2);
+                    figures.push_back(f);
+                }                
             }
             else if (figure == "c")
             {
@@ -198,6 +203,10 @@ int main(int argc, char *argv[])
                 }
                 Hexagon *f = new Hexagon(side);
                 figures.push_back(f);
+            }
+            else{
+                std::cout << "Nieprawidłowa figura \n";
+                continue;
             }
         }
         catch (const std::invalid_argument &ex)

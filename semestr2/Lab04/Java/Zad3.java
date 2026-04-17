@@ -120,6 +120,30 @@ public class Zad3{
             try{
                 String figure = args[i];
                 i++;
+                if(figure.equals("q") && Integer.parseInt(args[i+1]) == 90){
+                    int side1 = Integer.parseInt(args[i]);
+                    int side2 = Integer.parseInt(args[i]);
+                    int side3 = Integer.parseInt(args[i]);
+                    int side4 = Integer.parseInt(args[i]);
+                    int angle = Integer.parseInt(args[i+1]);
+                    i += 2;
+                    if(side1 <= 0 || side2 <= 0 || side3 <= 0 || side4 <= 0){
+                        System.out.println("Nieprawidłowy bok dla: " + figure);
+                        continue;
+                    }
+                    if(side1 == side2 && side2 == side3 && side3 == side4 && angle == 90){
+                        String name = Figure.OneParameter.SQUARE.getName();
+                        double area = Figure.OneParameter.SQUARE.calculateArea(side1);
+                        double perimeter = Figure.OneParameter.SQUARE.calculatePerimeter(side1);
+            
+                        System.out.println(name);
+                        System.out.println("Area: " + area);
+                        System.out.println("Perimeter: " + perimeter + "\n");
+                        
+                    }
+                    continue;
+                }
+                
                 if(figure.equals("q")){
 
                     int side1 = Integer.parseInt(args[i]);
@@ -154,7 +178,7 @@ public class Zad3{
                         System.out.println("Perimeter: " + perimeter + "\n");
 
                     }
-                    else if(side1 == side2 && side3 == side4){
+                    else if(side1 == side2 && side3 == side4 && angle == 90){
                         String name = Figure.TwoParameters.RECTANGLE.getName();
                         double area = Figure.TwoParameters.RECTANGLE.calculateArea(side1,side3);
                         double perimeter = Figure.TwoParameters.RECTANGLE.calculatePerimeter(side1, side3);
@@ -162,6 +186,16 @@ public class Zad3{
                         System.out.println(name);
                         System.out.println("Area: " + area);
                         System.out.println("Perimeter: " + perimeter + "\n");
+
+                    }
+                    else if(side1 == side3 && side2 == side4 && angle == 90){
+                        String name = Figure.TwoParameters.RECTANGLE.getName();
+                        double area = Figure.TwoParameters.RECTANGLE.calculateArea(side1,side2);
+                        double perimeter = Figure.TwoParameters.RECTANGLE.calculatePerimeter(side1, side2);
+            
+                        System.out.println(name);
+                        System.out.println("Area: " + area);
+                        System.out.println("Perimeter: " + perimeter + "\n");   
 
                     }
 
@@ -216,6 +250,10 @@ public class Zad3{
                     System.out.println("Area: " + area);
                     System.out.println("Perimeter: " + perimeter + "\n");                    
 
+                }
+                else{
+                    System.out.println("Nieprawidłowa figura");
+                    continue;
                 }
             } 
             catch(NumberFormatException ex){
