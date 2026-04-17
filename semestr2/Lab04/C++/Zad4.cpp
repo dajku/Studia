@@ -93,6 +93,26 @@ std::string Diamond::getName(){
 Diamond::~Diamond(){};
 
 
+Figure::OneParameterCalc* createOneParamFigure(OneParameter type){
+    switch(type){
+        case CIRCLE: return new Circle();
+        case SQUARE: return new Square();
+        case PENTAGON: return new Pentagon();
+        case HEXAGON: return new Hexagon();
+        default: return nullptr;
+    }
+
+}
+
+Figure::TwoParameterCalc* createTwoParamFigure(TwoParameter type){
+    switch(type){
+        case RECTANGLE: return new Rectangle();
+        case DIAMOND: return new Diamond();
+        default: return nullptr;
+    }
+}
+
+
 int main(int argc, char* argv[]){
     if(argc == 1){
         std::cout << "Nie podano argumentów" << "\n";
@@ -119,11 +139,12 @@ int main(int argc, char* argv[]){
                     continue;
                 }
                 if(side1 == side2 && side2 == side3 && side3 == side4 && angle == 90){
-                    Square f;
-                    std::cout << f.getName() << "\n";
-                    std::cout << "Area: " << f.calculateArea(side1) << "\n";
-                    std::cout << "Perimeter: "<< f.calculatePerimeter(side1) << "\n";
-
+                    OneParameter type = SQUARE;
+                    Figure::OneParameterCalc* f = createOneParamFigure(type);
+                    std::cout << f->getName() << "\n";
+                    std::cout << "Area: " << f->calculateArea(side1) << "\n";
+                    std::cout << "Perimeter: "<< f->calculatePerimeter(side1) << "\n";
+                    delete f;
                 }
                 continue;
 
@@ -141,23 +162,28 @@ int main(int argc, char* argv[]){
                     continue;
                 }
                 if(side1 == side2 && side2 == side3 && side3 == side4 && angle == 90){
-                    Square f;
-                    std::cout << f.getName() << "\n";
-                    std::cout << "Area: " << f.calculateArea(side1) << "\n";
-                    std::cout << "Perimeter: "<< f.calculatePerimeter(side1) << "\n";
+                    OneParameter type = SQUARE;
+                    Figure::OneParameterCalc* f = createOneParamFigure(type);
+                    std::cout << f->getName() << "\n";
+                    std::cout << "Area: " << f->calculateArea(side1) << "\n";
+                    std::cout << "Perimeter: "<< f->calculatePerimeter(side1) << "\n";
+                    delete f;
                 }
                 else if (side1 == side2 && side2 == side3 && side3 == side4){
-                    Diamond f;
-
-                    std::cout << f.getName() << "\n";
-                    std::cout << "Area: " << f.calculateArea(side1, angle) << "\n";
-                    std::cout << "Perimeter: "<< f.calculatePerimeter(side1, side2) << "\n";
+                    TwoParameter type = DIAMOND;
+                    Figure::TwoParameterCalc* f = createTwoParamFigure(type);
+                    std::cout << f->getName() << "\n";
+                    std::cout << "Area: " << f->calculateArea(side1, angle) << "\n";
+                    std::cout << "Perimeter: "<< f->calculatePerimeter(side1, angle) << "\n";
+                    delete f;
                 }
                 else if(side1 == side2 && side3 == side4){
-                    Rectangle f;
-                    std::cout << f.getName() << "\n";
-                    std::cout << "Area: " << f.calculateArea(side1, side3) << "\n";
-                    std::cout << "Perimeter: "<< f.calculatePerimeter(side1, side3) << "\n";
+                     TwoParameter type = RECTANGLE;
+                    Figure::TwoParameterCalc* f = createTwoParamFigure(type);
+                    std::cout << f->getName() << "\n";
+                    std::cout << "Area: " << f->calculateArea(side1, side3) << "\n";
+                    std::cout << "Perimeter: "<< f->calculatePerimeter(side1, side3) << "\n";
+                    delete f;
                 }
 
             }
@@ -168,10 +194,12 @@ int main(int argc, char* argv[]){
                     std::cout << "Nieprawidłowy promień dla: " << figure << "\n";
                     continue;
                 }
-                Circle f;
-                std::cout << f.getName() << "\n";
-                std::cout << "Area: " << f.calculateArea(radius) << "\n";
-                std::cout << "Perimeter: "<< f.calculatePerimeter(radius) << "\n";
+                    OneParameter type = CIRCLE;
+                    Figure::OneParameterCalc* f = createOneParamFigure(type);
+                    std::cout << f->getName() << "\n";
+                    std::cout << "Area: " << f->calculateArea(radius) << "\n";
+                    std::cout << "Perimeter: "<< f->calculatePerimeter(radius) << "\n";
+                    delete f;
             }
             else if(figure == "p"){
                 int side = std::stoi(argv[i]);
@@ -180,10 +208,12 @@ int main(int argc, char* argv[]){
                     std::cout << "Nieprawidłowy bok dla: " << figure << "\n";
                     continue;
                 }
-                    Pentagon f;
-                    std::cout << f.getName() << "\n";
-                    std::cout << "Area: " << f.calculateArea(side) << "\n";
-                    std::cout << "Perimeter: "<< f.calculatePerimeter(side) << "\n";
+                    OneParameter type = PENTAGON;
+                    Figure::OneParameterCalc* f = createOneParamFigure(type);
+                    std::cout << f->getName() << "\n";
+                    std::cout << "Area: " << f->calculateArea(side) << "\n";
+                    std::cout << "Perimeter: "<< f->calculatePerimeter(side) << "\n";
+                    delete f;
             }
             else if(figure == "h"){
                 int side = std::stoi(argv[i]);
@@ -192,10 +222,12 @@ int main(int argc, char* argv[]){
                     std::cout << "Nieprawidłowy bok dla " << figure << "\n";
                     continue;
                 }
-                    Hexagon f;
-                    std::cout << f.getName() << "\n";
-                    std::cout << "Area: " << f.calculateArea(side) << "\n";
-                    std::cout << "Perimeter: "<< f.calculatePerimeter(side) << "\n";
+                    OneParameter type = HEXAGON;
+                    Figure::OneParameterCalc* f = createOneParamFigure(type);
+                    std::cout << f->getName() << "\n";
+                    std::cout << "Area: " << f->calculateArea(side) << "\n";
+                    std::cout << "Perimeter: "<< f->calculatePerimeter(side) << "\n";
+                    delete f;
 
             }
         }
