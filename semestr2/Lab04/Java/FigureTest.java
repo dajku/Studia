@@ -140,6 +140,25 @@ class Hexagon extends Figure{
         return "Hexagon";
     }
 }
+
+class Octagon extends Figure{
+    int side = 0;
+
+    public Octagon(int a){
+        this.side = a;
+    }
+
+    public double calculateArea(){
+        return 2 * (1 + Math.sqrt(2)) * side * side;
+    }
+
+    public double calculatePerimeter(){
+        return 8 * side;
+    }
+    public String getName(){
+        return "Octagon";
+    }
+}
 public class FigureTest{
     public static void main(String[] args){
         if (args.length == 0){
@@ -230,6 +249,16 @@ public class FigureTest{
                         continue;
                     }
                     Hexagon f = new Hexagon(side);
+                    figures.add(f);
+                }
+                else if(figure.equals("o")){
+                    int side = Integer.parseInt(args[i]);
+                    i+=1;
+                    if(side <= 0){
+                        System.out.println("Nieprawidłowy bok dla: " + figure);
+                        continue;
+                    }
+                    Octagon f = new Octagon(side);
                     figures.add(f);
                 }
                 else{

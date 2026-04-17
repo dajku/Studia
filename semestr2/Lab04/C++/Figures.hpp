@@ -95,3 +95,16 @@ class Hexagon : public Figure{
 
 };
 
+class Octagon : public Figure{
+    protected:
+        int side;
+    public:
+        Octagon(int a);
+
+        double calculateArea() override;
+
+        double calculatePerimeter() override;
+
+        std::string getName() override;
+};
+

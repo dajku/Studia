@@ -98,6 +98,21 @@ std::string Hexagon::getName()
     return "Hexagon";
 }
 
+
+Octagon::Octagon(int a) : side(a){}
+
+double Octagon::calculateArea(){
+    return side * side * (2 * (1 + sqrt(2)));
+}
+
+double Octagon::calculatePerimeter(){
+    return 8 * side;
+}
+
+std::string Octagon::getName(){
+    return "Octagon";
+}
+
 int main(int argc, char *argv[])
 {
     if (argc == 1)
@@ -202,6 +217,16 @@ int main(int argc, char *argv[])
                     continue;
                 }
                 Hexagon *f = new Hexagon(side);
+                figures.push_back(f);
+            }
+            else if (figure == "o"){
+                int side = std::stoi(argv[i]);
+                i++;
+                if(side <= 0){
+                    std::cout << "Nieprawidłowy bok dla " << figure << "\n";
+                    continue;
+                }
+                Octagon *f = new Octagon(side);
                 figures.push_back(f);
             }
             else{

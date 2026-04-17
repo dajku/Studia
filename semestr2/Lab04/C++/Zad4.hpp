@@ -6,7 +6,8 @@ enum OneParameter{
     CIRCLE,
     SQUARE,
     PENTAGON,
-    HEXAGON
+    HEXAGON,
+    OCTAGON
 };
 
 enum TwoParameter{
@@ -88,6 +89,20 @@ class Hexagon : public Figure::OneParameterCalc{
 
 };
 
+class Octagon : public Figure::OneParameterCalc{
+    public:
+        Octagon();
+
+        double calculateArea(int a) override;
+
+        double calculatePerimeter(int a) override;
+
+        std::string getName() override;
+
+        ~Octagon();
+};
+
+
 class Rectangle : public Figure::TwoParameterCalc{
     public:
         Rectangle();
@@ -112,5 +127,6 @@ class Diamond : public Figure::TwoParameterCalc{
         
         ~Diamond();
 };
+
 
 

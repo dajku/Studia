@@ -71,6 +71,20 @@ class Figure {
             public String getName(){
                 return "Hexagon";
             }
+        },
+        OCTAGON{
+            @Override
+            public double calculateArea(int a){
+                return 2 * (1 + Math.sqrt(2)) * a * a;
+            }
+            @Override
+            public double calculatePerimeter(int a){
+                return 8 * a;
+            }
+            @Override
+            public String getName(){
+                return "Octagon";
+            }
         }
     }
 
@@ -251,11 +265,28 @@ public class Zad3{
                     System.out.println("Perimeter: " + perimeter + "\n");                    
 
                 }
+                else if(figure.equals("o")){
+                    int side = Integer.parseInt(args[i]);
+                    i += 1;
+                    if(side <= 0){
+                        System.out.println("Nieprawidłowy bok dla: " + figure);
+                        continue;
+                    }
+                    String name = Figure.OneParameter.OCTAGON.getName();
+                    double area = Figure.OneParameter.OCTAGON.calculateArea(side);
+                    double perimeter = Figure.OneParameter.OCTAGON.calculatePerimeter(side);
+                    
+                    System.out.println(name);
+                    System.out.println("Area: " + area);
+                    System.out.println("Perimeter: " + perimeter + "\n");   
+                    
+
+                }
                 else{
                     System.out.println("Nieprawidłowa figura");
                     continue;
                 }
-            } 
+            }   
             catch(NumberFormatException ex){
                 System.out.println(" Nieprawidłowa dana: " + ex.getMessage());
                 continue;

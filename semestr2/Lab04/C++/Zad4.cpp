@@ -74,6 +74,23 @@ std::string Hexagon::getName()
 
 Hexagon::~Hexagon() {};
 
+Octagon::Octagon(){};
+
+double Octagon::calculateArea(int a){
+    return 2*(1 + sqrt(2)) * a * a;
+}
+
+double Octagon::calculatePerimeter(int a){
+    return 8 * a;
+}
+
+std::string Octagon::getName(){
+    return "Octagon";
+}
+
+Octagon::~Octagon(){};
+
+
 Rectangle::Rectangle() {};
 
 double Rectangle::calculateArea(int a, int b)
@@ -120,6 +137,8 @@ Figure::OneParameterCalc *createOneParamFigure(OneParameter type)
         return new Pentagon();
     case HEXAGON:
         return new Hexagon();
+    case OCTAGON:
+        return new Octagon();
     default:
         return nullptr;
     }
@@ -270,6 +289,20 @@ int main(int argc, char *argv[])
                     continue;
                 }
                 OneParameter type = HEXAGON;
+                Figure::OneParameterCalc *f = createOneParamFigure(type);
+                std::cout << f->getName() << "\n";
+                std::cout << "Area: " << f->calculateArea(side) << "\n";
+                std::cout << "Perimeter: " << f->calculatePerimeter(side) << "\n";
+                delete f;
+            }
+            else if(figure == "o"){
+                int side = std::stoi(argv[i]);
+                i++;
+                if(side <= 0){
+                    std::cout << "Nieprawidłowy bok dla " << figure << "\n";
+                    continue;
+                }
+                OneParameter type = OCTAGON;
                 Figure::OneParameterCalc *f = createOneParamFigure(type);
                 std::cout << f->getName() << "\n";
                 std::cout << "Area: " << f->calculateArea(side) << "\n";
