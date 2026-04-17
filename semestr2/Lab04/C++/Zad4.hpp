@@ -21,6 +21,8 @@ class Figure{
                     virtual double calculateArea(int a) = 0;
                     virtual double calculatePerimeter(int a) = 0;
                     virtual std::string getName() = 0;
+
+                    virtual ~OneParameterCalc() = default;
             };
 
             class TwoParameterCalc{
@@ -28,6 +30,8 @@ class Figure{
                     virtual double calculateArea(int a, int b) = 0;
                     virtual double calculatePerimeter(int a, int b) = 0;
                     virtual std::string getName() = 0;
+
+                    virtual ~TwoParameterCalc() = default;
             };
 };
 
