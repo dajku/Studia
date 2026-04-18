@@ -14,12 +14,15 @@ public class pascal {
             return;
         }
         try{
-
             int n = Integer.parseInt(args[0]);
+            if(n <= 0){
+                System.out.println("Błędny argument");
+                return;
+            }
 
             JFrame fr = new JFrame("Pascal");
 
-            fr.setSize(800,800);
+            fr.setSize(1000,1000);
 
             fr.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
             
