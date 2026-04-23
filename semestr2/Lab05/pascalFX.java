@@ -68,13 +68,18 @@ public class pascalFX extends Application {
         catch (InvalidArraySize ex) {
             System.out.println(ex + ":  - Nieprawidłowy wiersz trójkąta Pascala");
             Platform.exit();
-            return;
+            System.exit(0);
 
         } catch (NumberFormatException ex) {
             System.out.println("nieprawidłowa dana");
             Platform.exit();
-            return;
+            System.exit(0);
         }        
+        catch(InvalidIndex ex){
+            System.out.println("Nieprawidłowy indeks");
+            Platform.exit();
+            System.exit(0);
+        }
     }
 
     public static void main(String[] args) {
@@ -82,23 +87,20 @@ public class pascalFX extends Application {
 
         if (args.length == 0) {
             System.out.println("Nie podano argumentów");
-            return;
+            System.exit(0);
+
         }
         try{
         
             n = Integer.parseInt(args[0]);
             if(n < 0){
                 System.out.println("Podano n mniejsze/równe zeru");
-                return;
+                System.exit(0);
             }
         }
-        catch (InvalidArraySize ex) {
-            System.out.println(ex + ": " + args[0] + " - Nieprawidłowy wiersz trójkąta Pascala");
-            return;
-
-        } catch (NumberFormatException ex) {
+        catch (NumberFormatException ex) {
             System.out.println(args[0] + " - nieprawidłowa dana");
-            return;
+            System.exit(0);
         }
         launch(args);
 
