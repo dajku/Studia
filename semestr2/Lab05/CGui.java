@@ -9,8 +9,10 @@ import javafx.geometry.Pos;
 import javafx.stage.Stage;
 import javafx.scene.Scene;
 import javafx.scene.layout.VBox;
+import javafx.scene.paint.Color;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.HBox;
+import javafx.scene.layout.Pane;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextArea;
@@ -68,17 +70,22 @@ public class CGui extends Application {
         Button btn = new Button("Uruchom");
         btn.setFont(Font.font("Arial", 18));
 
-
         
         vertical.getChildren().add(btn);
         vertical.setAlignment(Pos.CENTER);
         mainPanel.setTop(vertical);
 
-        TextArea output = new TextArea();
+        Label output = new Label();
+        
+        output.setMaxHeight(Double.MAX_VALUE);
+        output.setMaxWidth(Double.MAX_VALUE);
+
         output.setFont(Font.font("Arial", 24));
         mainPanel.setCenter(output);
-        output.setStyle("-fx-control-inner-background: black; -fx-text-fill: white;");
-        output.setEditable(false);
+
+        output.setAlignment(Pos.CENTER);
+        output.setTextFill(Color.WHITE);
+        output.setStyle("-fx-background-color: black");
 
         btn.setOnAction(new EventHandler<ActionEvent>() {
             @Override
@@ -97,8 +104,8 @@ public class CGui extends Application {
                     );
                     
                     StringBuilder result = new StringBuilder();
-                    String line = reader.readLine();
-                    while((line) != null){
+                    String line;
+                    while((line = reader.readLine()) != null){
                         result.append(line + "\n");
                     }
                     process.waitFor();
@@ -123,12 +130,6 @@ public class CGui extends Application {
 
     public static void main(String[] args) {
         launch(args);
-
-        ProcessBuilder pb = new ProcessBuilder();
-
-
-
-
 
 
     }
