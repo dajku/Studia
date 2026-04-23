@@ -1,21 +1,20 @@
-import java.util.TreeMap;
-
+import javafx.event.ActionEvent;
 import javafx.application.Application;
-import javafx.application.Platform;
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
+import java.nio.Buffer;
+
 import javafx.event.EventHandler;
-import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 import javafx.stage.Stage;
 import javafx.scene.Scene;
 import javafx.scene.layout.VBox;
-import javafx.scene.layout.Border;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.HBox;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
-import javafx.scene.paint.Color;
 import javafx.scene.text.Font;
 
 
@@ -42,6 +41,7 @@ public class CGui extends Application {
         label.setFont(Font.font("Arial", 24));
 
         TextField input = new TextField();
+        input.setFont(Font.font("Arial", 16));
 
 
         horizontal1.getChildren().add(label);
@@ -58,6 +58,7 @@ public class CGui extends Application {
         label2.setFont(Font.font("Arial", 24));
 
         TextField input2 = new TextField();
+        input2.setFont(Font.font("Arial", 16));
         
         horizontal2.getChildren().add(label2);
         horizontal2.getChildren().add(input2);
@@ -67,12 +68,7 @@ public class CGui extends Application {
         Button btn = new Button("Uruchom");
         btn.setFont(Font.font("Arial", 18));
 
-        btn.setOnAction(new EventHandler<ActionEvent>() {
-            @Override
-            public void handle(ActionEvent e){
-                label.setText("a");
-            }
-        });
+
         
         vertical.getChildren().add(btn);
         vertical.setAlignment(Pos.CENTER);
@@ -83,6 +79,37 @@ public class CGui extends Application {
         mainPanel.setCenter(output);
         output.setStyle("-fx-control-inner-background: black; -fx-text-fill: white;");
         output.setEditable(false);
+
+        btn.setOnAction(new EventHandler<ActionEvent>() {
+            @Override
+            public void handle(ActionEvent e){
+                try{
+                    String n = input.getText();
+                    String k = input2.getText();
+
+                    ProcessBuilder pb = new ProcessBuilder("/home/maciej/programowanie/Studia/semestr2/Lab03/C++/PascalTriangleRow", n, k);
+                    pb.redirectErrorStream(true);
+
+                    Process process = pb.start();
+
+                    BufferedReader reader = new BufferedReader(
+                        new InputStreamReader(process.getInputStream())
+                    );
+                    
+                    StringBuilder result = new StringBuilder();
+                    String line = reader.readLine();
+                    while((line) != null){
+                        result.append(line + "\n");
+                    }
+                    process.waitFor();
+
+                    output.setText(result.toString());
+                }
+                catch(Exception ex){
+                    output.setText("Error: " + ex.getMessage());
+                }
+            }
+        });
         
         
         Scene scene = new Scene(mainPanel, 1000, 1000);
