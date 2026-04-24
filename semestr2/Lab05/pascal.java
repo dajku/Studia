@@ -18,7 +18,7 @@ public class pascal {
             }
 
             JFrame fr = new JFrame("Pascal");
-
+            
             fr.setSize(1000, 1000);
 
             fr.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -46,8 +46,7 @@ public class pascal {
                 for (int j = 0; j < i + 1; j++) {
                     int value = calcPascal.pascalValue(j);
                     if (value != 0) {
-                        JLabel number = new JLabel(String.valueOf(value)); // W konstruktorze powinna być liczba
-                                                                           // obliczona z trójkąta pascala;
+                        JLabel number = new JLabel(String.valueOf(value)); 
 
                         number.setFont(mainFont);
                         number.setForeground(Color.WHITE);

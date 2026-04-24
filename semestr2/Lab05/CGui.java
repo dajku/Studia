@@ -1,9 +1,8 @@
+import java.util.*;
 import javafx.event.ActionEvent;
 import javafx.application.Application;
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
-import java.nio.Buffer;
-
 import javafx.event.EventHandler;
 import javafx.geometry.Pos;
 import javafx.stage.Stage;
@@ -73,6 +72,8 @@ public class CGui extends Application {
         vertical.setAlignment(Pos.CENTER);
         mainPanel.setTop(vertical);
 
+        // CENTER AREA
+
         Label output = new Label();
         
         output.setMaxHeight(Double.MAX_VALUE);
@@ -89,10 +90,17 @@ public class CGui extends Application {
             @Override
             public void handle(ActionEvent e){
                 try{
+                    //
                     String n = input.getText();
-                    String k = input2.getText();
-
-                    ProcessBuilder pb = new ProcessBuilder("/home/maciej/programowanie/Studia/semestr2/Lab03/C++/PascalTriangleRow", n, k);
+                    String[] k = input2.getText().split(" ");
+                    List<String> arguments = new ArrayList<String>();
+                    arguments.add("/home/maciej/programowanie/Studia/semestr2/Lab03/C++/PascalTriangleRow");
+                    arguments.add(n);
+                    for(int i = 0; i < k.length; i++){
+                        arguments.add(k[i]);
+                    }
+                    
+                    ProcessBuilder pb = new ProcessBuilder(arguments);
                     pb.redirectErrorStream(true);
 
                     Process process = pb.start();
