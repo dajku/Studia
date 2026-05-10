@@ -1,0 +1,20 @@
+{
+    "java.project.sourcePaths": [
+        "Lab05"
+    ],
+    "java.project.outputPath": "Lab05/bin",
+    "java.project.referencedLibraries": [
+        "${env:HOME}/javafx/javafx-sdk-25.0.2/lib/*.jar",
+        "/home/maciej/javafx/javafx-sdk-25.0.2/lib/javafx.base.jar",
+        "/home/maciej/javafx/javafx-sdk-25.0.2/lib/jfx.incubator.richtext.jar",
+        "/home/maciej/javafx/javafx-sdk-25.0.2/lib/jfx.incubator.input.jar",
+        "/home/maciej/javafx/javafx-sdk-25.0.2/lib/jdk.jsobject.jar",
+        "/home/maciej/javafx/javafx-sdk-25.0.2/lib/javafx-swt.jar",
+        "/home/maciej/javafx/javafx-sdk-25.0.2/lib/javafx.web.jar",
+        "/home/maciej/javafx/javafx-sdk-25.0.2/lib/javafx.swing.jar",
+        "/home/maciej/javafx/javafx-sdk-25.0.2/lib/javafx.media.jar",
+        "/home/maciej/javafx/javafx-sdk-25.0.2/lib/javafx.graphics.jar",
+        "/home/maciej/javafx/javafx-sdk-25.0.2/lib/javafx.fxml.jar",
+        "/home/maciej/javafx/javafx-sdk-25.0.2/lib/javafx.controls.jar"
+    ]
+}

@@ -33,6 +33,11 @@ public class PascalTriangleRow {
             for (int j = i; j >= 1; j--){
                 factors[j] = factors[j] + factors[j-1];
             }
+            for(int k = n; k >= 0; k--){
+                System.out.print(factors[k] + " ");
+            }
+            System.out.print("\n");
+
         }
     }
 

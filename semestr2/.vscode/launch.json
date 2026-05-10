@@ -1,0 +1,12 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "java",
+            "name": "Uruchom JavaFX",
+            "request": "launch",
+            "mainClass": "pascalFX",
+            "vmArgs": "--module-path ${env:HOME}/javafx/javafx-sdk-25.0.2/lib --add-modules javafx.controls"
+        }
+    ]
+}
