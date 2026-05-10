@@ -38,28 +38,20 @@ public class GeometricFiguers extends Application {
 
         Button infoBtn = new Button("Info");
 
-
-
         
         circleBtn.getStyleClass().add("figureButton");
         rectangleBtn.getStyleClass().add("figureButton");
         polygonBtn.getStyleClass().add("figureButton");
 
-        circleBtn.setOnAction(new EventHandler<ActionEvent>() {
-            public void handle(ActionEvent e){
-                drawingPane.setToolMode(ToolMode.CIRCLE);
-            }
+        circleBtn.setOnAction(e -> {
+                drawingPane.setToolMode(ToolMode.CIRCLE);   
         });
 
-        rectangleBtn.setOnAction(new EventHandler<ActionEvent>() {
-            public void handle(ActionEvent e){
-                drawingPane.setToolMode(ToolMode.RECTANGLE);
-            }
+        rectangleBtn.setOnAction(e -> {
+            drawingPane.setToolMode(ToolMode.RECTANGLE);
         });
-        polygonBtn.setOnAction(new EventHandler<ActionEvent>() {
-            public void handle(ActionEvent e){
+        polygonBtn.setOnAction(e -> {
                 drawingPane.setToolMode(ToolMode.POLYGON);
-            }
         });
 
         infoBtn.getStyleClass().add("infoButton");
@@ -75,7 +67,6 @@ public class GeometricFiguers extends Application {
 
         mainPanel.setCenter(drawingPane);
 
-        // header.getChildren().add(menuBar);
         Scene scene = new Scene(mainPanel, 1000, 1000);
         scene.getStylesheets().add(getClass().getResource("style.css").toExternalForm());
 
