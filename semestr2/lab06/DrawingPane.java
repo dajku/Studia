@@ -30,8 +30,8 @@ public class DrawingPane extends Pane{
             setOnMousePressed(e ->{
                 startX = e.getX();
                 startY = e.getY();
-                lastMouseX = startX;
-                lastMouseY = startY;
+                lastMouseX = e.getSceneX();
+                lastMouseY = e.getSceneY();
                 Object target = e.getTarget();
                 if(target instanceof Shape){
                     currentShape = (Shape) target; // sprawdziłem Shape, rzutuję Shape na target

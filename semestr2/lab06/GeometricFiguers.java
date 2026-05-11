@@ -67,7 +67,7 @@ public class GeometricFiguers extends Application {
 
         mainPanel.setCenter(drawingPane);
 
-        Scene scene = new Scene(mainPanel, 1000, 1000);
+        Scene scene = new Scene(mainPanel, 800, 800);
         scene.getStylesheets().add(getClass().getResource("style.css").toExternalForm());
 
         stage.setTitle("Geometric Figures");
