@@ -15,6 +15,8 @@ import javafx.scene.layout.HBox;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
+import javafx.scene.control.ToggleButton;
+import javafx.scene.control.ToggleGroup;
 import javafx.scene.text.Font;
 
 public class GeometricFiguers extends Application {
@@ -30,21 +32,25 @@ public class GeometricFiguers extends Application {
 
 
         DrawingPane drawingPane = new DrawingPane();
+        
+        ToggleGroup figureButtons = new ToggleGroup();
+        ToggleButton circleBtn = new ToggleButton("Circle");
+        ToggleButton rectangleBtn = new ToggleButton("Rectangle");
+        ToggleButton polygonBtn = new ToggleButton("Polygon");
 
-
-        Button circleBtn = new Button("Circle");
-        Button rectangleBtn = new Button("Rectangle");
-        Button polygonBtn = new Button("Polygon");
-
+        circleBtn.setToggleGroup(figureButtons);
+        rectangleBtn.setToggleGroup(figureButtons);
+        polygonBtn.setToggleGroup(figureButtons);
+        figureButtons.selectToggle(null);
         Button infoBtn = new Button("Info");
-
         
         circleBtn.getStyleClass().add("figureButton");
         rectangleBtn.getStyleClass().add("figureButton");
         polygonBtn.getStyleClass().add("figureButton");
 
+    
+
         circleBtn.setOnAction(e -> {
-            
             drawingPane.setToolMode(ToolMode.CIRCLE);   
         });
 

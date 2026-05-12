@@ -146,23 +146,28 @@ public class DrawingPane extends Pane{
 
             setOnMouseReleased(e -> {
                 if(currentRectangle != null){
+                    if(currentRectangle.getWidth() <= 1){
+                        getChildren().remove(currentRectangle);
+                    }
                     allFigures.add(currentRectangle);
+                
                 }
                 if(currentCircle != null){
+                    if(currentCircle.getRadius() <= 1){
+                        getChildren().remove(currentCircle);
+                    }
                     allFigures.add(currentCircle);
+                    
                 }
 
                 currentRectangle = null;
                 currentCircle = null;
-                if(currentPolygon == null){
-                    currentMode = null;
-                }
+
                 if(e.getClickCount() == 2){
                     if(currentPolygon != null){
                         allFigures.add(currentPolygon);
                     }
                     currentPolygon = null;
-                    currentMode = null;
                 }
             });
         
