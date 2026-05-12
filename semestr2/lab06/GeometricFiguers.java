@@ -44,6 +44,7 @@ public class GeometricFiguers extends Application {
         polygonBtn.getStyleClass().add("figureButton");
 
         circleBtn.setOnAction(e -> {
+            
             drawingPane.setToolMode(ToolMode.CIRCLE);   
         });
 

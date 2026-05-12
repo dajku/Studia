@@ -25,13 +25,14 @@ public class DrawingPane extends Pane{
 
     public DrawingPane(){
 
-            
+            allFigures = new ArrayList<Shape>();
             
             setOnMousePressed(e ->{
                 startX = e.getX();
                 startY = e.getY();
                 lastMouseX = e.getSceneX();
                 lastMouseY = e.getSceneY();
+
                 Object target = e.getTarget();
                 if(target instanceof Shape){
                     currentShape = (Shape) target; // sprawdziłem Shape, rzutuję Shape na target
@@ -144,21 +145,24 @@ public class DrawingPane extends Pane{
             });
 
             setOnMouseReleased(e -> {
-                // if(currentRectangle != null){
-                //     allFigures.add(currentRectangle);
-                // }
-                // if(currentCircle != null){
-                //     allFigures.add(currentCircle);
-                // }
+                if(currentRectangle != null){
+                    allFigures.add(currentRectangle);
+                }
+                if(currentCircle != null){
+                    allFigures.add(currentCircle);
+                }
 
                 currentRectangle = null;
                 currentCircle = null;
-
+                if(currentPolygon == null){
+                    currentMode = null;
+                }
                 if(e.getClickCount() == 2){
-                    // if(currentPolygon != null){
-                    //     allFigures.add(currentPolygon);
-                    // }
+                    if(currentPolygon != null){
+                        allFigures.add(currentPolygon);
+                    }
                     currentPolygon = null;
+                    currentMode = null;
                 }
             });
         
