@@ -26,7 +26,7 @@ public class DrawingPane extends Pane{
     public DrawingPane(){
 
             
-
+            
             setOnMousePressed(e ->{
                 startX = e.getX();
                 startY = e.getY();
@@ -65,6 +65,7 @@ public class DrawingPane extends Pane{
 
                         currentRectangle.setFill(Color.LIGHTBLUE);
                         currentRectangle.setStroke(Color.BLACK);
+
                         getChildren().add(currentRectangle);
                     }
 
@@ -83,11 +84,14 @@ public class DrawingPane extends Pane{
                     }
                     else if(currentMode == ToolMode.POLYGON){
                         if(currentPolygon == null){
+                            
                             currentPolygon = new Polygon();
+                            
                             currentPolygon.setFill(Color.LIGHTBLUE);
                             currentPolygon.setStroke(Color.BLACK);
+                            
                             currentPolygon.getPoints().addAll(startX, startY);
-
+                            
                             getChildren().add(currentPolygon);
 
                         }
@@ -140,10 +144,20 @@ public class DrawingPane extends Pane{
             });
 
             setOnMouseReleased(e -> {
+                // if(currentRectangle != null){
+                //     allFigures.add(currentRectangle);
+                // }
+                // if(currentCircle != null){
+                //     allFigures.add(currentCircle);
+                // }
+
                 currentRectangle = null;
                 currentCircle = null;
 
                 if(e.getClickCount() == 2){
+                    // if(currentPolygon != null){
+                    //     allFigures.add(currentPolygon);
+                    // }
                     currentPolygon = null;
                 }
             });

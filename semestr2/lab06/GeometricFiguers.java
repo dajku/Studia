@@ -44,14 +44,14 @@ public class GeometricFiguers extends Application {
         polygonBtn.getStyleClass().add("figureButton");
 
         circleBtn.setOnAction(e -> {
-                drawingPane.setToolMode(ToolMode.CIRCLE);   
+            drawingPane.setToolMode(ToolMode.CIRCLE);   
         });
 
         rectangleBtn.setOnAction(e -> {
             drawingPane.setToolMode(ToolMode.RECTANGLE);
         });
         polygonBtn.setOnAction(e -> {
-                drawingPane.setToolMode(ToolMode.POLYGON);
+            drawingPane.setToolMode(ToolMode.POLYGON);
         });
 
         infoBtn.getStyleClass().add("infoButton");
