@@ -27,7 +27,7 @@ public class DrawingPane extends Pane{
 
             allFigures = new ArrayList<Shape>();
             
-            setOnMousePressed(e ->{
+            setOnMousePressed(e -> {
                 startX = e.getX();
                 startY = e.getY();
                 lastMouseX = e.getSceneX();
@@ -45,7 +45,6 @@ public class DrawingPane extends Pane{
                             currentShape.setScaleX(currentShape.getScaleX() + s.getDeltaY()*0.0005);
                             currentShape.setScaleY(currentShape.getScaleY() + s.getDeltaY()*0.0005);
                         }
-
                     });
                 }
                 else{
