@@ -29,6 +29,7 @@ public class GeometricFiguers extends Application {
         HBox menuBar = new HBox(10);
         menuBar.setPadding(new Insets(10));
         menuBar.setAlignment(Pos.CENTER);
+        menuBar.setStyle("-fx-background-color: black");
 
 
         DrawingPane drawingPane = new DrawingPane();
@@ -37,6 +38,10 @@ public class GeometricFiguers extends Application {
         ToggleButton circleBtn = new ToggleButton("Circle");
         ToggleButton rectangleBtn = new ToggleButton("Rectangle");
         ToggleButton polygonBtn = new ToggleButton("Polygon");
+
+        Button saveBtn = new Button("Save");
+        Button importBtn = new Button("Import");
+
 
         circleBtn.setToggleGroup(figureButtons);
         rectangleBtn.setToggleGroup(figureButtons);
@@ -47,7 +52,6 @@ public class GeometricFiguers extends Application {
         circleBtn.getStyleClass().add("figureButton");
         rectangleBtn.getStyleClass().add("figureButton");
         polygonBtn.getStyleClass().add("figureButton");
-
     
 
         circleBtn.setOnAction(e -> {
@@ -60,14 +64,22 @@ public class GeometricFiguers extends Application {
         polygonBtn.setOnAction(e -> {
             drawingPane.setToolMode(ToolMode.POLYGON);
         });
+        saveBtn.setOnAction(e -> {
+            drawingPane.saveDrawing();
+        });
+        importBtn.setOnAction(e -> {
+            
+        });
 
         infoBtn.getStyleClass().add("infoButton");
         infoBtn.setAlignment(Pos.CENTER_RIGHT);
 
+        saveBtn.getStyleClass().add("infoButton");
+        importBtn.getStyleClass().add("infoButton");
 
-        menuBar.getChildren().addAll(circleBtn, rectangleBtn, polygonBtn, infoBtn);
+        menuBar.getChildren().addAll(circleBtn, rectangleBtn, polygonBtn, infoBtn, saveBtn, importBtn);
+        saveBtn.setAlignment(Pos.CENTER_RIGHT);
 
-        menuBar.setStyle("-fx-background-color: black");
 
         mainPanel.setTop(menuBar);
 
