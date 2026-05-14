@@ -40,7 +40,7 @@ public class GeometricFiguers extends Application {
         ToggleButton polygonBtn = new ToggleButton("Polygon");
 
         Button saveBtn = new Button("Save");
-        Button importBtn = new Button("Import");
+        Button loadBtn = new Button("Load");
 
 
         circleBtn.setToggleGroup(figureButtons);
@@ -67,17 +67,17 @@ public class GeometricFiguers extends Application {
         saveBtn.setOnAction(e -> {
             drawingPane.saveDrawing();
         });
-        importBtn.setOnAction(e -> {
-            
+        loadBtn.setOnAction(e -> {
+            drawingPane.loadDrawing("Figures");
         });
 
         infoBtn.getStyleClass().add("infoButton");
         infoBtn.setAlignment(Pos.CENTER_RIGHT);
 
         saveBtn.getStyleClass().add("infoButton");
-        importBtn.getStyleClass().add("infoButton");
+        loadBtn.getStyleClass().add("infoButton");
 
-        menuBar.getChildren().addAll(circleBtn, rectangleBtn, polygonBtn, infoBtn, saveBtn, importBtn);
+        menuBar.getChildren().addAll(circleBtn, rectangleBtn, polygonBtn, infoBtn, saveBtn, loadBtn);
         saveBtn.setAlignment(Pos.CENTER_RIGHT);
 
 

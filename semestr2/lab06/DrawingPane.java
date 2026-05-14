@@ -1,4 +1,7 @@
 import java.util.ArrayList;
+
+import org.w3c.dom.css.Rect;
+
 import javafx.scene.layout.Pane;
 import javafx.scene.paint.Color;
 import javafx.scene.shape.Shape;
@@ -17,14 +20,12 @@ public class DrawingPane extends Pane {
     private Circle currentCircle;
     private Polygon currentPolygon;
     private ArrayList<Shape> allFigures;
-    private ArrayList<ShapeData> listToSave;
     private Shape currentShape;
 
 
     public DrawingPane() {
 
         allFigures = new ArrayList<Shape>();
-        listToSave = new ArrayList<ShapeData>();
 
         setOnMousePressed(e -> {
             startX = e.getX();
@@ -163,6 +164,7 @@ public class DrawingPane extends Pane {
     }
 
     public void saveDrawing() {
+        ArrayList<ShapeData> listToSave = new ArrayList<>();
         for (Shape s : allFigures) {
             if (s instanceof Rectangle) {
                 Rectangle rect = (Rectangle) s;
@@ -203,6 +205,65 @@ public class DrawingPane extends Pane {
             }
         }
         FileIO.saveToFile(listToSave, "Figures");
+    }
+
+    public void loadDrawing(String fileName){
+        ArrayList<ShapeData> loadedFigures = FileIO.loadFromFile(fileName);
+        // getChildren().clear();
+        // allFigures.clear();
+        for (ShapeData sData : loadedFigures) {
+            if(sData instanceof RectangleData){
+                Rectangle rect = new Rectangle();
+                RectangleData shape = (RectangleData) sData;
+                rect.setX(shape.getX());
+                rect.setY(shape.getY());
+                rect.setWidth(shape.getWidth());
+                rect.setHeight(shape.getHeight());
+                rect.setTranslateX(shape.getTranslateX());
+                rect.setTranslateY(shape.getTranslateY());
+                rect.setScaleX(shape.getScaleX());
+                rect.setScaleY(shape.getScaleY());
+                rect.setRotate(shape.getRotate());
+                rect.setStrokeWidth(shape.getStrokeWidth());
+                rect.setFill(Color.valueOf(shape.getFillColor()));
+                rect.setStroke(Color.valueOf(shape.getStrokeColor()));
+                getChildren().add(rect);
+                allFigures.add(rect);
+            }
+            else if(sData instanceof CircleData){
+                Circle circ = new Circle();
+                CircleData shape = (CircleData) sData;
+                circ.setCenterX(shape.getCenterX());
+                circ.setCenterY(shape.getCenterY());
+                circ.setRadius(shape.getRadius());
+                circ.setTranslateX(shape.getTranslateX());
+                circ.setTranslateY(shape.getTranslateY());
+                circ.setScaleX(shape.getScaleX());
+                circ.setScaleY(shape.getScaleY());
+                circ.setRotate(shape.getRotate());
+                circ.setStrokeWidth(shape.getStrokeWidth());
+                circ.setFill(Color.valueOf(shape.getFillColor()));
+                circ.setStroke(Color.valueOf(shape.getStrokeColor()));
+                getChildren().add(circ);
+                allFigures.add(circ);
+            }
+            else if(sData instanceof PolygonData){
+                Polygon poly = new Polygon();
+                PolygonData shape = (PolygonData) sData;
+                poly.getPoints().addAll(shape.getPoints());
+                poly.setTranslateX(shape.getTranslateX());
+                poly.setTranslateY(shape.getTranslateY());
+                poly.setScaleX(shape.getScaleX());
+                poly.setScaleY(shape.getScaleY());
+                poly.setRotate(shape.getRotate());
+                poly.setStrokeWidth(shape.getStrokeWidth());
+                poly.setFill(Color.valueOf(shape.getFillColor()));
+                poly.setStroke(Color.valueOf(shape.getStrokeColor()));
+                getChildren().add(poly);
+                allFigures.add(poly);
+            }
+            
+        }
     }
 
     public void setToolMode(ToolMode mode) {
