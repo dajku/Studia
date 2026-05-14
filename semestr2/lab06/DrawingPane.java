@@ -2,9 +2,12 @@ import java.util.ArrayList;
 
 import org.w3c.dom.css.Rect;
 
+import javafx.scene.control.ColorPicker;
+import javafx.scene.input.MouseButton;
 import javafx.scene.layout.Pane;
 import javafx.scene.paint.Color;
 import javafx.scene.shape.Shape;
+import javafx.stage.FileChooser;
 import javafx.scene.shape.Rectangle;
 import javafx.scene.shape.Circle;
 import javafx.scene.shape.Polygon;
@@ -21,11 +24,13 @@ public class DrawingPane extends Pane {
     private Polygon currentPolygon;
     private ArrayList<Shape> allFigures;
     private Shape currentShape;
-
+    private Color currentFillColor = Color.WHITE;
+    private ColorPicker colorPicker;
 
     public DrawingPane() {
 
         allFigures = new ArrayList<Shape>();
+        colorPicker = new ColorPicker();
 
         setOnMousePressed(e -> {
             startX = e.getX();
@@ -45,8 +50,17 @@ public class DrawingPane extends Pane {
                         currentShape.setScaleY(currentShape.getScaleY() + s.getDeltaY() * 0.0005);
                     }
                 });
-            } 
-            else{
+                if (e.getButton() == MouseButton.SECONDARY && !(getChildren().contains(colorPicker))) {
+                    colorPicker.setLayoutX(e.getX());
+                    colorPicker.setLayoutY(e.getY());
+
+                    getChildren().add(colorPicker);
+                    colorPicker.setOnAction(ex -> {
+                        currentShape.setFill(colorPicker.getValue());
+                    });
+                }
+
+            } else {
                 if (currentShape != null) {
                     currentShape.setStrokeWidth(1);
                 }
@@ -60,7 +74,7 @@ public class DrawingPane extends Pane {
                     currentRectangle.setWidth(0);
                     currentRectangle.setHeight(0);
 
-                    currentRectangle.setFill(Color.LIGHTBLUE);
+                    currentRectangle.setFill(currentFillColor);
                     currentRectangle.setStroke(Color.BLACK);
 
                     getChildren().add(currentRectangle);
@@ -74,7 +88,7 @@ public class DrawingPane extends Pane {
 
                     currentCircle.setRadius(0);
 
-                    currentCircle.setFill(Color.LIGHTBLUE);
+                    currentCircle.setFill(currentFillColor);
                     currentCircle.setStroke(Color.BLACK);
 
                     getChildren().add(currentCircle);
@@ -83,7 +97,7 @@ public class DrawingPane extends Pane {
 
                         currentPolygon = new Polygon();
 
-                        currentPolygon.setFill(Color.LIGHTBLUE);
+                        currentPolygon.setFill(currentFillColor);
                         currentPolygon.setStroke(Color.BLACK);
 
                         currentPolygon.getPoints().addAll(startX, startY);
@@ -149,7 +163,6 @@ public class DrawingPane extends Pane {
 
             }
 
-            
             currentRectangle = null;
             currentCircle = null;
 
@@ -158,7 +171,13 @@ public class DrawingPane extends Pane {
                     allFigures.add(currentPolygon);
                 }
                 currentPolygon = null;
+
             }
+
+            if (e.getButton() != MouseButton.SECONDARY) {
+                getChildren().remove(colorPicker);
+            }
+
         });
 
     }
@@ -192,7 +211,9 @@ public class DrawingPane extends Pane {
                 listToSave.add(sData);
             } else if (s instanceof Polygon) {
                 Polygon poly = (Polygon) s;
-                PolygonData sData = new PolygonData(new ArrayList<>(poly.getPoints())); // poly.getPoints() zwraca Observable list a nie ArrayList
+                PolygonData sData = new PolygonData(new ArrayList<>(poly.getPoints())); // poly.getPoints() zwraca
+                                                                                        // Observable list a nie
+                                                                                        // ArrayList
                 sData.setTranslateX(s.getTranslateX());
                 sData.setTranslateY(s.getTranslateY());
                 sData.setScaleX(s.getScaleX());
@@ -204,15 +225,31 @@ public class DrawingPane extends Pane {
                 listToSave.add(sData);
             }
         }
-        FileIO.saveToFile(listToSave, "Figures");
+        FileChooser fileChooser = new FileChooser();
+        fileChooser.setTitle("Save figures");
+
+        java.io.File file = fileChooser.showSaveDialog(getScene().getWindow());
+
+        if (file != null) {
+            FileIO.saveToFile(listToSave, file.getAbsolutePath());
+        }
     }
 
-    public void loadDrawing(String fileName){
-        ArrayList<ShapeData> loadedFigures = FileIO.loadFromFile(fileName);
+    public void loadDrawing() {
+
+        FileChooser fileChooser = new FileChooser();
+        fileChooser.setTitle("Load figures");
+
+        java.io.File file = fileChooser.showOpenDialog(getScene().getWindow());
+
+        if (file == null) {
+            return;
+        }
+        ArrayList<ShapeData> loadedFigures = FileIO.loadFromFile(file.getAbsolutePath());
         // getChildren().clear();
         // allFigures.clear();
         for (ShapeData sData : loadedFigures) {
-            if(sData instanceof RectangleData){
+            if (sData instanceof RectangleData) {
                 Rectangle rect = new Rectangle();
                 RectangleData shape = (RectangleData) sData;
                 rect.setX(shape.getX());
@@ -229,8 +266,7 @@ public class DrawingPane extends Pane {
                 rect.setStroke(Color.valueOf(shape.getStrokeColor()));
                 getChildren().add(rect);
                 allFigures.add(rect);
-            }
-            else if(sData instanceof CircleData){
+            } else if (sData instanceof CircleData) {
                 Circle circ = new Circle();
                 CircleData shape = (CircleData) sData;
                 circ.setCenterX(shape.getCenterX());
@@ -246,8 +282,7 @@ public class DrawingPane extends Pane {
                 circ.setStroke(Color.valueOf(shape.getStrokeColor()));
                 getChildren().add(circ);
                 allFigures.add(circ);
-            }
-            else if(sData instanceof PolygonData){
+            } else if (sData instanceof PolygonData) {
                 Polygon poly = new Polygon();
                 PolygonData shape = (PolygonData) sData;
                 poly.getPoints().addAll(shape.getPoints());
@@ -262,11 +297,15 @@ public class DrawingPane extends Pane {
                 getChildren().add(poly);
                 allFigures.add(poly);
             }
-            
+
         }
     }
 
     public void setToolMode(ToolMode mode) {
         currentMode = mode;
+    }
+
+    public void setFillColor(Color c) {
+        currentFillColor = c;
     }
 }

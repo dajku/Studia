@@ -23,7 +23,7 @@ public class FileIO {
     }
 
     public static ArrayList<ShapeData> loadFromFile(String fileName){
-        try(ObjectInputStream ois = new ObjectInputStream(new FileInputStream(fileName + ".fig"))){
+        try(ObjectInputStream ois = new ObjectInputStream(new FileInputStream(fileName))){
             return (ArrayList<ShapeData>) ois.readObject();
         }
         catch(IOException e){

@@ -68,7 +68,7 @@ public class GeometricFiguers extends Application {
             drawingPane.saveDrawing();
         });
         loadBtn.setOnAction(e -> {
-            drawingPane.loadDrawing("Figures");
+            drawingPane.loadDrawing();
         });
 
         infoBtn.getStyleClass().add("infoButton");
