@@ -21,8 +21,30 @@ import javafx.scene.control.ToggleGroup;
 import javafx.scene.control.Alert.AlertType;
 import javafx.scene.text.Font;
 
+/**
+ * Main application class for the Geometric Figures drawing tool.
+ *
+ * Entry point of the JavaFX application. Builds the main window with a toolbar
+ * containing drawing mode buttons (Circle, Rectangle, Polygon), file operation buttons
+ * (Save, Load), and informational buttons (Info, Help).
+ *
+ * The central area of the window hosts a {@link DrawingPane} where the user
+ * creates and edits shapes interactively.
+ *
+ * @author Maciej Zyśk
+ * @version 1.0
+ */
 public class GeometricFiguers extends Application {
 
+    /**
+     * Initializes and displays the main application window.
+     *
+     * Constructs the UI layout: a top toolbar with tool/action buttons
+     * and a central {@link DrawingPane}. Wires up all button actions,
+     * applies the CSS stylesheet, and shows the stage.
+     *
+     * @param stage The primary {@link Stage} provided by the JavaFX runtime.
+     */
     @Override
     public void start(Stage stage) {
 
@@ -33,9 +55,9 @@ public class GeometricFiguers extends Application {
         menuBar.setAlignment(Pos.CENTER);
         menuBar.setStyle("-fx-background-color: black");
 
-
         DrawingPane drawingPane = new DrawingPane();
-        
+
+        // Toggle group ensures only one drawing mode is active at a time
         ToggleGroup figureButtons = new ToggleGroup();
         ToggleButton circleBtn = new ToggleButton("Circle");
         ToggleButton rectangleBtn = new ToggleButton("Rectangle");
@@ -46,19 +68,17 @@ public class GeometricFiguers extends Application {
         Button helpBtn = new Button("Help");
         Button infoBtn = new Button("Info");
 
-
         circleBtn.setToggleGroup(figureButtons);
         rectangleBtn.setToggleGroup(figureButtons);
         polygonBtn.setToggleGroup(figureButtons);
         figureButtons.selectToggle(null);
-        
+
         circleBtn.getStyleClass().add("figureButton");
         rectangleBtn.getStyleClass().add("figureButton");
         polygonBtn.getStyleClass().add("figureButton");
-    
+
         infoBtn.getStyleClass().add("infoButton");
         infoBtn.setAlignment(Pos.CENTER_RIGHT);
-
         saveBtn.getStyleClass().add("infoButton");
         loadBtn.getStyleClass().add("infoButton");
         helpBtn.getStyleClass().add("infoButton");
@@ -66,23 +86,32 @@ public class GeometricFiguers extends Application {
         menuBar.getChildren().addAll(rectangleBtn, circleBtn, polygonBtn, saveBtn, loadBtn, infoBtn, helpBtn);
         saveBtn.setAlignment(Pos.CENTER_RIGHT);
 
-
+        // Set active tool mode to CIRCLE
         circleBtn.setOnAction(e -> {
-            drawingPane.setToolMode(ToolMode.CIRCLE);   
+            drawingPane.setToolMode(ToolMode.CIRCLE);
         });
 
+        // Set active tool mode to RECTANGLE
         rectangleBtn.setOnAction(e -> {
             drawingPane.setToolMode(ToolMode.RECTANGLE);
         });
+
+        // Set active tool mode to POLYGON
         polygonBtn.setOnAction(e -> {
             drawingPane.setToolMode(ToolMode.POLYGON);
         });
+
+        // Trigger save dialog in DrawingPane
         saveBtn.setOnAction(e -> {
             drawingPane.saveDrawing();
         });
+
+        // Trigger load dialog in DrawingPane
         loadBtn.setOnAction(e -> {
             drawingPane.loadDrawing();
         });
+
+        // Show "About" dialog with application metadata
         infoBtn.setOnAction(e -> {
             Alert alert = new Alert(AlertType.INFORMATION);
             alert.setTitle("About");
@@ -97,7 +126,8 @@ public class GeometricFiguers extends Application {
                 "  Maciej Zyśk\n\n");
             alert.show();
         });
-        
+
+        // Show "User Manual" dialog with usage instructions
         helpBtn.setOnAction(e -> {
             Alert alert = new Alert(AlertType.INFORMATION);
             alert.setTitle("User manual");
@@ -108,7 +138,7 @@ public class GeometricFiguers extends Application {
                 "   - Select a tool (Circle / Rectangle / Polygon) from the menu bar.\n" +
                 "   - Circle / Rectangle: click and drag on the drawing area.\n" +
                 "   - Polygon: click to place vertices; double-click to finish.\n" +
-                "2. Selecting and moving:\n" + 
+                "2. Selecting and moving:\n" +
                 "   - Left-click on a shape to select it.\n" +
                 "   - Drag the selected shape to move it.\n" +
                 "3. Scaling and rotating\n" +
@@ -117,18 +147,16 @@ public class GeometricFiguers extends Application {
                 "4. Changing fill color\n" +
                 "   - Right-click on a shape.\n" +
                 "   - A color picker will appear - choose a color and confirm.\n" +
-                "5. Saving and loading\n" + 
+                "5. Saving and loading\n" +
                 "   - Save - saves the current drawing to a file (.fig).\n" +
-                "   - Load - loads a drawing from a file; shapes are added to the current drawing. \n" + 
+                "   - Load - loads a drawing from a file; shapes are added to the current drawing.\n" +
                 "6. About\n" +
                 "   - The Info button displays a window with information about the application.\n"
-
             );
             alert.show();
         });
 
         mainPanel.setTop(menuBar);
-
         mainPanel.setCenter(drawingPane);
 
         Scene scene = new Scene(mainPanel, 800, 800);
@@ -139,6 +167,10 @@ public class GeometricFiguers extends Application {
         stage.show();
     }
 
+    /**
+     * Application entry point.
+     * @param args Command-line arguments (not used).
+     */
     public static void main(String[] args) {
         launch(args);
     }

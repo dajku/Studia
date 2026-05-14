@@ -1,0 +1,104 @@
+\doxysection{Drawing\+Pane Class Reference}
+\hypertarget{classDrawingPane}{}\label{classDrawingPane}\index{DrawingPane@{DrawingPane}}
+
+
+Inheritance diagram for Drawing\+Pane\+:
+% FIG 0
+
+
+Collaboration diagram for Drawing\+Pane\+:
+% FIG 1
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classDrawingPane_a80db2f9b565d5dcdf9482311d108a168}{Drawing\+Pane}} ()
+\item 
+void \mbox{\hyperlink{classDrawingPane_a149a822032e4b00ec5baac5cffb24b2f}{save\+Drawing}} ()
+\item 
+void \mbox{\hyperlink{classDrawingPane_a5b6265dea978cd2211648a94ba665b19}{load\+Drawing}} ()
+\item 
+void \mbox{\hyperlink{classDrawingPane_a66041cd321b90361a17c04a696303e62}{set\+Tool\+Mode}} (\mbox{\hyperlink{enumToolMode}{Tool\+Mode}} mode)
+\item 
+void \mbox{\hyperlink{classDrawingPane_a42bd6e5ca070667f1c0fbb4e73a142ac}{set\+Fill\+Color}} (Color c)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Interactive drawing canvas for creating and editing geometric shapes.
+
+Extends {\ttfamily \doxylink{}{javafx.\+scene.\+layout.\+Pane}} to provide a mouse-\/driven canvas where the user can draw, select, move, scale, rotate, and recolor shapes. Supports three shape types\+: circles, rectangles, and polygons.
+
+Interaction summary\+:
+\begin{DoxyItemize}
+\item Left-\/click + drag on empty area\+: draws a new shape (depending on active {\ttfamily \doxylink{enumToolMode}{Tool\+Mode}}).
+\item Left-\/click on a shape\+: selects it (stroke thickens).
+\item Left-\/click + drag on selected shape\+: moves it.
+\item Scroll wheel on selected shape\+: scales it.
+\item Shift + scroll on selected shape\+: rotates it.
+\item Right-\/click on a shape\+: opens an inline {\ttfamily \doxylink{}{Color\+Picker}} to change fill color.
+\item Double-\/click\+: finishes drawing a polygon.
+\end{DoxyItemize}
+
+\begin{DoxyAuthor}{Author}
+Maciej Zyśk 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+1.\+0 
+\end{DoxyVersion}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classDrawingPane_a80db2f9b565d5dcdf9482311d108a168}\label{classDrawingPane_a80db2f9b565d5dcdf9482311d108a168} 
+\index{DrawingPane@{DrawingPane}!DrawingPane@{DrawingPane}}
+\index{DrawingPane@{DrawingPane}!DrawingPane@{DrawingPane}}
+\doxysubsubsection{\texorpdfstring{DrawingPane()}{DrawingPane()}}
+{\footnotesize\ttfamily Drawing\+Pane.\+Drawing\+Pane (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Constructs the \doxylink{classDrawingPane}{Drawing\+Pane} and registers all mouse event handlers.
+
+Sets up clipping to prevent shapes from rendering outside the pane bounds, and attaches handlers for mouse press, drag, release, and scroll events. 
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classDrawingPane_a5b6265dea978cd2211648a94ba665b19}\label{classDrawingPane_a5b6265dea978cd2211648a94ba665b19} 
+\index{DrawingPane@{DrawingPane}!loadDrawing@{loadDrawing}}
+\index{loadDrawing@{loadDrawing}!DrawingPane@{DrawingPane}}
+\doxysubsubsection{\texorpdfstring{loadDrawing()}{loadDrawing()}}
+{\footnotesize\ttfamily void Drawing\+Pane.\+load\+Drawing (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Loads shapes from a binary file and adds them to the current canvas.
+
+Opens a {\ttfamily \doxylink{}{File\+Chooser}} dialog for the user to select a {\ttfamily .\+fig} file, then deserializes the shapes via {\ttfamily \doxylink{classFileIO_ad6c709a959a56be6a6ba4de18d4cf91c}{File\+IO\#load\+From\+File}} and reconstructs the corresponding Java\+FX {\ttfamily \doxylink{}{Shape}} objects with all saved properties restored. Loaded shapes are appended to the existing canvas without clearing it. \Hypertarget{classDrawingPane_a149a822032e4b00ec5baac5cffb24b2f}\label{classDrawingPane_a149a822032e4b00ec5baac5cffb24b2f} 
+\index{DrawingPane@{DrawingPane}!saveDrawing@{saveDrawing}}
+\index{saveDrawing@{saveDrawing}!DrawingPane@{DrawingPane}}
+\doxysubsubsection{\texorpdfstring{saveDrawing()}{saveDrawing()}}
+{\footnotesize\ttfamily void Drawing\+Pane.\+save\+Drawing (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Saves all shapes currently on the canvas to a binary file.
+
+Converts each {\ttfamily \doxylink{}{Shape}} in the canvas into its corresponding {\ttfamily \doxylink{classShapeData}{Shape\+Data}} object (preserving all transformations and colors), then opens a {\ttfamily \doxylink{}{File\+Chooser}} dialog for the user to choose the save location. The file is saved with a {\ttfamily .\+fig} extension via {\ttfamily \doxylink{classFileIO_a63bc5a7f07d2bf9273492cd7a7d5d05f}{File\+IO\#save\+To\+File}}. \Hypertarget{classDrawingPane_a42bd6e5ca070667f1c0fbb4e73a142ac}\label{classDrawingPane_a42bd6e5ca070667f1c0fbb4e73a142ac} 
+\index{DrawingPane@{DrawingPane}!setFillColor@{setFillColor}}
+\index{setFillColor@{setFillColor}!DrawingPane@{DrawingPane}}
+\doxysubsubsection{\texorpdfstring{setFillColor()}{setFillColor()}}
+{\footnotesize\ttfamily void Drawing\+Pane.\+set\+Fill\+Color (\begin{DoxyParamCaption}\item[{Color}]{c }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Sets the default fill color for newly created shapes. 
+\begin{DoxyParams}{Parameters}
+{\em c} & The {\ttfamily \doxylink{}{Color}} to use as fill for the next drawn shape. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classDrawingPane_a66041cd321b90361a17c04a696303e62}\label{classDrawingPane_a66041cd321b90361a17c04a696303e62} 
+\index{DrawingPane@{DrawingPane}!setToolMode@{setToolMode}}
+\index{setToolMode@{setToolMode}!DrawingPane@{DrawingPane}}
+\doxysubsubsection{\texorpdfstring{setToolMode()}{setToolMode()}}
+{\footnotesize\ttfamily void Drawing\+Pane.\+set\+Tool\+Mode (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{enumToolMode}{Tool\+Mode}}}]{mode }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Sets the active drawing tool mode. 
+\begin{DoxyParams}{Parameters}
+{\em mode} & The {\ttfamily \doxylink{enumToolMode}{Tool\+Mode}} to activate (CIRCLE, RECTANGLE, or POLYGON). \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Drawing\+Pane.\+java\end{DoxyCompactItemize}

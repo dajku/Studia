@@ -1,0 +1,69 @@
+\doxysection{Geometric\+Figuers Class Reference}
+\hypertarget{classGeometricFiguers}{}\label{classGeometricFiguers}\index{GeometricFiguers@{GeometricFiguers}}
+
+
+Inheritance diagram for Geometric\+Figuers\+:
+% FIG 0
+
+
+Collaboration diagram for Geometric\+Figuers\+:
+% FIG 1
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{classGeometricFiguers_a9ded35b74a7909499430242426a40f87}{start}} (Stage stage)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static void \mbox{\hyperlink{classGeometricFiguers_ad9edc043121c33c3e01b7165318d19e7}{main}} (String\mbox{[}$\,$\mbox{]} args)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Main application class for the Geometric Figures drawing tool.
+
+Entry point of the Java\+FX application. Builds the main window with a toolbar containing drawing mode buttons (Circle, Rectangle, Polygon), file operation buttons (Save, Load), and informational buttons (Info, Help).
+
+The central area of the window hosts a {\ttfamily \doxylink{classDrawingPane}{Drawing\+Pane}} where the user creates and edits shapes interactively.
+
+\begin{DoxyAuthor}{Author}
+Maciej Zyśk 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+1.\+0 
+\end{DoxyVersion}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classGeometricFiguers_ad9edc043121c33c3e01b7165318d19e7}\label{classGeometricFiguers_ad9edc043121c33c3e01b7165318d19e7} 
+\index{GeometricFiguers@{GeometricFiguers}!main@{main}}
+\index{main@{main}!GeometricFiguers@{GeometricFiguers}}
+\doxysubsubsection{\texorpdfstring{main()}{main()}}
+{\footnotesize\ttfamily static void Geometric\+Figuers.\+main (\begin{DoxyParamCaption}\item[{String\mbox{[}$\,$\mbox{]}}]{args }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+Application entry point. 
+\begin{DoxyParams}{Parameters}
+{\em args} & Command-\/line arguments (not used). \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classGeometricFiguers_a9ded35b74a7909499430242426a40f87}\label{classGeometricFiguers_a9ded35b74a7909499430242426a40f87} 
+\index{GeometricFiguers@{GeometricFiguers}!start@{start}}
+\index{start@{start}!GeometricFiguers@{GeometricFiguers}}
+\doxysubsubsection{\texorpdfstring{start()}{start()}}
+{\footnotesize\ttfamily void Geometric\+Figuers.\+start (\begin{DoxyParamCaption}\item[{Stage}]{stage }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Initializes and displays the main application window.
+
+Constructs the UI layout\+: a top toolbar with tool/action buttons and a central {\ttfamily \doxylink{classDrawingPane}{Drawing\+Pane}}. Wires up all button actions, applies the CSS stylesheet, and shows the stage.
+
+
+\begin{DoxyParams}{Parameters}
+{\em stage} & The primary {\ttfamily \doxylink{}{Stage}} provided by the Java\+FX runtime. \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Geometric\+Figuers.\+java\end{DoxyCompactItemize}

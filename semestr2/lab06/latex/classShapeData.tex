@@ -1,0 +1,296 @@
+\doxysection{Shape\+Data Class Reference}
+\hypertarget{classShapeData}{}\label{classShapeData}\index{ShapeData@{ShapeData}}
+
+
+Inheritance diagram for Shape\+Data\+:
+% FIG 0
+
+
+Collaboration diagram for Shape\+Data\+:
+% FIG 1
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+double \mbox{\hyperlink{classShapeData_a729b3f299d0b2b7e9b1fdf7810fa7172}{get\+TranslateX}} ()
+\item 
+double \mbox{\hyperlink{classShapeData_a0c22694cadef782e9dff083879060c8e}{get\+TranslateY}} ()
+\item 
+double \mbox{\hyperlink{classShapeData_af4ab91cc647ab43ac74db10ce2913214}{get\+ScaleX}} ()
+\item 
+double \mbox{\hyperlink{classShapeData_a8152feb9cce807d99d72186adbd0da50}{get\+ScaleY}} ()
+\item 
+double \mbox{\hyperlink{classShapeData_ae2f497df777d7f3f81b6a3480f92c656}{get\+Rotate}} ()
+\item 
+double \mbox{\hyperlink{classShapeData_a342860c79f7235f46d9478cc823af0de}{get\+Stroke\+Width}} ()
+\item 
+String \mbox{\hyperlink{classShapeData_a2ae960804d3d0b8f5b5ff65cb50c5645}{get\+Fill\+Color}} ()
+\item 
+String \mbox{\hyperlink{classShapeData_ab3e0565097dc02085c52c00fca407306}{get\+Stroke\+Color}} ()
+\item 
+void \mbox{\hyperlink{classShapeData_aeb1af45aa6f4e7ed4190f24c81e61889}{set\+TranslateX}} (double x)
+\item 
+void \mbox{\hyperlink{classShapeData_aab928076adebef755c75cfbdf22322a4}{set\+TranslateY}} (double y)
+\item 
+void \mbox{\hyperlink{classShapeData_a129f9c2c19f73a5dc44fa7c884043835}{set\+ScaleX}} (double x)
+\item 
+void \mbox{\hyperlink{classShapeData_a6b78ce8743a337cb78612d3fc14eee7b}{set\+ScaleY}} (double y)
+\item 
+void \mbox{\hyperlink{classShapeData_acb49496eb63ef8640d6576d3eb68801a}{set\+Rotate}} (double r)
+\item 
+void \mbox{\hyperlink{classShapeData_a3e7d4c53c900cc43810895dd5e4ccee1}{set\+Stroke\+Width}} (double s)
+\item 
+void \mbox{\hyperlink{classShapeData_ac3ccf193b8bd104fbba1d0c0e2478f88}{set\+Fill\+Color}} (String c)
+\item 
+void \mbox{\hyperlink{classShapeData_abde8fce5ca8010ce3e19f5039e498105}{set\+Stroke\+Color}} (String c)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+double \mbox{\hyperlink{classShapeData_a6224e249ef5a8a661df925ac236b5cbc}{translateX}}
+\item 
+double \mbox{\hyperlink{classShapeData_a105398314bd68398c6944e447f057d18}{translateY}}
+\item 
+double \mbox{\hyperlink{classShapeData_ae85951b21db60a2efb053e65dfaeb40a}{scaleX}}
+\item 
+double \mbox{\hyperlink{classShapeData_abc1b0d36441678b0fe79b396907acacb}{scaleY}}
+\item 
+double \mbox{\hyperlink{classShapeData_a78f7eb0ab1d9696b578f73c8a6a4f0d6}{rotate}}
+\item 
+double \mbox{\hyperlink{classShapeData_a48f7d215bb69faafc47019f2c1eb0070}{stroke\+Width}}
+\item 
+String \mbox{\hyperlink{classShapeData_a78c0ae9645107d68ed0d811dc80c9c96}{fill\+Color}}
+\item 
+String \mbox{\hyperlink{classShapeData_a9d92b5cf3c7a4a8da8564f189c8ddbdb}{stroke\+Color}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Abstract base class for storing serializable shape data.
+
+Serves as the base for all shape data classes (Rectangle\+Data, Circle\+Data, Polygon\+Data). Stores common transformation and styling properties that can be saved to and loaded from a file. Implements {\ttfamily \doxylink{}{Serializable}} to support binary file I/O via {\ttfamily \doxylink{classFileIO}{File\+IO}}.
+
+\begin{DoxyAuthor}{Author}
+Maciej Zyśk 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+1.\+0 
+\end{DoxyVersion}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classShapeData_a2ae960804d3d0b8f5b5ff65cb50c5645}\label{classShapeData_a2ae960804d3d0b8f5b5ff65cb50c5645} 
+\index{ShapeData@{ShapeData}!getFillColor@{getFillColor}}
+\index{getFillColor@{getFillColor}!ShapeData@{ShapeData}}
+\doxysubsubsection{\texorpdfstring{getFillColor()}{getFillColor()}}
+{\footnotesize\ttfamily String Shape\+Data.\+get\+Fill\+Color (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Returns the fill color as a string. \begin{DoxyReturn}{Returns}
+Java\+FX color string representing the fill color. 
+\end{DoxyReturn}
+\Hypertarget{classShapeData_ae2f497df777d7f3f81b6a3480f92c656}\label{classShapeData_ae2f497df777d7f3f81b6a3480f92c656} 
+\index{ShapeData@{ShapeData}!getRotate@{getRotate}}
+\index{getRotate@{getRotate}!ShapeData@{ShapeData}}
+\doxysubsubsection{\texorpdfstring{getRotate()}{getRotate()}}
+{\footnotesize\ttfamily double Shape\+Data.\+get\+Rotate (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Returns the rotation angle. \begin{DoxyReturn}{Returns}
+Rotation in degrees. 
+\end{DoxyReturn}
+\Hypertarget{classShapeData_af4ab91cc647ab43ac74db10ce2913214}\label{classShapeData_af4ab91cc647ab43ac74db10ce2913214} 
+\index{ShapeData@{ShapeData}!getScaleX@{getScaleX}}
+\index{getScaleX@{getScaleX}!ShapeData@{ShapeData}}
+\doxysubsubsection{\texorpdfstring{getScaleX()}{getScaleX()}}
+{\footnotesize\ttfamily double Shape\+Data.\+get\+ScaleX (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Returns the X scale factor. \begin{DoxyReturn}{Returns}
+Scale along the X axis. 
+\end{DoxyReturn}
+\Hypertarget{classShapeData_a8152feb9cce807d99d72186adbd0da50}\label{classShapeData_a8152feb9cce807d99d72186adbd0da50} 
+\index{ShapeData@{ShapeData}!getScaleY@{getScaleY}}
+\index{getScaleY@{getScaleY}!ShapeData@{ShapeData}}
+\doxysubsubsection{\texorpdfstring{getScaleY()}{getScaleY()}}
+{\footnotesize\ttfamily double Shape\+Data.\+get\+ScaleY (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Returns the Y scale factor. \begin{DoxyReturn}{Returns}
+Scale along the Y axis. 
+\end{DoxyReturn}
+\Hypertarget{classShapeData_ab3e0565097dc02085c52c00fca407306}\label{classShapeData_ab3e0565097dc02085c52c00fca407306} 
+\index{ShapeData@{ShapeData}!getStrokeColor@{getStrokeColor}}
+\index{getStrokeColor@{getStrokeColor}!ShapeData@{ShapeData}}
+\doxysubsubsection{\texorpdfstring{getStrokeColor()}{getStrokeColor()}}
+{\footnotesize\ttfamily String Shape\+Data.\+get\+Stroke\+Color (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Returns the stroke color as a string. \begin{DoxyReturn}{Returns}
+Java\+FX color string representing the border color. 
+\end{DoxyReturn}
+\Hypertarget{classShapeData_a342860c79f7235f46d9478cc823af0de}\label{classShapeData_a342860c79f7235f46d9478cc823af0de} 
+\index{ShapeData@{ShapeData}!getStrokeWidth@{getStrokeWidth}}
+\index{getStrokeWidth@{getStrokeWidth}!ShapeData@{ShapeData}}
+\doxysubsubsection{\texorpdfstring{getStrokeWidth()}{getStrokeWidth()}}
+{\footnotesize\ttfamily double Shape\+Data.\+get\+Stroke\+Width (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Returns the stroke width. \begin{DoxyReturn}{Returns}
+Width of the shape\textquotesingle{}s border. 
+\end{DoxyReturn}
+\Hypertarget{classShapeData_a729b3f299d0b2b7e9b1fdf7810fa7172}\label{classShapeData_a729b3f299d0b2b7e9b1fdf7810fa7172} 
+\index{ShapeData@{ShapeData}!getTranslateX@{getTranslateX}}
+\index{getTranslateX@{getTranslateX}!ShapeData@{ShapeData}}
+\doxysubsubsection{\texorpdfstring{getTranslateX()}{getTranslateX()}}
+{\footnotesize\ttfamily double Shape\+Data.\+get\+TranslateX (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Returns the X translation offset. \begin{DoxyReturn}{Returns}
+Translation along the X axis. 
+\end{DoxyReturn}
+\Hypertarget{classShapeData_a0c22694cadef782e9dff083879060c8e}\label{classShapeData_a0c22694cadef782e9dff083879060c8e} 
+\index{ShapeData@{ShapeData}!getTranslateY@{getTranslateY}}
+\index{getTranslateY@{getTranslateY}!ShapeData@{ShapeData}}
+\doxysubsubsection{\texorpdfstring{getTranslateY()}{getTranslateY()}}
+{\footnotesize\ttfamily double Shape\+Data.\+get\+TranslateY (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Returns the Y translation offset. \begin{DoxyReturn}{Returns}
+Translation along the Y axis. 
+\end{DoxyReturn}
+\Hypertarget{classShapeData_ac3ccf193b8bd104fbba1d0c0e2478f88}\label{classShapeData_ac3ccf193b8bd104fbba1d0c0e2478f88} 
+\index{ShapeData@{ShapeData}!setFillColor@{setFillColor}}
+\index{setFillColor@{setFillColor}!ShapeData@{ShapeData}}
+\doxysubsubsection{\texorpdfstring{setFillColor()}{setFillColor()}}
+{\footnotesize\ttfamily void Shape\+Data.\+set\+Fill\+Color (\begin{DoxyParamCaption}\item[{String}]{c }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Sets the fill color. 
+\begin{DoxyParams}{Parameters}
+{\em c} & Java\+FX color string representing the fill color. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classShapeData_acb49496eb63ef8640d6576d3eb68801a}\label{classShapeData_acb49496eb63ef8640d6576d3eb68801a} 
+\index{ShapeData@{ShapeData}!setRotate@{setRotate}}
+\index{setRotate@{setRotate}!ShapeData@{ShapeData}}
+\doxysubsubsection{\texorpdfstring{setRotate()}{setRotate()}}
+{\footnotesize\ttfamily void Shape\+Data.\+set\+Rotate (\begin{DoxyParamCaption}\item[{double}]{r }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Sets the rotation angle. 
+\begin{DoxyParams}{Parameters}
+{\em r} & Rotation in degrees. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classShapeData_a129f9c2c19f73a5dc44fa7c884043835}\label{classShapeData_a129f9c2c19f73a5dc44fa7c884043835} 
+\index{ShapeData@{ShapeData}!setScaleX@{setScaleX}}
+\index{setScaleX@{setScaleX}!ShapeData@{ShapeData}}
+\doxysubsubsection{\texorpdfstring{setScaleX()}{setScaleX()}}
+{\footnotesize\ttfamily void Shape\+Data.\+set\+ScaleX (\begin{DoxyParamCaption}\item[{double}]{x }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Sets the X scale factor. 
+\begin{DoxyParams}{Parameters}
+{\em x} & Scale value along the X axis. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classShapeData_a6b78ce8743a337cb78612d3fc14eee7b}\label{classShapeData_a6b78ce8743a337cb78612d3fc14eee7b} 
+\index{ShapeData@{ShapeData}!setScaleY@{setScaleY}}
+\index{setScaleY@{setScaleY}!ShapeData@{ShapeData}}
+\doxysubsubsection{\texorpdfstring{setScaleY()}{setScaleY()}}
+{\footnotesize\ttfamily void Shape\+Data.\+set\+ScaleY (\begin{DoxyParamCaption}\item[{double}]{y }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Sets the Y scale factor. 
+\begin{DoxyParams}{Parameters}
+{\em y} & Scale value along the Y axis. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classShapeData_abde8fce5ca8010ce3e19f5039e498105}\label{classShapeData_abde8fce5ca8010ce3e19f5039e498105} 
+\index{ShapeData@{ShapeData}!setStrokeColor@{setStrokeColor}}
+\index{setStrokeColor@{setStrokeColor}!ShapeData@{ShapeData}}
+\doxysubsubsection{\texorpdfstring{setStrokeColor()}{setStrokeColor()}}
+{\footnotesize\ttfamily void Shape\+Data.\+set\+Stroke\+Color (\begin{DoxyParamCaption}\item[{String}]{c }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Sets the stroke color. 
+\begin{DoxyParams}{Parameters}
+{\em c} & Java\+FX color string representing the border color. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classShapeData_a3e7d4c53c900cc43810895dd5e4ccee1}\label{classShapeData_a3e7d4c53c900cc43810895dd5e4ccee1} 
+\index{ShapeData@{ShapeData}!setStrokeWidth@{setStrokeWidth}}
+\index{setStrokeWidth@{setStrokeWidth}!ShapeData@{ShapeData}}
+\doxysubsubsection{\texorpdfstring{setStrokeWidth()}{setStrokeWidth()}}
+{\footnotesize\ttfamily void Shape\+Data.\+set\+Stroke\+Width (\begin{DoxyParamCaption}\item[{double}]{s }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Sets the stroke width. 
+\begin{DoxyParams}{Parameters}
+{\em s} & Width of the shape\textquotesingle{}s border. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classShapeData_aeb1af45aa6f4e7ed4190f24c81e61889}\label{classShapeData_aeb1af45aa6f4e7ed4190f24c81e61889} 
+\index{ShapeData@{ShapeData}!setTranslateX@{setTranslateX}}
+\index{setTranslateX@{setTranslateX}!ShapeData@{ShapeData}}
+\doxysubsubsection{\texorpdfstring{setTranslateX()}{setTranslateX()}}
+{\footnotesize\ttfamily void Shape\+Data.\+set\+TranslateX (\begin{DoxyParamCaption}\item[{double}]{x }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Sets the X translation offset. 
+\begin{DoxyParams}{Parameters}
+{\em x} & Translation value along the X axis. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classShapeData_aab928076adebef755c75cfbdf22322a4}\label{classShapeData_aab928076adebef755c75cfbdf22322a4} 
+\index{ShapeData@{ShapeData}!setTranslateY@{setTranslateY}}
+\index{setTranslateY@{setTranslateY}!ShapeData@{ShapeData}}
+\doxysubsubsection{\texorpdfstring{setTranslateY()}{setTranslateY()}}
+{\footnotesize\ttfamily void Shape\+Data.\+set\+TranslateY (\begin{DoxyParamCaption}\item[{double}]{y }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Sets the Y translation offset. 
+\begin{DoxyParams}{Parameters}
+{\em y} & Translation value along the Y axis. \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{classShapeData_a78c0ae9645107d68ed0d811dc80c9c96}\label{classShapeData_a78c0ae9645107d68ed0d811dc80c9c96} 
+\index{ShapeData@{ShapeData}!fillColor@{fillColor}}
+\index{fillColor@{fillColor}!ShapeData@{ShapeData}}
+\doxysubsubsection{\texorpdfstring{fillColor}{fillColor}}
+{\footnotesize\ttfamily String Shape\+Data.\+fill\+Color\hspace{0.3cm}{\ttfamily [protected]}}
+
+Fill color of the shape, stored as a Java\+FX color string (e.\+g. {\ttfamily "{}0xff0000ff"{}}). \Hypertarget{classShapeData_a78f7eb0ab1d9696b578f73c8a6a4f0d6}\label{classShapeData_a78f7eb0ab1d9696b578f73c8a6a4f0d6} 
+\index{ShapeData@{ShapeData}!rotate@{rotate}}
+\index{rotate@{rotate}!ShapeData@{ShapeData}}
+\doxysubsubsection{\texorpdfstring{rotate}{rotate}}
+{\footnotesize\ttfamily double Shape\+Data.\+rotate\hspace{0.3cm}{\ttfamily [protected]}}
+
+Rotation angle in degrees. \Hypertarget{classShapeData_ae85951b21db60a2efb053e65dfaeb40a}\label{classShapeData_ae85951b21db60a2efb053e65dfaeb40a} 
+\index{ShapeData@{ShapeData}!scaleX@{scaleX}}
+\index{scaleX@{scaleX}!ShapeData@{ShapeData}}
+\doxysubsubsection{\texorpdfstring{scaleX}{scaleX}}
+{\footnotesize\ttfamily double Shape\+Data.\+scaleX\hspace{0.3cm}{\ttfamily [protected]}}
+
+Scale factor along the X axis. \Hypertarget{classShapeData_abc1b0d36441678b0fe79b396907acacb}\label{classShapeData_abc1b0d36441678b0fe79b396907acacb} 
+\index{ShapeData@{ShapeData}!scaleY@{scaleY}}
+\index{scaleY@{scaleY}!ShapeData@{ShapeData}}
+\doxysubsubsection{\texorpdfstring{scaleY}{scaleY}}
+{\footnotesize\ttfamily double Shape\+Data.\+scaleY\hspace{0.3cm}{\ttfamily [protected]}}
+
+Scale factor along the Y axis. \Hypertarget{classShapeData_a9d92b5cf3c7a4a8da8564f189c8ddbdb}\label{classShapeData_a9d92b5cf3c7a4a8da8564f189c8ddbdb} 
+\index{ShapeData@{ShapeData}!strokeColor@{strokeColor}}
+\index{strokeColor@{strokeColor}!ShapeData@{ShapeData}}
+\doxysubsubsection{\texorpdfstring{strokeColor}{strokeColor}}
+{\footnotesize\ttfamily String Shape\+Data.\+stroke\+Color\hspace{0.3cm}{\ttfamily [protected]}}
+
+Stroke (border) color of the shape, stored as a Java\+FX color string. \Hypertarget{classShapeData_a48f7d215bb69faafc47019f2c1eb0070}\label{classShapeData_a48f7d215bb69faafc47019f2c1eb0070} 
+\index{ShapeData@{ShapeData}!strokeWidth@{strokeWidth}}
+\index{strokeWidth@{strokeWidth}!ShapeData@{ShapeData}}
+\doxysubsubsection{\texorpdfstring{strokeWidth}{strokeWidth}}
+{\footnotesize\ttfamily double Shape\+Data.\+stroke\+Width\hspace{0.3cm}{\ttfamily [protected]}}
+
+Width of the shape\textquotesingle{}s border stroke. \Hypertarget{classShapeData_a6224e249ef5a8a661df925ac236b5cbc}\label{classShapeData_a6224e249ef5a8a661df925ac236b5cbc} 
+\index{ShapeData@{ShapeData}!translateX@{translateX}}
+\index{translateX@{translateX}!ShapeData@{ShapeData}}
+\doxysubsubsection{\texorpdfstring{translateX}{translateX}}
+{\footnotesize\ttfamily double Shape\+Data.\+translateX\hspace{0.3cm}{\ttfamily [protected]}}
+
+Translation offset along the X axis. \Hypertarget{classShapeData_a105398314bd68398c6944e447f057d18}\label{classShapeData_a105398314bd68398c6944e447f057d18} 
+\index{ShapeData@{ShapeData}!translateY@{translateY}}
+\index{translateY@{translateY}!ShapeData@{ShapeData}}
+\doxysubsubsection{\texorpdfstring{translateY}{translateY}}
+{\footnotesize\ttfamily double Shape\+Data.\+translateY\hspace{0.3cm}{\ttfamily [protected]}}
+
+Translation offset along the Y axis. 
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Shape\+Data.\+java\end{DoxyCompactItemize}

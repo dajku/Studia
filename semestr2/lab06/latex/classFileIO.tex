@@ -1,0 +1,65 @@
+\doxysection{File\+IO Class Reference}
+\hypertarget{classFileIO}{}\label{classFileIO}\index{FileIO@{FileIO}}
+\doxysubsubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static void \mbox{\hyperlink{classFileIO_a63bc5a7f07d2bf9273492cd7a7d5d05f}{save\+To\+File}} (Array\+List$<$ \mbox{\hyperlink{classShapeData}{Shape\+Data}} $>$ shapes\+List, String file\+Name)
+\item 
+static Array\+List$<$ \mbox{\hyperlink{classShapeData}{Shape\+Data}} $>$ \mbox{\hyperlink{classFileIO_ad6c709a959a56be6a6ba4de18d4cf91c}{load\+From\+File}} (String file\+Name)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Utility class for saving and loading shape data to/from binary files.
+
+Provides static methods for serializing an {\ttfamily \doxylink{}{Array\+List}} of {\ttfamily \doxylink{classShapeData}{Shape\+Data}} objects to a binary {\ttfamily .\+fig} file and deserializing them back. Uses Java\textquotesingle{}s built-\/in object serialization ({\ttfamily \doxylink{}{Object\+Output\+Stream}} / {\ttfamily \doxylink{}{Object\+Input\+Stream}}).
+
+\begin{DoxyAuthor}{Author}
+Maciej Zyśk 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+1.\+0 
+\end{DoxyVersion}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classFileIO_ad6c709a959a56be6a6ba4de18d4cf91c}\label{classFileIO_ad6c709a959a56be6a6ba4de18d4cf91c} 
+\index{FileIO@{FileIO}!loadFromFile@{loadFromFile}}
+\index{loadFromFile@{loadFromFile}!FileIO@{FileIO}}
+\doxysubsubsection{\texorpdfstring{loadFromFile()}{loadFromFile()}}
+{\footnotesize\ttfamily static Array\+List$<$ \mbox{\hyperlink{classShapeData}{Shape\+Data}} $>$ File\+IO.\+load\+From\+File (\begin{DoxyParamCaption}\item[{String}]{file\+Name }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+Loads a list of shapes from a binary file.
+
+Deserializes a previously saved {\ttfamily .\+fig} file and returns its contents as an {\ttfamily \doxylink{}{Array\+List}} of {\ttfamily \doxylink{classShapeData}{Shape\+Data}} objects. Returns {\ttfamily null} if the file cannot be read or does not contain valid data.
+
+
+\begin{DoxyParams}{Parameters}
+{\em file\+Name} & Full path to the file to load (including extension). \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Array\+List of {\ttfamily \doxylink{classShapeData}{Shape\+Data}} objects, or {\ttfamily null} on error. 
+\end{DoxyReturn}
+\Hypertarget{classFileIO_a63bc5a7f07d2bf9273492cd7a7d5d05f}\label{classFileIO_a63bc5a7f07d2bf9273492cd7a7d5d05f} 
+\index{FileIO@{FileIO}!saveToFile@{saveToFile}}
+\index{saveToFile@{saveToFile}!FileIO@{FileIO}}
+\doxysubsubsection{\texorpdfstring{saveToFile()}{saveToFile()}}
+{\footnotesize\ttfamily static void File\+IO.\+save\+To\+File (\begin{DoxyParamCaption}\item[{Array\+List$<$ \mbox{\hyperlink{classShapeData}{Shape\+Data}} $>$}]{shapes\+List,  }\item[{String}]{file\+Name }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+Saves a list of shapes to a binary file.
+
+Serializes the given list and writes it to a file with the {\ttfamily .\+fig} extension appended to the provided file name.
+
+
+\begin{DoxyParams}{Parameters}
+{\em shapes\+List} & List of {\ttfamily \doxylink{classShapeData}{Shape\+Data}} objects to save. \\
+\hline
+{\em file\+Name} & Path and base name of the output file (without extension). \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+File\+IO.\+java\end{DoxyCompactItemize}
