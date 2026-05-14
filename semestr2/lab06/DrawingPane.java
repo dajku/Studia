@@ -1,7 +1,4 @@
 import java.util.ArrayList;
-
-import org.w3c.dom.css.Rect;
-
 import javafx.scene.control.ColorPicker;
 import javafx.scene.input.MouseButton;
 import javafx.scene.layout.Pane;
@@ -32,11 +29,22 @@ public class DrawingPane extends Pane {
         allFigures = new ArrayList<Shape>();
         colorPicker = new ColorPicker();
 
+        Rectangle clipRect = new Rectangle();
+
+        clipRect.widthProperty().bind(this.widthProperty());
+        clipRect.heightProperty().bind(this.heightProperty());
+
+        this.setClip(clipRect);
+
         setOnMousePressed(e -> {
             startX = e.getX();
             startY = e.getY();
             lastMouseX = e.getSceneX();
             lastMouseY = e.getSceneY();
+            if(currentShape != null){
+                currentShape.setStrokeWidth(1);
+
+            }
 
             Object target = e.getTarget();
             if (target instanceof Shape) {
@@ -61,9 +69,6 @@ public class DrawingPane extends Pane {
                 }
 
             } else {
-                if (currentShape != null) {
-                    currentShape.setStrokeWidth(1);
-                }
                 currentShape = null;
                 if (currentMode == ToolMode.RECTANGLE) {
 
