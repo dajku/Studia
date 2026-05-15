@@ -48,16 +48,21 @@ public class FileIO {
      */
     public static ArrayList<ShapeData> loadFromFile(String fileName) {
         try (ObjectInputStream ois = new ObjectInputStream(new FileInputStream(fileName))) {
+            
             return (ArrayList<ShapeData>) ois.readObject();
         } catch (IOException e) {
-            System.out.println("błąd");
+            System.out.println("Input/Output error");
             return null;
         } catch (ClassNotFoundException e) {
-            System.out.println("blad");
+            System.out.println("Class error");
             return null;
         } catch (ClassCastException e) {
-            System.out.println("bład");
+            System.out.println("Cast error");
+            return null;
+        } catch (Exception e){
+            System.out.println("File error");
             return null;
         }
+
     }
 }

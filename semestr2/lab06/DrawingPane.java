@@ -1,6 +1,8 @@
 import java.util.ArrayList;
 
+import javafx.scene.control.Alert;
 import javafx.scene.control.ColorPicker;
+import javafx.scene.control.Alert.AlertType;
 import javafx.scene.input.MouseButton;
 import javafx.scene.layout.Pane;
 import javafx.scene.paint.Color;
@@ -301,7 +303,16 @@ public class DrawingPane extends Pane {
 
         if (file == null) return;
 
+
         ArrayList<ShapeData> loadedFigures = FileIO.loadFromFile(file.getAbsolutePath());
+        if(loadedFigures == null){
+            Alert errorAlert = new Alert(AlertType.ERROR);
+            errorAlert.setTitle("Read error");
+            errorAlert.setHeaderText("Wrong file!");
+            errorAlert.setContentText("Selected file is damaged or the format isn't correct");
+            errorAlert.showAndWait();
+            return;
+        }
         for (ShapeData sData : loadedFigures) {
             if (sData instanceof RectangleData) {
                 Rectangle rect = new Rectangle();
